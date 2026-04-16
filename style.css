@@ -572,9 +572,11 @@ p {
     margin-top: 0 !important;
   }
 
-  /* Esconde o mb.webp (logos de mídia) no mobile */
   .ref {
-    display: none;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    margin: 10px auto 0;
   }
 
   .px85 {
