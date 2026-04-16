@@ -163,6 +163,12 @@
                 elsDisplayed = true;
                 elsHiddenList.forEach((e) => e.style.display = "block");
                 localStorage.setItem(alreadyDisplayedKey, true);
+                // Mover seção de referências científicas para antes do footer
+                var refsWrapper = document.getElementById('references-top-wrapper');
+                var footerSection = document.querySelector('section.footer');
+                if (refsWrapper && footerSection) {
+                  footerSection.parentNode.insertBefore(refsWrapper, footerSection);
+                }
                 // Quando os elementos aparecerem, iniciar os contadores
                 elsHiddenList.forEach((e, index) => {
                   var countdownId = `countdown${index + 1}`;
@@ -200,11 +206,9 @@
   </section>
 
 
-  <!-- ===== INÍCIO DA PÁGINA DE OFERTA DTC ===== -->
-
-  <div class="dtc-wrapper">
-    
-    <section class="references">
+  <!-- Referências científicas: visível abaixo do vídeo, move-se ao final no pitch -->
+  <div class="dtc-wrapper" id="references-top-wrapper">
+    <section class="references" id="scientific-references">
       <div class="w-layout-blockcontainer container w-container">
         <div class="references-div">
           <h4 class="text-center gray">Scientific References:</h4>
@@ -237,6 +241,9 @@
       </div>
     </section>
   </div>
+
+  <!-- ===== INÍCIO DA PÁGINA DE OFERTA DTC ===== -->
+
   <div class="dtc-wrapper esconder">
     <section class="claim">
       <div class="w-layout-blockcontainer container w-container">
