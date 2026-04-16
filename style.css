@@ -1,0 +1,802 @@
+.w-layout-blockcontainer {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+@media screen and (max-width: 991px) {
+  .w-layout-blockcontainer {
+    max-width: 728px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .w-layout-blockcontainer {
+    max-width: none;
+  }
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 44px;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.container {
+  flex-flow: column;
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+}
+
+.hero {
+  grid-column-gap: 35px;
+  grid-row-gap: 35px;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 60px 0;
+  display: flex;
+}
+
+.body {
+  color: #000;
+  font-family: Montserrat, sans-serif;
+}
+
+.stars {
+  max-width: 160px;
+}
+
+.section-color-3 {
+  background-color: #201828;
+}
+
+.div-block {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* Desktop: puxa a seção da VSL levemente pra cima */
+.hero-vsl-container {
+  margin-top: -45px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* Player de vídeo: sombra e largura máxima */
+.hoje {
+  width: 100%;
+}
+
+.hoje vturb-smartplayer,
+.hoje h {
+  display: block;
+  width: 100%;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.55);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.text-block-2 {
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+.nav-div {
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+}
+
+.section-color-red-1 {
+  background-color: #a70c0c;
+}
+
+.nav-icon {
+  width: 100%;
+  max-width: 30px;
+}
+
+.nav-holder {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.white {
+  color: #fff;
+}
+
+.lupa {
+  width: 30px;
+  height: 30px;
+}
+
+.red {
+  color: red;
+}
+
+.ref {
+  align-self: center;
+  max-width: 400px;
+}
+
+.fw500 {
+  font-weight: 500;
+}
+
+.comments {
+    max-width: 100vw;
+    margin: 20px auto;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #333;
+    padding: 0 10px;
+}
+
+/* Título de contagem */
+.showing {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Divisor sutil */
+.divisor {
+    height: 1px;
+    background-color: #eee;
+    margin-bottom: 30px;
+}
+
+/* Container de cada comentário */
+.comment-holder {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 15px;
+}
+
+/* Foto do usuário */
+.foto {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%; /* Torna a imagem circular */
+    object-fit: cover;
+    background-color: #f0f0f0;
+}
+
+/* Balão/Conteúdo do comentário */
+.comment-content {
+    flex: 1;
+    background-color: #f8f9fa; /* Fundo leve para destacar do fundo branco */
+    padding: 16px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.comment-content h4 {
+    margin: 0 0 4px 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.comment-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #444;
+}
+
+/* Rodapé do comentário (Likes e Tempo) */
+.div-block-2 {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.links {
+    font-weight: 600;
+    color: #65676b;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.links:hover {
+    text-decoration: underline;
+}
+
+/* Ícone de Like e contagem */
+.like {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+}
+
+/* Ajuste para o texto de likes e tempo */
+.div-block-2 div:last-child {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 480px) {
+    .comment-holder {
+        gap: 10px;
+    }
+    .foto {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+.div-block-2 {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.verified-list {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.px85 {
+  font-size: 85px;
+}
+
+.px85.text-center.color-1 {
+  color: #318356;
+  line-height: 1em;
+}
+
+.red-2 {
+  color: #ba1e21;
+}
+
+.potes-holder-div {
+  color: #000;
+  background-color: #fff;
+  border: 3px solid #b7b7b7;
+  border-radius: 15px;
+  flex-flow: column;
+  min-width: 100%;
+  text-decoration: none;
+  display: flex;
+}
+
+.potes-holder-div:hover {
+  scale: 1.05;
+}
+
+.potes-holder-div.potes-6 {
+  background-color: #fffcc3;
+  border-color: #032737;
+}
+
+.potes-div {
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  flex-flow: column;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+}
+
+.costumer-say-stars-div {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.potes-tittle-div {
+  background-color: #626f72;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 8px;
+}
+
+.potes-tittle-div.potes-6 {
+  background-color: #116139;
+}
+
+.potes-part2 {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  flex-flow: column;
+  display: flex;
+}
+
+.text-center {
+  text-align: center;
+  line-height: 1em;
+}
+
+.potes-content-div {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  flex-flow: column;
+  padding: 20px;
+  display: flex;
+}
+
+.potes-part1 {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  flex-flow: column;
+  display: flex;
+}
+
+.potes-price-div {
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  flex-flow: column;
+  display: flex;
+}
+
+.hand {
+  align-self: flex-end;
+  max-width: 50px;
+  margin-top: -30px;
+}
+
+.pote {
+  object-fit: contain;
+  max-height: 300px;
+}
+
+.px45 {
+  font-size: 45px;
+}
+
+.px45.text-center.color-1 {
+  color: #318356;
+  line-height: 1em;
+}
+
+.px45.text-center.color-1._6-potes {
+  color: #cc860d;
+}
+
+.check-icon {
+  border-radius: 100px;
+  width: 20px;
+  height: 20px;
+}
+
+.potes-bonus-div {
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  flex-flow: column;
+  display: flex;
+}
+
+.costumer-rating-icon {
+  border-radius: 100px;
+  width: 30px;
+  height: 30px;
+}
+
+.potes-tittle-content-div {
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  flex-flow: column;
+  display: flex;
+}
+
+.potes-button-holder {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  display: flex;
+}
+
+.color-1 {
+  color: #27ae60;
+}
+
+.potes-bonus-list {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.costumer-say-div {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  flex-flow: column;
+  display: flex;
+}
+
+.potes-grid {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  place-items: start center;
+  display: grid;
+}
+
+@media screen and (max-width: 991px) {
+  .hoje {
+    font-size: 12px;
+  }
+
+  .holder-hero {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    flex-flow: column;
+    display: flex;
+  }
+
+  .px85 {
+    font-size: 70px;
+  }
+
+  .px85.text-center.color-1 {
+    font-size: 80px;
+  }
+
+  .potes-holder-div {
+    max-width: 100%;
+  }
+
+  .potes-content-div {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .pote {
+    max-height: 300px;
+  }
+
+  .px45 {
+    font-size: 30px;
+  }
+
+  .px45.text-center.color-1 {
+    font-size: 40px;
+  }
+
+  .check-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .potes-button-holder {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .potes-grid {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .hero {
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 30px 0;
+  }
+
+  .nav-div {
+    justify-content: center;
+    gap: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .stars {
+    max-width: 140px;
+  }
+
+  /* Remove overlap da nav no mobile */
+  .hero-vsl-container {
+    margin-top: 0 !important;
+  }
+
+  /* Esconde o mb.webp (logos de mídia) no mobile */
+  .ref {
+    display: none;
+  }
+
+  .px85 {
+    font-size: 60px;
+  }
+
+  .px85.text-center.color-1 {
+    font-size: 55px;
+  }
+
+  .potes-holder-div:hover {
+    scale: 1.02;
+  }
+
+  /* No mobile os cards de potes viram layout em coluna única (sem layout row) */
+  .potes-content-div {
+    flex-flow: column;
+    align-items: stretch;
+  }
+
+  .potes-part1,
+  .potes-part2 {
+    width: 100%;
+  }
+
+  .hand {
+    max-width: 40px;
+  }
+
+  .pote {
+    max-width: 100%;
+    max-height: 220px;
+    align-self: center;
+  }
+
+  .px45 {
+    font-size: 32px;
+  }
+
+  .px45.text-center.color-1 {
+    font-size: 30px;
+  }
+
+  .check-icon, .costumer-rating-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .potes-bonus-list {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .potes-grid {
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+  }
+
+  .potes-button-holder {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Botão BUY NOW largura total */
+  .button {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+  }
+
+  /* Imagens responsivas */
+  .ref,
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Texto da headline VSL */
+  .holder-hero h2 {
+    font-size: 20px;
+    line-height: 1.3em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .holder-hero h5 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .hero {
+    padding: 20px 0;
+  }
+
+  /* Nav centralizado e compacto */
+  .nav-div {
+    justify-content: center;
+    gap: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .nav-holder {
+    max-width: 24px;
+    max-height: 24px;
+  }
+
+  .lupa {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-icon {
+    max-width: 24px;
+  }
+
+  /* Headline VSL */
+  .holder-hero h2 {
+    font-size: 17px;
+    line-height: 1.3em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .holder-hero h5 {
+    font-size: 13px;
+  }
+
+  /* Fonte dos preços grandes */
+  .px85 {
+    font-size: 44px;
+  }
+
+  .px85.text-center.color-1 {
+    font-size: 40px;
+  }
+
+  .potes-part2 {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    width: 100%;
+  }
+
+  .potes-part1 {
+    width: 100%;
+  }
+
+  .potes-content-div {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    flex-flow: column;
+    padding: 12px;
+  }
+
+  .pote {
+    max-height: 180px;
+    max-width: 100%;
+    align-self: center;
+  }
+
+  .px45 {
+    font-size: 24px;
+  }
+
+  .px45.text-center.color-1 {
+    font-size: 22px;
+  }
+
+  /* Botão BUY NOW: largura total, padding confortável */
+  .potes-button-holder {
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .button {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 10px;
+  }
+
+  .potes-bonus-list {
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+  }
+
+}
+
+.elemento-pulante {
+  display: inline-block; 
+  animation: jump-bounce 4s ease-in-out infinite;
+}
+
+@keyframes jump-bounce {
+  
+  0%, 70%, 100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  
+  
+  75% {
+    transform: translateY(0) scale(1.1, 0.9);
+  }
+  
+  
+  85% {
+    transform: translateY(-10px) scale(0.9, 1.1);
+  }
+  
+  
+  90% {
+    transform: translateY(0) scale(1.05, 0.95);
+  }
+}
+
+
