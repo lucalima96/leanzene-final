@@ -30,6 +30,22 @@
   <link rel="dns-prefetch" href="https://images.converteai.net">
   <link rel="dns-prefetch" href="https://api.vturb.com.br">
 
+  <!-- Utmify Pixel -->
+  <script>
+    window.pixelId = "6938dbaca38158ddf809cdb0";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    async
+    defer
+  ></script>
+
 </head>
 
 <style>
@@ -98,8 +114,8 @@
                   const dia = String(hoje.getDate()).padStart(2, '0'); // Dia com 2 dígitos
                   const mes = String(hoje.getMonth() + 1).padStart(2, '0'); // Mês com 2 dígitos
                   const ano = hoje.getFullYear(); // Ano
-                  // Exibe a data no formato "DD/MM/YYYY"
-                  document.getElementById('hoje').textContent = `${dia}/${mes}/${ano}`;
+                  // Exibe a data no formato "MM/DD/YYYY"
+                  document.getElementById('hoje').textContent = `${mes}/${dia}/${ano}`;
                 }
                 // Chama a função para exibir a data ao carregar a página
                 mostrarData();
