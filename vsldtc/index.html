@@ -1832,6 +1832,29 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ne
   var _origSIV = Element.prototype.scrollIntoView;
   if (!section) return;
 
+  // Estado compartilhado do video: atualizado por polling + postMessage.
+  // Fonte unica de verdade pra decidir se pode revelar.
+  var videoState = { time: 0, lastAdvanceAt: 0 };
+
+  function updateTime(t) {
+    var n = parseFloat(t);
+    if (isNaN(n)) return;
+    if (n > videoState.time + 0.05) {
+      videoState.lastAdvanceAt = Date.now();
+    }
+    videoState.time = n;
+  }
+
+  // Gate unico: so revela se tempo confirmado >= PITCH_TIME E playback ativo.
+  function canReveal() {
+    if (videoState.time < PITCH_TIME) return false;
+    var v = findVideo();
+    if (v) return !v.paused && !v.ended; // checagem direta vence
+    // Sem acesso ao <video> (iframe cross-origin): infere paused pela ausencia
+    // de advance recente. Janela de 2s tolera jitter do postMessage.
+    return Date.now() - videoState.lastAdvanceAt < 2000;
+  }
+
   function reveal() {
     if (revealed) return;
     revealed = true;
@@ -1842,18 +1865,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ne
     }, 400);
   }
 
-  // Localiza o video em qualquer contexto
   function findVideo() {
     var v = document.querySelector('video');
     if (v) return v;
     var player = document.querySelector('vturb-smartplayer');
     if (player) {
-      // shadow DOM aberto
       if (player.shadowRoot) {
         v = player.shadowRoot.querySelector('video');
         if (v) return v;
       }
-      // iframes internos (mesmo origem)
       var iframes = player.querySelectorAll('iframe');
       for (var i = 0; i < iframes.length; i++) {
         try {
@@ -1862,7 +1882,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ne
         } catch(e) {}
       }
     }
-    // iframes no documento principal
     var allIframes = document.querySelectorAll('iframe');
     for (var j = 0; j < allIframes.length; j++) {
       try {
@@ -1873,73 +1892,57 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ne
     return null;
   }
 
-  // MÉTODO 1: Polling no <video> a cada 500ms
-  // So revela se video nao esta pausado E chegou no tempo
+  // MÉTODO 1: Polling no <video> a cada 500ms (alimenta videoState)
   var pollInterval = setInterval(function() {
     if (revealed) { clearInterval(pollInterval); return; }
     var v = findVideo();
-    if (v && !v.paused && !v.ended && v.currentTime >= PITCH_TIME) {
-      reveal();
+    if (v) {
+      updateTime(v.currentTime);
+      if (canReveal()) reveal();
     }
   }, 500);
 
-  // MÉTODO 2: postMessage — captura em todos os formatos conhecidos do Vturb
+  // MÉTODO 2: postMessage — alimenta videoState com currentTime do Vturb
   window.addEventListener('message', function(e) {
     if (revealed) return;
     var data;
     try { data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data; }
     catch(_) { return; }
     if (!data) return;
-
-    // Extrai currentTime de qualquer formato
     var time = data.currentTime || data.time ||
                (data.data && data.data.currentTime) ||
                (data.payload && data.payload.currentTime) || null;
-
-    if (time !== null && parseFloat(time) >= PITCH_TIME) {
-      // Confirma que video nao estava pausado no momento
-      var v = findVideo();
-      if (!v || !v.paused) reveal();
-    }
+    if (time === null) return;
+    updateTime(time);
+    if (canReveal()) reveal();
   });
 
-  // MÉTODO 3: scroll event — captura qualquer mecanismo de scroll do Vturb
-  // Protegido por PITCH_TIME: so ativa apos 80% do tempo configurado ter passado
-  var activateScrollAt = Date.now() + (PITCH_TIME * 800); // 80% em ms
+  // MÉTODO 3: scroll event — agora exige canReveal() (tempo + playback)
   window.addEventListener('scroll', function() {
-    if (revealed || Date.now() < activateScrollAt) return;
+    if (revealed || !canReveal()) return;
     var sentinel = document.getElementById('vsl-pitch-sentinel');
     if (!sentinel) return;
     var rect = sentinel.getBoundingClientRect();
-    if (rect.top > -50 && rect.top < window.innerHeight * 0.6) {
-      var v = findVideo();
-      // Se nao achar o video (cross-origin iframe), confia no Vturb
-      // Se achar, so revela se nao estiver pausado
-      if (!v || (!v.paused && v.currentTime >= PITCH_TIME)) reveal();
-    }
+    if (rect.top > -50 && rect.top < window.innerHeight * 0.6) reveal();
   }, { passive: true });
 
-  // MÉTODO 4: Element.prototype.scrollIntoView
+  // MÉTODO 4: Element.prototype.scrollIntoView do sentinel — exige canReveal()
   Element.prototype.scrollIntoView = function(opts) {
     if (this.classList && this.classList.contains('smartplayer-scroll-event')) {
-      var v = findVideo();
-      if (!v || (!v.paused && v.currentTime >= PITCH_TIME)) { reveal(); return; }
+      if (canReveal()) { reveal(); return; }
     }
     return _origSIV.call(this, opts);
   };
 
-  // MÉTODO 5: window.scrollTo
+  // MÉTODO 5: window.scrollTo destinado ao sentinel — exige canReveal()
   var _origScrollTo = window.scrollTo.bind(window);
   window.scrollTo = function() {
-    if (!revealed) {
+    if (!revealed && canReveal()) {
       var sentinel = document.getElementById('vsl-pitch-sentinel');
       if (sentinel) {
         var sTop = sentinel.getBoundingClientRect().top + window.pageYOffset;
         var destY = typeof arguments[0] === 'object' ? (arguments[0].top || 0) : (arguments[1] || 0);
-        if (sTop > 100 && Math.abs(destY - sTop) < 400) {
-          var v = findVideo();
-          if (!v || (!v.paused && v.currentTime >= PITCH_TIME)) reveal();
-        }
+        if (sTop > 100 && Math.abs(destY - sTop) < 400) reveal();
       }
     }
     return _origScrollTo.apply(window, arguments);
