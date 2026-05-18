@@ -1825,12 +1825,12 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ne
 
 <script>
 (function() {
-  var PITCH_TIME = 2465; // 41:05
+  // ⚠️ TESTE: PITCH_TIME=30s pra validar mecanismo sem esperar 41min.
+  // Voltar pra 2465 (41:05) depois do teste passar.
+  var PITCH_TIME = 30; // TEST — produção: 2465
   var PAGE_LOADED_AT = Date.now();
-  // Scroll-based triggers (Vturb chama scrollIntoView/scrollTo) so podem
-  // disparar depois de 60s de pagina aberta — barra eventos de load
-  // imediato do player que nao sao o pitch real.
-  var SCROLL_TRIGGER_FLOOR_MS = 60 * 1000;
+  // Floor reduzido pra 5s durante o teste (produção: 60s).
+  var SCROLL_TRIGGER_FLOOR_MS = 5 * 1000; // TEST — produção: 60 * 1000
 
   var revealed = false;
   var section  = document.getElementById('audileaf-lp');
