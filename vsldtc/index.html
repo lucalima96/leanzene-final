@@ -1050,17 +1050,9 @@ footer a:hover { color: var(--secondary-color) !important; }
 /* VSL wrapper */
 .vsl-wrapper { width: 100%; max-width: 700px; margin: 30px auto; padding: 20px 15px; text-align: center; background: transparent; }
 
-/* ── AudiLeaf section: oculta até o pitch da VSL ── */
-#audileaf-lp {
+/* ── AudiLeaf section: oculta até o pitch (reveal nativo VTurb "Show hidden content") ── */
+.esconder {
   display: none;
-}
-#audileaf-lp.vsl-revealed {
-  display: block !important;
-  animation: vslFadeIn 0.7s ease forwards;
-}
-@keyframes vslFadeIn {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
 }
 </style>
 
@@ -1122,9 +1114,8 @@ s.async=!0,document.head.appendChild(s);
 </div>
 
 <!-- ════ AUDILEAF LP ════ -->
-<div id="vsl-pitch-sentinel" class="smartplayer-scroll-event" style="height:0;line-height:0;overflow:hidden;padding:0;margin:0;" aria-hidden="true"></div>
 
-<div id="audileaf-lp">
+<div id="audileaf-lp" class="esconder">
 
 <!-- BuyGoods Affiliate Tracker -->
 <script type="text/javascript" defer="" src="https://tracking.buygoods.com/track/saved_resource"></script>
@@ -1823,131 +1814,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ne
 <script>AOS.init({ easing: 'ease-in-out', duration: 800, delay: 0 });</script>
 
 
-<script>
-(function() {
-  var PITCH_TIME = 2465; // 41:05
-  var PAGE_LOADED_AT = Date.now();
-  // Scroll-based triggers (Vturb chama scrollIntoView/scrollTo) so podem
-  // disparar depois de 60s de pagina aberta — barra eventos de load
-  // imediato do player que nao sao o pitch real.
-  var SCROLL_TRIGGER_FLOOR_MS = 60 * 1000;
 
-  var revealed = false;
-  var section  = document.getElementById('audileaf-lp');
-  var _origSIV = Element.prototype.scrollIntoView;
-  if (!section) return;
-
-  function pageOldEnough() {
-    return Date.now() - PAGE_LOADED_AT >= SCROLL_TRIGGER_FLOOR_MS;
-  }
-
-  function reveal() {
-    if (revealed) return;
-    revealed = true;
-    section.classList.add('vsl-revealed');
-    setTimeout(function() {
-      var s = document.getElementById('vsl-pitch-sentinel');
-      if (s) _origSIV.call(s, { behavior: 'smooth', block: 'start' });
-    }, 400);
-  }
-
-  function findVideo() {
-    var v = document.querySelector('video');
-    if (v) return v;
-    var player = document.querySelector('vturb-smartplayer');
-    if (player) {
-      if (player.shadowRoot) {
-        v = player.shadowRoot.querySelector('video');
-        if (v) return v;
-      }
-      var iframes = player.querySelectorAll('iframe');
-      for (var i = 0; i < iframes.length; i++) {
-        try {
-          v = iframes[i].contentDocument && iframes[i].contentDocument.querySelector('video');
-          if (v) return v;
-        } catch(e) {}
-      }
-    }
-    var allIframes = document.querySelectorAll('iframe');
-    for (var j = 0; j < allIframes.length; j++) {
-      try {
-        v = allIframes[j].contentDocument && allIframes[j].contentDocument.querySelector('video');
-        if (v) return v;
-      } catch(e) {}
-    }
-    return null;
-  }
-
-  // MÉTODO 1: Polling no <video> a cada 500ms
-  var pollInterval = setInterval(function() {
-    if (revealed) { clearInterval(pollInterval); return; }
-    var v = findVideo();
-    if (v && !v.paused && !v.ended && v.currentTime >= PITCH_TIME) {
-      reveal();
-    }
-  }, 500);
-
-  // MÉTODO 2: postMessage — captura currentTime do Vturb em qualquer formato
-  window.addEventListener('message', function(e) {
-    if (revealed) return;
-    var data;
-    try { data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data; }
-    catch(_) { return; }
-    if (!data) return;
-    var time = data.currentTime || data.time ||
-               (data.data && data.data.currentTime) ||
-               (data.payload && data.payload.currentTime) || null;
-    if (time !== null && parseFloat(time) >= PITCH_TIME) {
-      var v = findVideo();
-      if (!v || !v.paused) reveal();
-    }
-  });
-
-  // MÉTODO 3: scroll event — protegido por floor de wallclock (PITCH_TIME * 80%)
-  var activateScrollAt = PAGE_LOADED_AT + (PITCH_TIME * 800); // 80% em ms
-  window.addEventListener('scroll', function() {
-    if (revealed || Date.now() < activateScrollAt) return;
-    var sentinel = document.getElementById('vsl-pitch-sentinel');
-    if (!sentinel) return;
-    var rect = sentinel.getBoundingClientRect();
-    if (rect.top > -50 && rect.top < window.innerHeight * 0.6) {
-      var v = findVideo();
-      if (!v || (!v.paused && v.currentTime >= PITCH_TIME)) reveal();
-    }
-  }, { passive: true });
-
-  // MÉTODO 4: Element.prototype.scrollIntoView no sentinel — trigger principal
-  // do Vturb ("Scroll to your site element" configurado pra 41:05). Confiavel
-  // porque o sentinel tem classe unica .smartplayer-scroll-event que o Vturb
-  // so mira no tempo configurado. Filtro de 60s evita ruido de pos-load.
-  Element.prototype.scrollIntoView = function(opts) {
-    if (this.classList && this.classList.contains('smartplayer-scroll-event') && pageOldEnough()) {
-      var v = findVideo();
-      if (!v || (!v.paused && v.currentTime >= PITCH_TIME)) { reveal(); return; }
-    }
-    return _origSIV.call(this, opts);
-  };
-
-  // MÉTODO 5: window.scrollTo perto do sentinel — mesma logica que Método 4
-  var _origScrollTo = window.scrollTo.bind(window);
-  window.scrollTo = function() {
-    if (!revealed && pageOldEnough()) {
-      var sentinel = document.getElementById('vsl-pitch-sentinel');
-      if (sentinel) {
-        var sTop = sentinel.getBoundingClientRect().top + window.pageYOffset;
-        var destY = typeof arguments[0] === 'object' ? (arguments[0].top || 0) : (arguments[1] || 0);
-        if (sTop > 100 && Math.abs(destY - sTop) < 400) {
-          var v = findVideo();
-          if (!v || (!v.paused && v.currentTime >= PITCH_TIME)) reveal();
-        }
-      }
-    }
-    return _origScrollTo.apply(window, arguments);
-  };
-
-  window.showAudiLeafSection = reveal;
-})();
-</script>
 
 </body>
 </html>
