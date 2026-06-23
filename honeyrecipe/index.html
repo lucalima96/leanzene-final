@@ -497,5 +497,58 @@
   })();
 </script>
 
+<!-- ============================================================= -->
+<!-- vTurb subid3 fix                                               -->
+<!-- O passthrough da Utmify cola subid3= (vazio) por cima do PID   -->
+<!-- que o vTurb injeta. Este helper força subid3 = session id do   -->
+<!-- vTurb (hermes_session_id) no momento exato da navegacao pra    -->
+<!-- DTC, rodando por ULTIMO — imune ao template da Utmify.         -->
+<!-- Utmify segue na vaga 'subid' (jLj+leadId), sem colisao.        -->
+<!-- ============================================================= -->
+<script>
+(function () {
+  var DEST = 'marobrain.com';   // dominio da DTC do produtor
+  var SLOT = 'subid3';          // vaga dedicada ao vTurb
+
+  function vturbId() {
+    try {
+      // id da sessao de visualizacao do vTurb (smartplayer v4 / hermes)
+      var raw = localStorage.getItem('__storejs_hermes-session_hermes_session_id');
+      if (raw) return String(JSON.parse(raw));
+    } catch (e) {}
+    return null;
+  }
+
+  function fix(url) {
+    try {
+      if (typeof url !== 'string') return url;
+      var id = vturbId();
+      if (!id) return url;
+      var u = new URL(url, location.href);
+      if (u.hostname.indexOf(DEST) === -1) return url;
+      // so preenche se estiver vazio/ausente — nao atropela nada ja setado
+      if (!u.searchParams.get(SLOT)) {
+        u.searchParams.set(SLOT, id);
+        return u.toString();
+      }
+    } catch (e) {}
+    return url;
+  }
+
+  // 1) window.open — o vTurb abre a DTC por aqui (open_in_new_tab)
+  var _open = window.open;
+  window.open = function (url) {
+    if (arguments.length) arguments[0] = fix(url);
+    return _open.apply(window, arguments);
+  };
+
+  // 2) reforco: qualquer clique em <a> que aponte pra DTC
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest && e.target.closest('a[href*="' + DEST + '"]');
+    if (a) a.href = fix(a.getAttribute('href'));
+  }, true);
+})();
+</script>
+
 </body>
 </html>
