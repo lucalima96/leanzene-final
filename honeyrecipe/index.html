@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health</title>
+<meta name="description" content="Daily updates on wellness and health">
+<meta name="robots" content="index, follow">
+
+<!-- ============================================================= -->
+<!-- POSTBACK DE CONVERSÃO VTURB (BuyGoods) — CONFIGURAR NO PAINEL  -->
+<!-- Isto NÃO é um script de página. É a URL de postback server-side -->
+<!-- que você cola no BuyGoods/vTurb para registrar a conversão:    -->
+<!-- https://tracker.vturb.com/conversions/buygoods-postback?t=14aff60f-b198-4975-a42b-7f7f0cdf13b8&subid={SUBID}&subid2={SUBID2}&subid3={SUBID3}&subid4={SUBID4}&subid5={SUBID5}&amount={COMMISSION_AMOUNT}&currency=USD&event_type={CONV_TYPE}&email_hash={EMAILHASH}&product_name={PRODUCT_NAME}&order_id={ORDER_ID} -->
+<!-- ============================================================= -->
+
+<!-- ===== SCRIPT VELOCIDADE VTURB (preload do player novo) ===== -->
+<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+<link rel="preload" href="https://scripts.converteai.net/323b6d8a-4307-4d60-9a56-26e91f3cb757/ab-test/6a3ae619a67608469a95c687/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+<link rel="dns-prefetch" href="https://cdn.converteai.net">
+<link rel="dns-prefetch" href="https://scripts.converteai.net">
+<link rel="dns-prefetch" href="https://images.converteai.net">
+<link rel="dns-prefetch" href="https://m3u8.vturb.net">
+<link rel="dns-prefetch" href="https://license.vturb.com">
+<!-- ===== FIM SCRIPT VELOCIDADE VTURB ===== -->
+
+<!-- ===== UTMify Pixel (seu tracking) ===== -->
+<script>
+  window.pixelId = "6938dbaca38158ddf809cdb0";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  async
+  defer
+></script>
+<!-- ===== FIM UTMify ===== -->
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background: #fff;
+    color: #050505;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img, video { max-width: 100%; height: auto; display: block; }
+
+  /* ===== Header HEALTH ===== */
+  header.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #a70c0c;
+    padding: 10px 20px;
+  }
+  header.site-header h1 {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  @media (min-width: 997px) {
+    header.site-header h1 { font-size: 2rem; }
+  }
+
+  /* ===== Marquee ===== */
+  marquee.ticker {
+    background: #810505;
+    padding: 4px 0;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+
+  /* ===== Bloco principal ===== */
+  .content { width: 100%; margin: 0 auto; }
+  .byline {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 12px 15px;
+    text-align: left;
+    font-size: 12px;
+    color: #54595f;
+  }
+  .byline b { font-size: 13px; font-weight: 700; color: #000; }
+
+  .vsl-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 15px 12px;
+    text-align: center;
+  }
+
+  /* ===== Comentários (estilo Facebook) ===== */
+  #fb-comments {
+    font-family: "Segoe UI Historic", "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 12px 30px;
+  }
+  #fb-comments .fb-heading {
+    margin: 2.125em 0 0.625em;
+    font-size: 1.1em;
+    color: #555;
+    font-weight: 400;
+    text-align: left;
+  }
+  #fb-comments .comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+    border: 0.0625em solid #e9ebee;
+    border-radius: 1.25em;
+    padding: 1.25em 1.25em 0;
+  }
+  #fb-comments .comment {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    gap: 0.625em;
+  }
+  #fb-comments .comment.answer {
+    margin-left: 3.625em;
+    max-width: calc(100% - 3.625em);
+    margin-bottom: 0.75em;
+  }
+  #fb-comments .comment.answer + .answer { margin-top: -0.75em; }
+  #fb-comments .comment .user-avatar {
+    max-width: 3em;
+    max-height: 3em;
+    border-radius: 1.5625em;
+    object-fit: cover;
+  }
+  #fb-comments .comment .comment-data { width: 100%; }
+  #fb-comments .comment .comment-data .user {
+    font-weight: 400;
+    color: #050505;
+    border-radius: 0.75em;
+    background-color: #f0f2f5;
+    padding: 0.375em 0.75em 0.75em;
+  }
+  #fb-comments .comment .comment-data .user .name {
+    margin: 0;
+    color: #365899;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    max-width: max-content;
+  }
+  #fb-comments .comment .comment-data .user .text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    color: #050505;
+    width: fit-content;
+    text-align: left;
+  }
+  #fb-comments .comment .comment-data .buttons {
+    margin: 0.125em 0 0 0.75em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.3125em;
+  }
+  #fb-comments .comment .comment-data .buttons time,
+  #fb-comments .comment .comment-data .buttons like,
+  #fb-comments .comment .comment-data .buttons answer,
+  #fb-comments .comment .comment-data .buttons span {
+    font-size: 0.80em;
+    color: #888;
+    user-select: none;
+  }
+  #fb-comments .comment .comment-data .buttons like,
+  #fb-comments .comment .comment-data .buttons answer {
+    font-weight: 600;
+    cursor: pointer;
+  }
+  #fb-comments .comment .comment-data .buttons answer { cursor: default; position: relative; }
+  #fb-comments .comment .comment-data .buttons answer:hover::after {
+    content: "You cannot comment on this post";
+    position: absolute;
+    left: 50%;
+    top: -0.625em;
+    width: 11.25em;
+    background-color: #f0f2f5;
+    color: #4c4c4c;
+    transform: translate(-50%, -100%);
+    z-index: 10;
+    border-radius: 0.25em;
+    padding: 0.375em;
+    text-align: center;
+    font-weight: 400;
+    box-shadow: 0.125em 0.125em 0.5em 0.125em rgba(0,0,0,0.18);
+  }
+  #fb-comments .comment .comment-data .buttons answer:hover::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -0.625em;
+    width: 0; height: 0;
+    border-left: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;
+    border-top: 0.5em solid #f0f2f5;
+    z-index: 11;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 0.1875em 0.125em rgba(0,0,0,0.1));
+  }
+  #fb-comments .comment likes {
+    position: absolute;
+    bottom: -0.625em;
+    right: 0;
+    background-color: #fff;
+    border: 0.125em solid #eaebef;
+    display: flex;
+    align-items: center;
+    font-size: 0.875em;
+    line-height: 1;
+    color: #888;
+    border-radius: 6.25em;
+    padding: 0.0625em 0.25em 0.0625em 0;
+  }
+  #fb-comments .comment likes::before {
+    content: url('https://cdn.wellnesssciencehub.com/gerais/fb/likes.webp');
+    cursor: pointer;
+  }
+  #fb-comments .comments-closed {
+    font-size: 0.875em;
+    font-weight: 600;
+    text-align: center;
+    margin: 0.9375em 0 5px;
+    color: #555;
+  }
+  @media (min-width: 576px) {
+    #fb-comments { font-size: 16px; }
+    #fb-comments .comment likes { bottom: 0; }
+  }
+
+  /* ===== Footer ===== */
+  footer.site-footer {
+    text-align: center;
+    padding: 40px 15px;
+    background-color: #305d61;
+    color: #fff;
+  }
+  footer.site-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    font-size: 14px;
+  }
+  footer.site-footer ul li { display: inline-block; margin: 0 8px; }
+  footer.site-footer a { color: #fff; text-decoration: none; }
+  footer.site-footer a:hover { text-decoration: underline; }
+  footer.site-footer p { margin: 0; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<main class="content-wrapper">
+
+  <!-- ===== HEADER (Secret Recipe) ===== -->
+  <header class="site-header">
+    <h1>HEALTH</h1>
+  </header>
+
+  <!-- ===== MARQUEE ===== -->
+  <marquee class="ticker">
+    Daily updates on wellness and health - Daily updates on wellness and
+    health - Daily updates on wellness and health - Daily updates on
+    wellness and health
+  </marquee>
+
+  <section class="content">
+
+    <!-- Byline -->
+    <p class="byline">
+      <b>By Dr. </b>
+      <br>Updated 30 minutes ago - <span class="data_atual">23/06/2026</span>
+    </p>
+
+    <!-- ===== VSL — VTURB PLAYER NOVO ===== -->
+    <div class="vsl-wrap">
+      <vturb-smartplayer
+        id="ab-6a3ae619a67608469a95c687"
+        style="display: block; margin: 0 auto; width: 100%; max-width: var(--player-vertical-width, 400px);">
+      </vturb-smartplayer>
+      <script type="text/javascript">
+        var s = document.createElement("script");
+        s.src = "https://scripts.converteai.net/323b6d8a-4307-4d60-9a56-26e91f3cb757/ab-test/6a3ae619a67608469a95c687/player.js";
+        s.async = !0;
+        document.head.appendChild(s);
+      </script>
+    </div>
+    <!-- ===== FIM VSL ===== -->
+
+    <!-- ===== COMENTÁRIOS (page memoria) ===== -->
+    <div id="fb-comments" style="display: block;">
+      <h2 class="fb-heading"><b>36.158 Comments</b></h2>
+      <div class="comments-container">
+
+        <!-- Comentário 1 -->
+        <div class="comment" data-comment-id="1">
+          <img decoding="async" class="user-avatar" src="./assets/015.jpg" alt="">
+          <div class="comment-data">
+            <div class="user">
+              <p class="name">Hannah Cooper</p>
+              <p class="text">
+                With so many scams online it's rare to find something actually helpful. Gates you deserve all the success 👏👏
+              </p>
+            </div>
+            <div class="buttons">
+              <like>Like</like><span>·</span>
+              <answer>Reply</answer><span>·</span><time>2h</time>
+            </div>
+          </div>
+          <likes>23</likes>
+        </div>
+
+        <div class="comment" data-comment-id="1b">
+          <img decoding="async" class="user-avatar" src="./assets/011.jpg" alt="">
+          <div class="comment-data">
+            <div class="user">
+              <p class="name">Robert Hayes</p>
+              <p class="text">
+                thought this was gonna be another one of those videos that drags forever just to sell you something, thank god i stuck around.
+                im doing it every morning for 3 weeks now and i can actually follow a whole conversation again
+              </p>
+            </div>
+            <div class="buttons">
+              <like>Like</like><span>·</span>
+              <answer>Reply</answer><span>·</span><time>7 min</time>
+            </div>
+          </div>
+          <likes>11</likes>
+        </div>
+
+        <div class="comment answer" data-comment-id="1c">
+          <img decoding="async" class="user-avatar" src="./assets/019.jpg" alt="">
+          <div class="comment-data">
+            <div class="user">
+              <p class="name">Stephen Carter</p>
+              <p class="text">
+                I thought the same thing!! my dads got alzheimers and we'd tried everything you can think of, but this is actually helping a
+                lot! he called me on tuesday just to ask how my week was going, hadnt done that in over a year
+              </p>
+            </div>
+            <div class="buttons">
+              <like>Like</like><span>·</span>
+              <answer>Reply</answer><span>·</span><time>6 min</time>
+            </div>
+          </div>
+          <likes>32</likes>
+        </div>
+
+        <!-- Comentário 2 -->
+        <div class="comment" data-comment-id="2">
+          <img decoding="async" class="user-avatar" src="./assets/046.png" alt="">
+          <div class="comment-data">
+            <div class="user">
+              <p class="name">Natalie Parker</p>
+              <p class="text">anyone actually tried this? curious but skeptical 🤔</p>
+            </div>
+            <div class="buttons">
+              <like>Like</like><span>·</span>
+              <answer>Reply</answer><span>·</span><time>1h</time>
+            </div>
+          </div>
+          <likes>34</likes>
+        </div>
+
+        <div class="comment answer" data-comment-id="2a">
+          <img decoding="async" class="user-avatar" src="./assets/043.png" alt="">
+          <div class="comment-data">
+            <div class="user">
+              <p class="name">Jacob Morgan</p>
+              <p class="text">
+                been using this 2 months and the difference is night and day. fog is just gone. havent had an episode in weeks either
+              </p>
+            </div>
+            <div class="buttons">
+              <like>Like</like><span>·</span>
+              <answer>Reply</answer><span>·</span><time>1h</time>
+            </div>
+          </div>
+          <likes>32</likes>
+        </div>
+
+        <div class="comment answer" data-comment-id="2b">
+          <img decoding="async" class="user-avatar" src="./assets/046.png" alt="">
+          <div class="comment-data">
+            <div class="user">
+              <p class="name">Natalie Parker</p>
+              <p class="text">
+                thats awesome, thanks for the heads up. def gonna try it!
+              </p>
+            </div>
+            <div class="buttons">
+              <like>Like</like><span>·</span>
+              <answer>Reply</answer><span>·</span><time>1h</time>
+            </div>
+          </div>
+          <likes>76</likes>
+        </div>
+
+        <!-- Comentário 3 -->
+        <div class="comment" data-comment-id="3">
+          <img decoding="async" class="user-avatar" src="./assets/045.png" alt="">
+          <div class="comment-data">
+            <div class="user">
+              <p class="name">Samantha Edwards</p>
+              <p class="text">
+                I've tried the puzzles, the fish oil, the prescriptions… this is the first time i felt like my old self. i'm cooking again,
+                hosting my book club on thursdays, i'm even driving by myself again after almost a year of not having the guts to
+              </p>
+            </div>
+            <div class="buttons">
+              <like>Like</like><span>·</span>
+              <answer>Reply</answer><span>·</span><time>23 min</time>
+            </div>
+          </div>
+          <likes>28</likes>
+        </div>
+
+        <div class="comment" data-comment-id="6c">
+          <img decoding="async" class="user-avatar" src="./assets/020.jpg" alt="">
+          <div class="comment-data">
+            <div class="user">
+              <p class="name">Jessica Reeves</p>
+              <p class="text">
+                this is unbelievable! my doctor took "early onset alzheimers" off my chart 😭
+              </p>
+            </div>
+            <div class="buttons">
+              <like>Like</like><span>·</span>
+              <answer>Reply</answer><span>·</span><time>1h</time>
+            </div>
+          </div>
+          <likes>32</likes>
+        </div>
+
+        <h4 class="comments-closed">This post is no longer receiving comments!</h4>
+
+      </div>
+    </div>
+    <!-- ===== FIM COMENTÁRIOS ===== -->
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <ul>
+        <li><a href="#" target="_blank">Terms</a></li>
+        <li><a href="#" target="_blank">Privacy</a></li>
+        <li><a href="#" target="_blank">Return Policy</a></li>
+        <li><a href="#" target="_blank">Contact Us</a></li>
+      </ul>
+      <p>© Research 2026. All Rights Reserved.</p>
+    </footer>
+
+  </section>
+</main>
+
+<!-- Data automática (substitui a data do byline pela data de hoje) -->
+<script>
+  (function () {
+    var d = new Date();
+    var dd = String(d.getDate()).padStart(2, '0');
+    var mm = String(d.getMonth() + 1).padStart(2, '0');
+    var yyyy = d.getFullYear();
+    var els = document.querySelectorAll('.data_atual');
+    for (var i = 0; i < els.length; i++) {
+      els[i].textContent = dd + '/' + mm + '/' + yyyy;
+    }
+  })();
+</script>
+
+</body>
+</html>
