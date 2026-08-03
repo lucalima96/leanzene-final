@@ -1110,6 +1110,40 @@ footer a:hover { color: var(--secondary-color) !important; }
 .fb-group-container *{box-sizing:border-box}.fb-group-container{background-color:#fff;font-family:'Segoe UI',Helvetica,Arial,sans-serif;max-width:800px;margin:20px auto 50px;padding:15px;border:1px solid #ddd;border-radius:8px}.fb-header-info{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid #e4e6eb;margin-bottom:15px}.fb-stat-count{color:#65676b;font-size:15px;font-weight:600}.fb-stat-count i{color:#1877f2;margin-left:5px}.fb-thread{margin-bottom:15px}.fb-comment-row{display:flex;gap:8px;margin-bottom:4px}.fb-face{width:38px;height:38px;flex-shrink:0}.fb-face img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:1px solid #eee}.fb-bubble-block{max-width:88%}.fb-bubble-content{background-color:#f0f2f5;padding:10px 14px;border-radius:18px;position:relative;display:inline-block}.fb-user-name{color:#050505;font-weight:600;font-size:13px;cursor:pointer;display:block;text-decoration:none;margin-bottom:2px}.fb-user-name:hover{text-decoration:underline}.fb-msg-text{color:#1c1e21;font-size:15px;line-height:1.35;font-weight:400}.fb-tag{color:#1877f2;font-weight:600;cursor:pointer;text-decoration:none}.fb-tag:hover{text-decoration:underline}.fb-footer-actions{display:flex;gap:12px;margin-left:14px;margin-top:2px;margin-bottom:6px}.fb-action-link{font-size:12px;font-weight:700;color:#65676b;cursor:pointer;text-decoration:none}.fb-action-link:hover{text-decoration:underline}.fb-time{font-size:12px;color:#65676b;font-weight:400}.fb-badge-likes{position:absolute;bottom:-8px;right:-10px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.2);padding:2px 5px;display:flex;align-items:center;gap:3px;font-size:11px;color:#65676b;z-index:2;border:1px solid #fff}.icon-thumb{background:#1877f2;color:#fff;border-radius:50%;padding:3px;width:16px;height:16px;display:flex;align-items:center;justify-content:center;font-size:9px}.icon-heart{background:#f23e5c;color:#fff;border-radius:50%;padding:3px;width:16px;height:16px;display:flex;align-items:center;justify-content:center;font-size:9px}.fb-reply-thread{margin-left:48px;border-left:2px solid #f0f2f5;padding-left:10px}.fb-reply-row{display:flex;gap:8px;margin-bottom:4px;margin-top:6px}.fb-reply-row .fb-face{width:28px;height:28px}.fb-reply-row .fb-msg-text{font-size:14px}.fb-closed-notice{margin-top:30px;padding-top:20px;border-top:1px solid #e4e6eb;text-align:center;background-color:#f9fafb;padding:15px;border-radius:6px}.fb-closed-text{color:#65676b;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px}@media (max-width:480px){.fb-group-container{padding:10px;border:none;margin-bottom:20px}.fb-reply-thread{margin-left:30px;border:none;padding-left:0}.fb-bubble-content{padding:8px 12px}}
 </style>
 
+<!-- Libera o campo subid5 para a Vturb escrever o conversion key nos links de checkout.
+     Nao toca em subid, sid2, subid2, subid3 nem nas UTMs: a Utmify segue rastreando. -->
+<script>
+(function () {
+  var PARAM = 'subid5';
+  var PREFIXO = 'v3_';
+  function liberar() {
+    var links = document.querySelectorAll('a[href]');
+    for (var i = 0; i < links.length; i++) {
+      try {
+        var u = new URL(links[i].href);
+        if (!u.searchParams.has(PARAM)) continue;
+        var v = u.searchParams.get(PARAM) || '';
+        if (v.indexOf(PREFIXO) === 0) continue;
+        u.searchParams.delete(PARAM);
+        links[i].href = u.toString();
+      } catch (e) {}
+    }
+  }
+  liberar();
+  window.addEventListener('load', function () {
+    setTimeout(liberar, 300); setTimeout(liberar, 1000); setTimeout(liberar, 3000);
+  });
+  document.addEventListener('click', function (e) {
+    var t = e.target; if (t && t.nodeType === 3) t = t.parentElement;
+    var a = t && t.closest ? t.closest('a[href]') : null;
+    if (a) liberar();
+  }, true);
+  if (typeof MutationObserver !== 'undefined') {
+    new MutationObserver(liberar).observe(document.body || document.documentElement,
+      { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
+  }
+})();
+</script>
 </head>
 <body>
 
