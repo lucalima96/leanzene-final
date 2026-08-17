@@ -1799,7 +1799,12 @@ src="https://www.facebook.com/tr?id=1630606758184714&ev=PageView&noscript=1"
      isso feito, este bloco pode sair. ============================== -->
 <script>
 document.addEventListener('click', function (e) {
-  if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  // Ignora botao do meio/direito e clique com modificador, para nao
+  // atrapalhar "abrir em nova aba". Cuidado: eventos sinteticos (.click()
+  // e automacao) nao trazem `button`, entao testar `e.button !== 0`
+  // sozinho barraria esses cliques. `!= null` deixa undefined passar.
+  if (e.button != null && e.button !== 0) return;
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
   var a = e.target && e.target.closest ? e.target.closest('a[href*="/cart/"]') : null;
   if (!a) return;
   var url = a.href;
