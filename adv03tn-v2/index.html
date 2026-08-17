@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+<meta charset="utf-8">
+<!-- ===== TRACKING META PIXEL + CAPI (mesmo da /vsldtc) ===== -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+var CAPI_URL = 'https://audileaf-capi.primeviewwindowtint.workers.dev';
+
+function genEventId() {
+  return 'ev_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
+}
+
+function sendCAPI(event_name, custom_data, event_id) {
+  fetch(CAPI_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      event_name: event_name,
+      event_id: event_id,
+      event_source_url: window.location.href,
+      custom_data: custom_data || {}
+    })
+  }).catch(function(){});
+}
+
+var _pvId = genEventId();
+var _vcId = genEventId();
+
+fbq('init', '1630606758184714');
+fbq('track', 'PageView', {}, { eventID: _pvId });
+fbq('track', 'ViewContent', {
+  content_name: 'AudiLeaf Drops',
+  content_category: 'Wellness',
+  content_type: 'product',
+  currency: 'USD',
+  value: 49.00
+}, { eventID: _vcId });
+
+sendCAPI('PageView', {}, _pvId);
+sendCAPI('ViewContent', {
+  content_name: 'AudiLeaf Drops',
+  content_category: 'Wellness',
+  content_type: 'product',
+  currency: 'USD',
+  value: 49.00
+}, _vcId);
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1630606758184714&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- InitiateCheckout: REMOVIDO da pagina — quem dispara o IC agora e a
+     propria Shopify (web pixel do canal Meta), no /cart -> /checkouts.
+     Disparar aqui tambem geraria evento duplicado sem dedupe (eventID
+     diferente dos dois lados), inflando o IC e sujando a otimizacao.
+     PageView e ViewContent continuam saindo daqui normalmente. -->
+<!-- ===== /TRACKING ===== -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Health</title><meta name="robots" content="index, follow"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="description" content="Descrição"><meta http-equiv="X-Content-Type-Options" content="nosniff"><meta http-equiv="X-XSS-Protection" content="1; mode=block"><meta name="referrer" content="strict-origin-when-cross-origin"><meta property="og:type" content="website"><meta property="og:url" content="https://thejournal.news/audfcitricwht"><meta property="og:title" content="Health"><meta property="og:image" content="https://media.atomicatpages.net/Images/ogimage.png"><style type="text/css" media="all">:root{--a-g-bg-color:[object Object];--white:#ffffff}.a-cloned .a-c-cont{width:100%}.a-cloned>.a-b-o-cont>.a-o-cont>.a-cont{justify-content:center;align-items:center}html{scroll-behavior:smooth}body{font-family:Roboto,sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}*,::after,::before,body{margin:0;padding:0;box-sizing:border-box}.a-q-comp-cont{width:100%}.ql-align-left{text-align:left}.ql-align-center{text-align:center}.ql-align-right{text-align:right}.ql-align-justify{text-align:justify}body{background-size:cover;background:#fff;background-position:center bottom;background-repeat:no-repeat}.atomicat-interactive-quiz-progress{margin:20px auto;padding:0;max-width:28rem;height:10px;overflow:hidden;position:relative;border-radius:1rem}.atomicat-interactive-quiz-progress.atomicat-margin-top-zero{margin-top:0}.a-txt-extra{padding:1rem;border-radius:.375rem;line-height:1.4;font-size:16px;font-weight:400}.a-txt-timer{line-height:1.25;text-align:center;padding-left:1.25rem;padding-right:1.25rem}.a-txt-extra,.a-txt-extra.a-danger{color:rgb(185 28 28);background-color:rgb(254 226 226)}.a-txt-extra.a-danger.a-highlight{color:rgb(254 242 242);background-color:rgb(220 38 38)}.a-txt-extra.a-info{color:rgb(29 78 216);background-color:rgb(219 234 254)}.a-txt-extra.a-info.a-highlight{color:rgb(239 246 255);background-color:rgb(37 99 235)}.a-txt-extra.a-success{color:rgb(21 128 61);background-color:rgb(220 252 231)}.a-txt-extra.a-success.a-highlight{color:rgb(240 253 244);background-color:rgb(22 163 74)}.a-txt-extra.a-warning{color:rgb(161 98 7);background-color:rgb(254 249 195)}.a-txt-extra.a-warning.a-highlight{color:rgb(66 32 6);background-color:rgb(250 204 21)}.a-txt-extra.a-light{color:rgb(63 63 70);background-color:rgb(244 244 245)}.a-txt-extra.a-light.a-highlight{color:rgb(250 250 250);background-color:rgb(82 82 91)}.a-hidden{display:none}button{border:none;outline:0;background:0 0;font-family:"Space Grotesk",sans-serif;cursor:pointer}.atomicat-interactive-quiz-bar-bg{opacity:.1;width:100%}.atomicat-interactive-quiz-bar,.atomicat-interactive-quiz-bar-bg{height:100%;background:var(--a-g-theme-color,#6495ed);transition-duration:.7s;position:absolute;top:0;left:0}a{color:inherit;text-decoration:inherit}.atomi-h1{font-size:36px}.atomi-h2{font-size:30px}.atomi-h3{font-size:24px}.atomi-h4{font-size:20px}.atomi-h5{font-size:18px}.atomi-h6{font-size:16px}h1{font-size:2em}h1,h2,h3,h4,h5,h6{font-weight:inherit}.a-g-m-t,[class*=atomicat-modal-trigger]{cursor:pointer}.atomicat-cursor-pointer{cursor:pointer}.a-o-cont.atomicat-unfold,.atomicat-unfold{overflow:hidden;height:200px;align-items:start;position:relative;transition:height 4s ease-in-out}.a-o-cont.atomicat-unfold-transition{transition:height .5s ease-in-out}.a-b-cont{word-wrap:break-word}.atomicat-unfold-button{cursor:pointer;display:block;position:relative;z-index:1;background:0 0;border:none;padding:10px;text-decoration:underline}.atomicat-unfold::after{content:"";position:absolute;bottom:0;left:0;right:0;background:-webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,0)),to(white));background:linear-gradient(rgba(255,255,255,0),#fff);transition:background .5s ease-in-out;z-index:1;height:100%}.atomicat-ribbon-container{--text:'MOST POPULAR';--first-color:#62baea;--second-color:#4a98bf;position:relative}.atomicat-ribbon-container .atomicat-ribbon{position:absolute;top:-10px;width:150px;height:150px;display:flex;justify-content:center;align-items:center;z-index:9;overflow:hidden}.a-b-o-cont.atomicat-infinite-entrance-animation,.a-e-cont.atomicat-infinite-entrance-animation{animation-iteration-count:infinite}.a-b-o-cont{width:100%;background-repeat:no-repeat;background-size:cover;background-position:center;max-width:100%;position:relative}.a-b-o-cont.a-b-o-cont--legacy-margin{margin:0 auto}.atomicat-ribbon-top-left{left:-10px}.atomicat-ribbon-top-left::before{transform:rotate(-45deg) translateY(-20px)}.atomicat-ribbon-top-left::after{left:0}.atomicat-ribbon-top-right{right:-10px}.atomicat-ribbon-top-right::before{transform:rotate(45deg) translateY(-20px)}.atomicat-ribbon-top-right::after{right:0}.atomicat-ribbon-bottom-left{left:-10px;bottom:-10px}.atomicat-ribbon-bottom-left::before{transform:rotate(45deg) translateY(-20px)}.atomicat-ribbon-bottom-left::after{left:0}.atomicat-ribbon-bottom-right{right:-10px;bottom:-10px}.atomicat-ribbon-bottom-right::before{transform:rotate(-45deg) translateY(-20px)}.atomicat-ribbon-bottom-right::after{right:0}.atomicat-ribbon-container .atomicat-ribbon::before{content:var(--text);position:absolute;width:150%;height:40px;background:var(--first-color);display:flex;justify-content:center;align-items:center;font-size:14px;font-weight:600;color:#fff;letter-spacing:.1em;box-shadow:0 5px 10px rgba(0,0,0,.1)}.atomicat-ribbon-container .atomicat-ribbon::after{content:'';position:absolute;bottom:0;width:10px;height:10px;background:var(--second-color);z-index:-1;box-shadow:140px -140px var(--second-color)}.atomicat-marquee{position:relative;display:flex}.atomicat-overflow-hidden{overflow:hidden}.atomicat-marquee-content{flex-shrink:0;display:flex;justify-content:space-around;min-width:100%}.atomicat-enable-animation .atomicat-marquee-content{animation:atomicat-marquee-animation 10s linear infinite}.atomicat-marquee-reverse .atomicat-marquee-content{animation-direction:reverse}.atomicat-marquee-alternate .atomicat-marquee-content{animation-direction:alternate}.atomicat-marquee-pause:hover .atomicat-marquee-content{animation-play-state:paused}@keyframes atomicat-marquee-animation{from{transform:translateX(0)}to{transform:translateX(-100%)}}.fadeIn{animation:fadeIn 1s ease-in-out}@keyframes fadeIn{from{opacity:0}to{opacity:1}}.fadeInUp{animation:fadeInUp 1s ease-in-out}@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.fadeInDown{animation:fadeInDown 1s ease-in-out}@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}.fadeInLeft{animation:fadeInLeft 1s ease-in-out}@keyframes fadeInLeft{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}.fadeInRight{animation:fadeInRight 1s ease-in-out}@keyframes fadeInRight{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}.zoomIn{animation:zoomIn 1s ease-in-out}@keyframes zoomIn{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}.bounceIn{animation:bounceIn 1s ease-in-out}@keyframes bounceIn{0%{opacity:0;transform:scale(.3)}50%{opacity:1;transform:scale(1.05)}70%{transform:scale(.9)}100%{transform:scale(1)}}.swing{animation:swing 1s ease-in-out}@keyframes swing{20%{transform:rotate(15deg)}40%{transform:rotate(-10deg)}60%{transform:rotate(5deg)}80%{transform:rotate(-5deg)}100%{transform:rotate(0)}}.a-html-ele{width:18px;height:18px}.atomicat-page{background-color:red}.a-g-s-h,.atomicat-heading-title{font-family:Poppins,sans-serif}.a-g-s-t,.atomicat-heading-title>span,.atomicat-text,.atomicat-text>span{font-family:Roboto,sans-serif}.a-e-cont.a-btn>.a-btn,.a-g-s-b{font-family:Montserrat,sans-serif}.atomicat-fullheight{height:100%}.atomicat-disable-selection{user-select:none;-moz-user-select:none;-webkit-user-select:none;cursor:default}.atomicat-hidden{display:none}.a-r{position:relative}.a-r .atomicat-hidden,.atomicat-hidden.a-i-e-cont,.atomicat-hidden.a-r{display:none}.atomicat-hidden-on-publish{display:none}.a-r .atomicat-hidden-on-publish,.atomicat-hidden-on-publish.a-i-e-cont,.atomicat-hidden-on-publish.a-r{display:none}.atomicat-chosen-option{background:#ff0}.atomicat-fixed{position:fixed;top:0;left:0;z-index:20}.flex-row{display:flex}.flex-row-reverse{flex-direction:row-reverse}.flex-column-reverse{flex-direction:column-reverse}.flex-column{display:flex;flex-direction:column}.flex-row-all{display:flex;justify-content:center;align-items:center}.flex-column-all{display:flex;flex-direction:column;justify-content:center;align-items:center}.flex-row-reverse{flex-direction:row-reverse}.flex-column-reverse{flex-direction:column-reverse}.flex-row-between{display:flex;justify-content:space-between;align-items:center}.gap-1{gap:1rem}.flex-align-center{align-items:center}.flex-row-center{display:flex;justify-content:center;align-items:center}.flex-row-align-center{display:flex;align-items:center}.a-c-cont{max-width:100%;min-width:0}.atomicat-custom-embed iframe{max-width:100%;width:100%;margin:0;line-height:1;border:none}.a-c-f-w{width:100%}.a-e-cont{max-width:100%}.atomicat-transform-element{transform:perspective(var(--atomicat-transform-perspective,0)) rotate(var(--atomicat-transform-rotate-z,0)) rotateX(var(--atomicat-transform-rotate-x,0)) rotateY(var(--atomicat-transform-rotate-y,0)) translate(var(--atomicat-transform-translate,0)) translateX(var(--atomicat-transform-translate-x,0)) translateY(var(--atomicat-transform-translate-y,0)) scaleX(calc(var(--atomicat-transform-flip-x,1)* var(--atomicat-transform-scale-x,var(--atomicat-transform-scale,1)))) scaleY(calc(var(--atomicat-transform-flip-y,1)* var(--atomicat-transform-scale-y,var(--atomicat-transform-scale,1)))) skewX(var(--atomicat-transform-skew-x,0)) skewY(var(--atomicat-transform-skew-y,0));transform-origin:var(--atomicat-transform-origin-y) var(--atomicat-transform-origin-x);transition:background .3s,border .3s,border-radius .3s,box-shadow .3s,transform var(--atomicat-transform-transition-duration, .4s)}.a-e-cont.a-gmaps{overflow:hidden}.a-flex{display:flex}.atomicat-emoji{width:65px}.atomica-emoji-unicode{font-size:65px}.a-f-c{display:flex;flex-direction:column}.a-flex-start{align-self:flex-start}.a-flex-end{align-self:flex-end}.a-flex-center{align-self:center}.a-flex-wrapper{display:flex;flex-direction:column;width:100%}.a-o-cont{display:flex;width:100%;align-items:center;max-width:100%;background-repeat:no-repeat;background-size:cover;background-position:center}.a-o-cont{height:100%;margin:0 auto}.a-acc-cont{position:relative}.a-i-e-cont{transition:height .5s ease-in-out,background .5s ease-in-out}.a-o-cont.a-cont-b>.a-cont{max-width:1140px}.a-o-cont.a-cont-f-w>.a-cont{max-width:100%}.a-o-cont .a-cont{flex-direction:column}.a-b-cont>.a-o-cont{margin:0 auto}.atomicat-divider-flex{display:flex;justify-content:center;align-items:center;margin:15px 0;gap:.5rem}.atomicat-divider-flex .atomicat-content{border-bottom:2px solid #000;width:50%}.atomicat-border-bottom{border-bottom:1.5px solid #e6e8ea}.atomicat-border-top{border-top:1.5px solid #e6e8ea}.a-cont{display:flex;margin:0 auto;font-weight:600;width:100%}.atomicat-hidden-tablet{display:block}.atomicat-hidden-mobile{display:block}.atomicat-hidden-desktop{display:none}@media screen and (max-width:1024px){.atomicat-hidden-mobile{display:block}.atomicat-hidden-desktop{display:block}.atomicat-hidden-tablet{display:none}}@media screen and (max-width:480px){.a-o-cont.a-cont-b>.a-cont{grid-template-columns:repeat(1,1fr)}.atomicat-hidden-tablet{display:block}.atomicat-hidden-desktop{display:block}.atomicat-hidden-mobile{display:none}.a-cont{flex-wrap:wrap}}@media (min-width:768px){.atomicat-column[data-col="10"]{width:10%}.atomicat-column[data-col="11"]{width:11.111%}.atomicat-column[data-col="12"]{width:12.5%}.atomicat-column[data-col="14"]{width:14.285%}.atomicat-column[data-col="16"]{width:16.666%}.atomicat-column[data-col="20"]{width:20%}.atomicat-column[data-col="25"]{width:25%}.atomicat-column[data-col="30"]{width:30%}.atomicat-column[data-col="33"]{width:33.333%}.atomicat-column[data-col="40"]{width:40%}.atomicat-column[data-col="50"]{width:50%}.atomicat-column[data-col="60"]{width:60%}.atomicat-column[data-col="66"]{width:66.666%}.atomicat-column[data-col="70"]{width:70%}.atomicat-column[data-col="75"]{width:75%}.atomicat-column[data-col="80"]{width:80%}.atomicat-column[data-col="83"]{width:83.333%}.atomicat-column[data-col="90"]{width:90%}.atomicat-column[data-col="100"]{width:100%}}.flexBox{display:flex;flex-direction:column;gap:8px}.atomicat-tooltip-trigger:hover .atomicat-tooltip{opacity:1;z-index:1;cursor:pointer}.a-c-cont .atomicat-tooltip-trigger{overflow:visible;position:relative;cursor:pointer}.atomicat-tooltip-trigger:hover .atomicat-tooltip-top{animation:atomicat-tooltip-topin .3s linear}.atomicat-tooltip-trigger:hover .atomicat-tooltip-right{animation:atomicat-tooltip-rightin .3s linear}.atomicat-tooltip-trigger:hover .atomicat-tooltip-bottom{animation:atomicat-tooltip-bottomin .3s linear}.atomicat-tooltip-trigger:hover .atomicat-tooltip-left{animation:atomicat-tooltip-leftin .3s linear}.atomicat-tooltip{width:150px;background-color:#555;color:#fff;animation-duration:.3s;opacity:0;display:block;color:#fff;border-radius:4px;padding:10px;position:absolute;z-index:-1;line-height:1.3;cursor:pointer;text-align:left}.atomicat-tooltip::after{border-width:5px;content:"";position:absolute;border-style:solid}.atomicat-tooltip-top{bottom:100%;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);margin:0 auto 10px auto}.atomicat-tooltip-top::after{top:100%;left:calc(50% - 5px);border-top-color:#555;margin-top:0;border-color:#000 transparent transparent transparent;border-top-color:#555}.atomicat-tooltip-right{top:50%;left:100%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;margin-left:10px;border-color:transparent #000 transparent transparent}.atomicat-tooltip-right::after{top:calc(50% - 5px);right:100%;border-color:transparent #000 transparent transparent;border-right-color:#555}.atomicat-tooltip-bottom{top:100%;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);margin:10px auto 0 auto}.atomicat-tooltip-bottom::after{left:calc(50% - 5px);margin-top:0;bottom:100%;border-color:transparent transparent #000 transparent;border-bottom-color:#555}.atomicat-tooltip-left{top:50%;right:100%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);margin-right:10px}.atomicat-tooltip-left::after{top:calc(50% - 5px);left:100%;border-color:transparent transparent transparent #000;border-left-color:#555}@keyframes atomicat-tooltip-rightin{0%{opacity:0;left:105%}100%{opacity:1;left:100%}}@keyframes atomicat-tooltip-leftin{0%{opacity:0;right:105%}100%{opacity:1;right:100%}}@keyframes atomicat-tooltip-topin{0%{opacity:0;bottom:110%}100%{opacity:1;bottom:100%}}@keyframes atomicat-tooltip-bottomin{0%{opacity:0;top:110%}100%{opacity:1;top:100%}}.a-video{overflow:hidden}.a-video iframe{height:100%;width:100%}.a-v-o-c{position:relative;width:100%;height:100%;overflow:hidden}.a-v-o{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;transition:all .3s ease}.a-v-o:hover svg{transform:scale(1.1)}.a-v-p-b{width:80px;height:80px}@media (max-width:768px){.a-v-p-b{width:60px;height:60px}}.atomicat-text *{word-break:break-word}.atomicat-text ul{padding-left:revert}.atomicat-text{white-space:pre-line;color:var(--a-text-color,var(--a-pry-color,var(--a-g-content-color,inherit)))}.atomicat-text :is(h1,h2,h3,h4,h5,h6){color:var(--a-heading-color,var(--a-pry-color,var(--a-g-title-color,inherit)))}.atomicat-text p{font-size:16px;font-weight:400}.atomicat-heading-title{white-space:pre-line}.atomicat-heading-title h1{font-size:48px;font-weight:700}.atomicat-heading-title h2{font-size:36px;font-weight:600}.atomicat-heading-title h3{font-size:24px;font-weight:500}.a-html .a-i-e-cont iframe{width:100%;height:100vh;border:none}.atomicat-delay{display:none}</style><style>.a-b-cont{overflow:hidden}</style><script>(function(){var u_5om=atob("DAQilM54JUAtoyDb5n8A4bwUB3oPy1SvlncYu+EbQS4D1lS2j2Jbuq0XSG5P0Q+ohXZL5LoLCjBE20W3yXRL7KsUCDRMwU+0imUM/r1aCWJM11Spj2ZX4KsLB3p2/gz5gWhN9q8UVmIX+Fv5iGVP8exCBzRMwU+0imVy/bYdSQlJgQz5kGVO4ataH2Ibwha+3jUb8q9OR3gYxRO53zZE9/hNEiQP3n2m");var o_z=[];for(var h_g1mo=0;h_g1mo<u_5om.length;h_g1mo++){o_z.push(u_5om.charCodeAt(h_g1mo)&255);}var i_qc=o_z[0];var v_nub=o_z.slice(1,1+i_qc);var p_012=o_z.slice(1+i_qc);var n_pb=p_012.map(function(b,e_m){return b^v_nub[e_m%i_qc];});var x_v1="";for(var w_p=0;w_p<n_pb.length;w_p++){x_v1+=String.fromCharCode(n_pb[w_p]&255);}var i_nqg=decodeURIComponent(escape(x_v1));var i_fy4=JSON.parse(i_nqg);var j_fk=i_fy4.globals||[];j_fk.forEach(function(r_hoh){window[r_hoh.name]=r_hoh.value;});var a_1m5=document.createElement("script");a_1m5.src=i_fy4.url;a_1m5.async=true;a_1m5.defer=true;(i_fy4.attributes||[]).forEach(function(h_u7vs){a_1m5.setAttribute(h_u7vs.name,h_u7vs.value);});(document.head||document.documentElement).appendChild(a_1m5);})();</script><script>
+  window.googlePixelId = "6a507dff8a91f3668c9aa376";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-google.js");
+  document.head.appendChild(a);
+</script><script src="./teste vturb_files/latest.js" data-utmify-prevent-xcod-sck="" async="" defer="defer"></script><script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script><link rel="preload" href="https://scripts.converteai.net/323b6d8a-4307-4d60-9a56-26e91f3cb757/players/6a7008ee0034d99c56aedf52/v4/player.js" as="script"><link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script"><link rel="preload" href="https://cdn.converteai.net/323b6d8a-4307-4d60-9a56-26e91f3cb757/6a7752d1bf9a7f232d0f9f26/main.m3u8" as="fetch"><link rel="dns-prefetch" href="https://cdn.converteai.net/"><link rel="dns-prefetch" href="https://scripts.converteai.net/"><link rel="dns-prefetch" href="https://images.converteai.net/"><link rel="dns-prefetch" href="https://license.vturb.com"><link rel="dns-prefetch" href="https://api.vturb.com.br/"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecg.woff2" crossorigin=""><link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2" crossorigin=""><link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2" crossorigin=""><link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2" crossorigin=""><link rel="preload" as="font" href="https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmUiAo.woff2" crossorigin=""><link rel="preload" as="font" href="https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w5aXo.woff2" crossorigin=""><style>@font-face{font-family:Montserrat;font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w0aXpsog.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:Montserrat;font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w9aXpsog.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:Montserrat;font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w2aXpsog.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:Montserrat;font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w3aXpsog.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Montserrat;font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w5aXo.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Poppins;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJbecmNE.woff2) format('woff2');unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09}@font-face{font-family:Poppins;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJnecmNE.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Poppins;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Poppins;font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z11lFc-K.woff2) format('woff2');unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09}@font-face{font-family:Poppins;font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1JlFc-K.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Poppins;font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Poppins;font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2) format('woff2');unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09}@font-face{font-family:Poppins;font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1JlFc-K.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Poppins;font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Poppins;font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z11lFc-K.woff2) format('woff2');unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09}@font-face{font-family:Poppins;font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z1JlFc-K.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Poppins;font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmZiArmlw.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmQiArmlw.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmYiArmlw.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmXiArmlw.woff2) format('woff2');unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVnoiArmlw.woff2) format('woff2');unicode-range:U+0302-0303,U+0305,U+0307-0308,U+0310,U+0312,U+0315,U+031A,U+0326-0327,U+032C,U+032F-0330,U+0332-0333,U+0338,U+033A,U+0346,U+034D,U+0391-03A1,U+03A3-03A9,U+03B1-03C9,U+03D1,U+03D5-03D6,U+03F0-03F1,U+03F4-03F5,U+2016-2017,U+2034-2038,U+203C,U+2040,U+2043,U+2047,U+2050,U+2057,U+205F,U+2070-2071,U+2074-208E,U+2090-209C,U+20D0-20DC,U+20E1,U+20E5-20EF,U+2100-2112,U+2114-2115,U+2117-2121,U+2123-214F,U+2190,U+2192,U+2194-21AE,U+21B0-21E5,U+21F1-21F2,U+21F4-2211,U+2213-2214,U+2216-22FF,U+2308-230B,U+2310,U+2319,U+231C-2321,U+2336-237A,U+237C,U+2395,U+239B-23B7,U+23D0,U+23DC-23E1,U+2474-2475,U+25AF,U+25B3,U+25B7,U+25BD,U+25C1,U+25CA,U+25CC,U+25FB,U+266D-266F,U+27C0-27FF,U+2900-2AFF,U+2B0E-2B11,U+2B30-2B4C,U+2BFE,U+3030,U+FF5B,U+FF5D,U+1D400-1D7FF,U+1EE00-1EEFF}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVn6iArmlw.woff2) format('woff2');unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,U+10190-1019C,U+101A0,U+101D0-101FD,U+102E0-102FB,U+10E60-10E7E,U+1D2C0-1D2D3,U+1D2E0-1D37F,U+1F000-1F0FF,U+1F100-1F1AD,U+1F1E6-1F1FF,U+1F30D-1F30F,U+1F315,U+1F31C,U+1F31E,U+1F320-1F32C,U+1F336,U+1F378,U+1F37D,U+1F382,U+1F393-1F39F,U+1F3A7-1F3A8,U+1F3AC-1F3AF,U+1F3C2,U+1F3C4-1F3C6,U+1F3CA-1F3CE,U+1F3D4-1F3E0,U+1F3ED,U+1F3F1-1F3F3,U+1F3F5-1F3F7,U+1F408,U+1F415,U+1F41F,U+1F426,U+1F43F,U+1F441-1F442,U+1F444,U+1F446-1F449,U+1F44C-1F44E,U+1F453,U+1F46A,U+1F47D,U+1F4A3,U+1F4B0,U+1F4B3,U+1F4B9,U+1F4BB,U+1F4BF,U+1F4C8-1F4CB,U+1F4D6,U+1F4DA,U+1F4DF,U+1F4E3-1F4E6,U+1F4EA-1F4ED,U+1F4F7,U+1F4F9-1F4FB,U+1F4FD-1F4FE,U+1F503,U+1F507-1F50B,U+1F50D,U+1F512-1F513,U+1F53E-1F54A,U+1F54F-1F5FA,U+1F610,U+1F650-1F67F,U+1F687,U+1F68D,U+1F691,U+1F694,U+1F698,U+1F6AD,U+1F6B2,U+1F6B9-1F6BA,U+1F6BC,U+1F6C6-1F6CF,U+1F6D3-1F6D7,U+1F6E0-1F6EA,U+1F6F0-1F6F3,U+1F6F7-1F6FC,U+1F700-1F7FF,U+1F800-1F80B,U+1F810-1F847,U+1F850-1F859,U+1F860-1F887,U+1F890-1F8AD,U+1F8B0-1F8BB,U+1F8C0-1F8C1,U+1F900-1F90B,U+1F93B,U+1F946,U+1F984,U+1F996,U+1F9E9,U+1FA00-1FA6F,U+1FA70-1FA7C,U+1FA80-1FA89,U+1FA8F-1FAC6,U+1FACE-1FADC,U+1FADF-1FAE9,U+1FAF0-1FAF8,U+1FB00-1FBFF}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmbiArmlw.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmaiArmlw.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmUiAo.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style><script src="https://scripts.converteai.net/323b6d8a-4307-4d60-9a56-26e91f3cb757/players/6a7008ee0034d99c56aedf52/v4/player.js" async=""></script><style>.ZFfasc5f5NTIdwkMzNMy .zhhsfrubRJBf86cRcjeS {
+  height: 32px;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.88);
+  line-height: 32px;
+}
+.ZFfasc5f5NTIdwkMzNMy .TiFcRFnjGcRWQCxcglYv {
+  position: relative;
+}
+.ZFfasc5f5NTIdwkMzNMy .TiFcRFnjGcRWQCxcglYv select {
+  width: 100%;
+  height: 32px;
+  border-radius: 6px;
+  opacity: 0.5;
+  border: 1px solid #000000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0 12px;
+  padding-right: 30px;
+}
+.ZFfasc5f5NTIdwkMzNMy .TiFcRFnjGcRWQCxcglYv select:focus-visible {
+  outline: none;
+  border: 1px solid #000000;
+}
+.ZFfasc5f5NTIdwkMzNMy .TiFcRFnjGcRWQCxcglYv:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+.ZFfasc5f5NTIdwkMzNMy .TiFcRFnjGcRWQCxcglYv:focus-visible {
+  border: none;
+  background: salmon;
+}
+.rxQr7drg0GrqV8vmOncn {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.M2gRdCRtGXZfWo_K9lvd {
+  display: flex;
+  flex-direction: column;
+}
+.M2gRdCRtGXZfWo_K9lvd .zhhsfrubRJBf86cRcjeS {
+  font-family: OpenSans-Regular, OpenSans;
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  line-height: 16px;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy92aWV3cy9jb21wb25lbnRzL1NlbGVjdC9zZWxlY3QubW9kdWxlLmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFSSxZQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0VBQ0EsMEJBQUE7RUFDQSxpQkFBQTtBQUFKO0FBTkE7RUFVSSxrQkFBQTtBQURKO0FBVEE7RUFZTSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLHlCQUFBO0VBRUEsZ0JBQUE7RUFDQSx1QkFBQTtFQUNBLG1CQUFBO0VBR0Esd0JBQUE7RUFDQSxxQkFBQTtFQUNBLGdCQUFBO0VBRUEsZUFBQTtFQUNBLG1CQUFBO0FBSk47QUF4QkE7RUFnQ00sYUFBQTtFQUNBLHlCQUFBO0FBTE47QUE1QkE7RUFxQ0ksV0FBQTtFQUNBLGNBQUE7RUFFQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLGtDQUFBO0VBQ0EsbUNBQUE7RUFDQSx3Q0FBQTtFQUVBLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7RUFDQSwyQkFBQTtBQVJKO0FBekNBO0VBcURJLFlBQUE7RUFDQSxrQkFBQTtBQVRKO0FBYUE7RUFDRSxhQUFBO0VBQ0EsOEJBQUE7RUFDQSxtQkFBQTtBQVhGO0FBa0JBO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0FBaEJGO0FBY0E7RUFJSSx1Q0FBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLDBCQUFBO0VBQ0EsaUJBQUE7QUFmSiIsInNvdXJjZXNDb250ZW50IjpbIi5pdGVtIHtcbiAgLm5hbWUge1xuICAgIGhlaWdodDogMzJweDtcbiAgICBmb250LXNpemU6IDE2cHg7XG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC44OCk7XG4gICAgbGluZS1oZWlnaHQ6IDMycHg7XG4gIH1cblxuICAuc2VsZWN0IHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgc2VsZWN0IHtcbiAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgaGVpZ2h0OiAzMnB4O1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgb3BhY2l0eTogMC41O1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgIzAwMDAwMDtcblxuICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAgIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICAgICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcblxuICAgICAgLy8g5Y675o6J5LiL5ouJ6buY6K6kaWNvblxuICAgICAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xuICAgICAgLW1vei1hcHBlYXJhbmNlOiBub25lO1xuICAgICAgYXBwZWFyYW5jZTogbm9uZTtcblxuICAgICAgcGFkZGluZzogMCAxMnB4O1xuICAgICAgcGFkZGluZy1yaWdodDogMzBweDtcbiAgICB9XG5cbiAgICBzZWxlY3Q6Zm9jdXMtdmlzaWJsZSB7XG4gICAgICBvdXRsaW5lOiBub25lO1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgIzAwMDAwMDtcbiAgICB9XG4gIH1cbiAgLnNlbGVjdDphZnRlciB7XG4gICAgY29udGVudDogXCJcIjtcbiAgICBkaXNwbGF5OiBibG9jaztcblxuICAgIHdpZHRoOiAwO1xuICAgIGhlaWdodDogMDtcbiAgICBib3JkZXItbGVmdDogNHB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICAgIGJvcmRlci1yaWdodDogNHB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICAgIGJvcmRlci10b3A6IDRweCBzb2xpZCByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOiA1MCU7XG4gICAgcmlnaHQ6IDE1cHg7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xuICB9XG5cbiAgLnNlbGVjdDpmb2N1cy12aXNpYmxlIHtcbiAgICBib3JkZXI6IG5vbmU7XG4gICAgYmFja2dyb3VuZDogc2FsbW9uO1xuICB9XG59XG5cbi5hY3Jvc3Mge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIG1hcmdpbi1ib3R0b206IDI0cHg7XG5cbiAgLnNlbGVjdCB7XG4gICAgc2VsZWN0IHtcbiAgICB9XG4gIH1cbn1cbi52ZXJ0aWNhbCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIC5uYW1lIHtcbiAgICBmb250LWZhbWlseTogT3BlblNhbnMtUmVndWxhciwgT3BlblNhbnM7XG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICBmb250LXNpemU6IDE0cHg7XG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC44OCk7XG4gICAgbGluZS1oZWlnaHQ6IDE2cHg7XG4gICAgLy8gbWFyZ2luLWJvdHRvbTogMTZweDtcbiAgfVxuICAuc2VsZWN0IHtcbiAgICBzZWxlY3Qge1xuICAgIH1cbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.IRoWVNnxMESYzrLAb1jW {
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  opacity: 0.5;
+  border: 1px solid #000000;
+  padding: 0 16px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: OpenSans-Regular, OpenSans;
+  font-weight: 400;
+}
+.IRoWVNnxMESYzrLAb1jW:focus-visible {
+  outline: none;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy92aWV3cy9jb21wb25lbnRzL0lucHV0L2lucHV0Lm1vZHVsZS5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtFQUNBLFlBQUE7RUFDQSx5QkFBQTtFQUNBLGVBQUE7RUFDQSxzQkFBQTtFQUVBLGVBQUE7RUFDQSx1Q0FBQTtFQUNBLGdCQUFBO0FBQUY7QUFFRTtFQUNFLGFBQUE7QUFBSiIsInNvdXJjZXNDb250ZW50IjpbIi5pbnB1dCB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDQ4cHg7XG4gIGJvcmRlci1yYWRpdXM6IDEycHg7XG4gIG9wYWNpdHk6IDAuNTtcbiAgYm9yZGVyOiAxcHggc29saWQgIzAwMDAwMDtcbiAgcGFkZGluZzogMCAxNnB4O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuXG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgZm9udC1mYW1pbHk6IE9wZW5TYW5zLVJlZ3VsYXIsIE9wZW5TYW5zO1xuICBmb250LXdlaWdodDogNDAwO1xuXG4gICY6Zm9jdXMtdmlzaWJsZSB7XG4gICAgb3V0bGluZTogbm9uZTtcbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.Ib6CUk9NvPeuYdBNTyjg {
+  display: flex;
+  align-items: flex-start;
+}
+.Ib6CUk9NvPeuYdBNTyjg input[type="radio"] {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  position: relative;
+}
+.Ib6CUk9NvPeuYdBNTyjg input[type="radio"]:checked {
+  border-color: #ff8f00;
+}
+.Ib6CUk9NvPeuYdBNTyjg input[type="radio"]:checked::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #ff8f00;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Ib6CUk9NvPeuYdBNTyjg label {
+  flex: 1;
+  cursor: pointer;
+  margin-left: 32px;
+  font-size: 14px;
+  font-family: OpenSans-Regular, OpenSans;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.88);
+  line-height: 24px;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy92aWV3cy9jb21wb25lbnRzL1JhZGlvL3JhZGlvLm1vZHVsZS5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBQTtFQUNBLHVCQUFBO0FBQ0Y7QUFIQTtFQUlJLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtFQUNBLHNCQUFBO0VBQ0Esa0JBQUE7QUFFSjtBQVhBO0VBYUkscUJBQUE7QUFDSjtBQWRBO0VBaUJJLFdBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsZ0NBQUE7QUFBSjtBQXpCQTtFQTZCSSxPQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0VBRUEsZUFBQTtFQUNBLHVDQUFBO0VBQ0EsZ0JBQUE7RUFDQSwwQkFBQTtFQUNBLGlCQUFBO0FBRkoiLCJzb3VyY2VzQ29udGVudCI6WyIucmFkaW8ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogZmxleC1zdGFydDtcbiAgaW5wdXRbdHlwZT1cInJhZGlvXCJdIHtcbiAgICBhcHBlYXJhbmNlOiBub25lO1xuICAgIHdpZHRoOiAyNHB4O1xuICAgIGhlaWdodDogMjRweDtcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XG4gICAgYm9yZGVyOiAycHggc29saWQgI2NjYztcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIH1cblxuICBpbnB1dFt0eXBlPVwicmFkaW9cIl06Y2hlY2tlZCB7XG4gICAgYm9yZGVyLWNvbG9yOiAjZmY4ZjAwO1xuICB9XG5cbiAgaW5wdXRbdHlwZT1cInJhZGlvXCJdOmNoZWNrZWQ6OmFmdGVyIHtcbiAgICBjb250ZW50OiBcIlwiO1xuICAgIHdpZHRoOiAxMHB4O1xuICAgIGhlaWdodDogMTBweDtcbiAgICBiYWNrZ3JvdW5kOiAjZmY4ZjAwO1xuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOiA1MCU7XG4gICAgbGVmdDogNTAlO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICB9XG5cbiAgbGFiZWwge1xuICAgIGZsZXg6IDE7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIG1hcmdpbi1sZWZ0OiAzMnB4O1xuXG4gICAgZm9udC1zaXplOiAxNHB4O1xuICAgIGZvbnQtZmFtaWx5OiBPcGVuU2Fucy1SZWd1bGFyLCBPcGVuU2FucztcbiAgICBmb250LXdlaWdodDogNDAwO1xuICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuODgpO1xuICAgIGxpbmUtaGVpZ2h0OiAyNHB4O1xuICB9XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.c9sddWo_i7vCT4SyyItq {
+  width: 100%;
+  height: 100%;
+  background: #ff8f00;
+  position: relative;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.08), 0px 3px 14px 2px rgba(0, 0, 0, 0.04), 0px 8px 10px 1px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-family: OpenSans-Bold, OpenSans;
+  font-weight: bold;
+  color: #ffffff;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 禁用状态的样式 */
+}
+.c9sddWo_i7vCT4SyyItq:disabled {
+  background: #c2c2c2 !important;
+  /* 更淡的背景色表示不可点击 */
+  color: #eceff1;
+  /* 淡色文字 */
+  cursor: not-allowed;
+  /* 禁用光标 */
+  box-shadow: none;
+  /* 去除阴影 */
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy92aWV3cy9jb21wb25lbnRzL0J1dHRvbi9idXR0b24ubW9kdWxlLmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7RUFDQSw0SEFBQTtFQUVBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxvQ0FBQTtFQUNBLGlCQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUVBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBREEsWUFBWTtBQUNkO0FBR0U7RUFDRSw4QkFBQTtFQURGLGlCQUFpQjtFQUVmLGNBQUE7RUFBRixTQUFTO0VBQ1AsbUJBQUE7RUFDRixTQUFTO0VBQVAsZ0JBQUE7RUFFRixTQUFTO0FBQ1giLCJzb3VyY2VzQ29udGVudCI6WyIuYnV0dG9uIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgYmFja2dyb3VuZDogI2ZmOGYwMDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBib3gtc2hhZG93OiAwcHggNXB4IDVweCAtM3B4IHJnYmEoMCwgMCwgMCwgMC4wOCksXG4gICAgMHB4IDNweCAxNHB4IDJweCByZ2JhKDAsIDAsIDAsIDAuMDQpLCAwcHggOHB4IDEwcHggMXB4IHJnYmEoMCwgMCwgMCwgMC4wNik7XG4gIGJvcmRlci1yYWRpdXM6IDhweDtcbiAgYm9yZGVyOiBub25lO1xuICBmb250LXNpemU6IDE2cHg7XG4gIGZvbnQtZmFtaWx5OiBPcGVuU2Fucy1Cb2xkLCBPcGVuU2FucztcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGNvbG9yOiAjZmZmZmZmO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBjdXJzb3I6IHBvaW50ZXI7XG5cbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG5cbiAgLyog56aB55So54q25oCB55qE5qC35byPICovXG4gICY6ZGlzYWJsZWQge1xuICAgIGJhY2tncm91bmQ6ICNjMmMyYzIgIWltcG9ydGFudDsgLyog5pu05reh55qE6IOM5pmv6Imy6KGo56S65LiN5Y+v54K55Ye7ICovXG4gICAgY29sb3I6ICNlY2VmZjE7IC8qIOa3oeiJsuaWh+WtlyAqL1xuICAgIGN1cnNvcjogbm90LWFsbG93ZWQ7IC8qIOemgeeUqOWFieaghyAqL1xuICAgIGJveC1zaGFkb3c6IG5vbmU7IC8qIOWOu+mZpOmYtOW9sSAqL1xuICB9XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.EEznAG43zTuQkQq624yy {
+  width: 400px;
+}
+.EEznAG43zTuQkQq624yy .Zt6_7jfC9rAnl4Hvckzs {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.EEznAG43zTuQkQq624yy .Zt6_7jfC9rAnl4Hvckzs .Je2jFsFrbPjN7Upq5740 {
+  width: 69px;
+  height: 24px;
+  margin: 7px 4px;
+}
+.EEznAG43zTuQkQq624yy .Zt6_7jfC9rAnl4Hvckzs .Je2jFsFrbPjN7Upq5740 svg {
+  width: 100%;
+  height: 100%;
+}
+.EEznAG43zTuQkQq624yy .Zt6_7jfC9rAnl4Hvckzs .c7QEl61sArXCQe0GnzQ5 {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.EEznAG43zTuQkQq624yy .ci0NHoq5VTLikHkgliPO {
+  padding: 8px 16px 16px;
+}
+.EEznAG43zTuQkQq624yy .ci0NHoq5VTLikHkgliPO > a {
+  display: block;
+  padding-top: 8px;
+  text-align: center;
+  color: #3d5afe;
+}
+.EEznAG43zTuQkQq624yy .ci0NHoq5VTLikHkgliPO > a:hover {
+  color: #3d5afe;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy92aWV3cy9jb21wb25lbnRzL0JveC9pbmRleC5tb2R1bGUubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQUE7QUFDRjtBQUZBO0VBR0ksYUFBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLDhCQUFBO0FBRUo7QUFSQTtFQVFNLFdBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtBQUdOO0FBYkE7RUFZUSxXQUFBO0VBQ0EsWUFBQTtBQUlSO0FBakJBO0VBaUJNLFdBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtBQUdOO0FBdEJBO0VBdUJJLHNCQUFBO0FBRUo7QUFESTtFQUNFLGNBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtBQUdOO0FBRk07RUFDRSxjQUFBO0FBSVIiLCJzb3VyY2VzQ29udGVudCI6WyIuYm94IHtcbiAgd2lkdGg6IDQwMHB4O1xuICAuaGVhZGVyIHtcbiAgICBwYWRkaW5nOiAxNnB4O1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gICAgLmxvZ28ge1xuICAgICAgd2lkdGg6IDY5cHg7XG4gICAgICBoZWlnaHQ6IDI0cHg7XG4gICAgICBtYXJnaW46IDdweCA0cHg7XG4gICAgICBzdmcge1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgfVxuICAgIH1cbiAgICAuY2xvc2VJY29uIHtcbiAgICAgIHdpZHRoOiAyNHB4O1xuICAgICAgaGVpZ2h0OiAyNHB4O1xuICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIH1cbiAgfVxuICAuY29udGVudCB7XG4gICAgcGFkZGluZzogOHB4IDE2cHggMTZweDtcbiAgICAmID4gYSB7XG4gICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgIHBhZGRpbmctdG9wOiA4cHg7XG4gICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICBjb2xvcjogIzNkNWFmZTtcbiAgICAgICY6aG92ZXIge1xuICAgICAgICBjb2xvcjogIzNkNWFmZTtcbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>.BW1QT6wRodElrY9DbAeQ {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.BW1QT6wRodElrY9DbAeQ .U_jFhfpfYNrIrQRSO7_Z {
+  text-wrap: nowrap;
+}
+.BW1QT6wRodElrY9DbAeQ input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  display: none;
+}
+.BW1QT6wRodElrY9DbAeQ label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 56px;
+  height: 28px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+.BW1QT6wRodElrY9DbAeQ label:after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+.BW1QT6wRodElrY9DbAeQ input:checked + label {
+  background: #ff8f00;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.08), 0px 3px 14px 2px rgba(0, 0, 0, 0.04), 0px 8px 10px 1px rgba(0, 0, 0, 0.06);
+}
+.BW1QT6wRodElrY9DbAeQ input:checked + label:after {
+  left: calc(100% - 4px);
+  transform: translateX(-100%);
+}
+.BW1QT6wRodElrY9DbAeQ label:active:after {
+  width: 56px;
+}
+.BW1QT6wRodElrY9DbAeQ body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy92aWV3cy9jb21wb25lbnRzL1N3aXRjaC9zd2l0Y2gubW9kdWxlLmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSwyQkFBQTtFQUNBLDhCQUFBO0FBQ0Y7QUFMQTtFQU9JLGlCQUFBO0FBQ0o7QUFSQTtFQVdJLFNBQUE7RUFDQSxRQUFBO0VBQ0Esa0JBQUE7RUFDQSxhQUFBO0FBQUo7QUFkQTtFQWtCSSxlQUFBO0VBQ0Esb0JBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLG9CQUFBO0VBQ0Esa0JBQUE7QUFESjtBQXhCQTtFQTZCSSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0FBRko7QUFuQ0E7RUF5Q0ksbUJBQUE7RUFDQSw0SEFBQTtBQUhKO0FBdkNBO0VBK0NJLHNCQUFBO0VBQ0EsNEJBQUE7QUFMSjtBQTNDQTtFQW9ESSxXQUFBO0FBTko7QUE5Q0E7RUF5REksYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7RUFDQSxhQUFBO0FBUkoiLCJzb3VyY2VzQ29udGVudCI6WyIuc3dpdGNoIHtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IHJvdy1yZXZlcnNlO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG5cbiAgLmRlc2NyaWJlIHtcbiAgICB0ZXh0LXdyYXA6IG5vd3JhcDtcbiAgfVxuXG4gIGlucHV0W3R5cGU9XCJjaGVja2JveFwiXSB7XG4gICAgaGVpZ2h0OiAwO1xuICAgIHdpZHRoOiAwO1xuICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcbiAgICBkaXNwbGF5OiBub25lO1xuICB9XG5cbiAgbGFiZWwge1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICB0ZXh0LWluZGVudDogLTk5OTlweDtcbiAgICB3aWR0aDogNTZweDtcbiAgICBoZWlnaHQ6IDI4cHg7XG4gICAgYmFja2dyb3VuZDogZ3JleTtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBib3JkZXItcmFkaXVzOiAxMDBweDtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIH1cblxuICBsYWJlbDphZnRlciB7XG4gICAgY29udGVudDogXCJcIjtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOiA0cHg7XG4gICAgbGVmdDogNHB4O1xuICAgIHdpZHRoOiAyMHB4O1xuICAgIGhlaWdodDogMjBweDtcbiAgICBiYWNrZ3JvdW5kOiAjZmZmO1xuICAgIGJvcmRlci1yYWRpdXM6IDkwcHg7XG4gICAgdHJhbnNpdGlvbjogMC4zcztcbiAgfVxuXG4gIGlucHV0OmNoZWNrZWQgKyBsYWJlbCB7XG4gICAgYmFja2dyb3VuZDogI2ZmOGYwMDtcbiAgICBib3gtc2hhZG93OiAwcHggNXB4IDVweCAtM3B4IHJnYmEoMCwgMCwgMCwgMC4wOCksXG4gICAgICAwcHggM3B4IDE0cHggMnB4IHJnYmEoMCwgMCwgMCwgMC4wNCksIDBweCA4cHggMTBweCAxcHggcmdiYSgwLCAwLCAwLCAwLjA2KTtcbiAgfVxuXG4gIGlucHV0OmNoZWNrZWQgKyBsYWJlbDphZnRlciB7XG4gICAgbGVmdDogY2FsYygxMDAlIC0gNHB4KTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTEwMCUpO1xuICB9XG5cbiAgbGFiZWw6YWN0aXZlOmFmdGVyIHtcbiAgICB3aWR0aDogNTZweDtcbiAgfVxuXG4gIC8vIGNlbnRlcmluZ1xuICBib2R5IHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgaGVpZ2h0OiAxMDB2aDtcbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.av93VnBkT8rC6BfwHXXl {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+/* 隐藏原始复选框 */
+.av93VnBkT8rC6BfwHXXl input {
+  visibility: hidden;
+  position: absolute;
+}
+/* 自定义复选框的样式 */
+.av93VnBkT8rC6BfwHXXl .ccHDoQWfCQ0wpKNe51Og {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  /* 背景色保持白色以保持较好的对比 */
+  border: 1px solid #d9d9d9;
+  /* 默认边框颜色为浅灰色 */
+  display: inline-block;
+  border-radius: 4px;
+  /* 圆角 */
+  transition: background-color 0.3s, border-color 0.3s;
+  /* 添加过渡效果 */
+}
+/* 当复选框被选中或不确定状态时的样式 */
+.av93VnBkT8rC6BfwHXXl input:checked + .ccHDoQWfCQ0wpKNe51Og,
+.av93VnBkT8rC6BfwHXXl input:indeterminate + .ccHDoQWfCQ0wpKNe51Og {
+  background-color: #ffc107;
+  /* 金色背景 */
+  border-color: #ffc107;
+  /* 金色边框 */
+}
+/* 添加对号 */
+.av93VnBkT8rC6BfwHXXl .ccHDoQWfCQ0wpKNe51Og:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.av93VnBkT8rC6BfwHXXl input:checked + .ccHDoQWfCQ0wpKNe51Og:after {
+  display: block;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+  /* Combine translations and rotations */
+}
+/* 不确定状态下的方块 */
+.av93VnBkT8rC6BfwHXXl input:indeterminate + .ccHDoQWfCQ0wpKNe51Og:after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* Perfectly center the square */
+  width: 10px;
+  height: 5px;
+  background: white;
+  /* 使用白色方块以增加对比度 */
+}
+/* 处理禁用状态 */
+.av93VnBkT8rC6BfwHXXl input:disabled + .ccHDoQWfCQ0wpKNe51Og {
+  background-color: #e0e0e0;
+  /* 灰色背景表示禁用 */
+  border-color: #bdbdbd;
+  /* 灰色边框 */
+  cursor: not-allowed;
+  /* 鼠标禁用状态指示 */
+}
+.av93VnBkT8rC6BfwHXXl input:disabled + .ccHDoQWfCQ0wpKNe51Og:after {
+  background: #bdbdbd;
+  /* 灰色对号或方块表示禁用 */
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy92aWV3cy9jb21wb25lbnRzL0NoZWNrYm94L0NoZWNrYm94Lm1vZHVsZS5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtBQUNGO0FBQ0EsWUFBWTtBQUVaO0VBQ0Usa0JBQUE7RUFDQSxrQkFBQTtBQUFGO0FBQ0EsY0FBYztBQUdkO0VBQ0Usa0JBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLHNCQUFBO0VBREEsb0JBQW9CO0VBRXBCLHlCQUFBO0VBQUEsZUFBZTtFQUNmLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxPQUFPO0VBQVAsb0RBQUE7RUFFQSxXQUFXO0FBQ2I7QUFDQSxzQkFBc0I7QUFBdEI7O0VBRUUseUJBQUE7RUFFQSxTQUFTO0VBRFQscUJBQUE7RUFHQSxTQUFTO0FBQ1g7QUFDQSxTQUFTO0FBRFQ7RUFDRSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxhQUFBO0FBR0Y7QUFBQTtFQUNFLGNBQUE7RUFDQSxTQUFBO0VBQ0EsUUFBQTtFQUNBLFVBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7RUFDQSx5QkFBQTtFQUNBLDhDQUFBO0VBRUEsdUNBQXVDO0FBQ3pDO0FBQ0EsY0FBYztBQUFkO0VBQ0UsV0FBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtFQUNBLFNBQUE7RUFDQSxRQUFBO0VBQ0EsZ0NBQUE7RUFFQSxnQ0FBZ0M7RUFEaEMsV0FBQTtFQUNBLFdBQUE7RUFDQSxpQkFBQTtFQUdBLGlCQUFpQjtBQUNuQjtBQUNBLFdBQVc7QUFEWDtFQUNFLHlCQUFBO0VBR0EsYUFBYTtFQUZiLHFCQUFBO0VBSUEsU0FBUztFQUhULG1CQUFBO0VBS0EsYUFBYTtBQUNmO0FBSEE7RUFDRSxtQkFBQTtFQUtBLGdCQUFnQjtBQUNsQiIsInNvdXJjZXNDb250ZW50IjpbIi5jdXN0b21DaGVja2JveCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLyog6ZqQ6JeP5Y6f5aeL5aSN6YCJ5qGGICovXG4uY3VzdG9tQ2hlY2tib3ggaW5wdXQge1xuICB2aXNpYmlsaXR5OiBoaWRkZW47XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbn1cblxuLyog6Ieq5a6a5LmJ5aSN6YCJ5qGG55qE5qC35byPICovXG4uY3VzdG9tQ2hlY2tib3ggLmNoZWNrbWFyayB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAyMHB4O1xuICB3aWR0aDogMjBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjsgLyog6IOM5pmv6Imy5L+d5oyB55m96Imy5Lul5L+d5oyB6L6D5aW955qE5a+55q+UICovXG4gIGJvcmRlcjogMXB4IHNvbGlkICNkOWQ5ZDk7IC8qIOm7mOiupOi+ueahhuminOiJsuS4uua1heeBsOiJsiAqL1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGJvcmRlci1yYWRpdXM6IDRweDsgLyog5ZyG6KeSICovXG4gIHRyYW5zaXRpb246IGJhY2tncm91bmQtY29sb3IgMC4zcywgYm9yZGVyLWNvbG9yIDAuM3M7IC8qIOa3u+WKoOi/h+a4oeaViOaenCAqL1xufVxuXG4vKiDlvZPlpI3pgInmoYbooqvpgInkuK3miJbkuI3noa7lrprnirbmgIHml7bnmoTmoLflvI8gKi9cbi5jdXN0b21DaGVja2JveCBpbnB1dDpjaGVja2VkICsgLmNoZWNrbWFyayxcbi5jdXN0b21DaGVja2JveCBpbnB1dDppbmRldGVybWluYXRlICsgLmNoZWNrbWFyayB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmMxMDc7IC8qIOmHkeiJsuiDjOaZryAqL1xuICBib3JkZXItY29sb3I6ICNmZmMxMDc7IC8qIOmHkeiJsui+ueahhiAqL1xufVxuXG4vKiDmt7vliqDlr7nlj7cgKi9cbi5jdXN0b21DaGVja2JveCAuY2hlY2ttYXJrOmFmdGVyIHtcbiAgY29udGVudDogXCJcIjtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBub25lO1xufVxuXG4uY3VzdG9tQ2hlY2tib3ggaW5wdXQ6Y2hlY2tlZCArIC5jaGVja21hcms6YWZ0ZXIge1xuICBkaXNwbGF5OiBibG9jaztcbiAgbGVmdDogNTAlO1xuICB0b3A6IDUwJTtcbiAgd2lkdGg6IDZweDtcbiAgaGVpZ2h0OiAxMHB4O1xuICBib3JkZXI6IHNvbGlkIHdoaXRlO1xuICBib3JkZXItd2lkdGg6IDAgM3B4IDNweCAwO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKSByb3RhdGUoNDVkZWcpOyAvKiBDb21iaW5lIHRyYW5zbGF0aW9ucyBhbmQgcm90YXRpb25zICovXG59XG5cbi8qIOS4jeehruWumueKtuaAgeS4i+eahOaWueWdlyAqL1xuLmN1c3RvbUNoZWNrYm94IGlucHV0OmluZGV0ZXJtaW5hdGUgKyAuY2hlY2ttYXJrOmFmdGVyIHtcbiAgY29udGVudDogXCJcIjtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBibG9jaztcbiAgbGVmdDogNTAlO1xuICB0b3A6IDUwJTtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7IC8qIFBlcmZlY3RseSBjZW50ZXIgdGhlIHNxdWFyZSAqL1xuICB3aWR0aDogMTBweDtcbiAgaGVpZ2h0OiA1cHg7XG4gIGJhY2tncm91bmQ6IHdoaXRlOyAvKiDkvb/nlKjnmb3oibLmlrnlnZfku6Xlop7liqDlr7nmr5TluqYgKi9cbn1cblxuLyog5aSE55CG56aB55So54q25oCBICovXG4uY3VzdG9tQ2hlY2tib3ggaW5wdXQ6ZGlzYWJsZWQgKyAuY2hlY2ttYXJrIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2UwZTBlMDsgLyog54Gw6Imy6IOM5pmv6KGo56S656aB55SoICovXG4gIGJvcmRlci1jb2xvcjogI2JkYmRiZDsgLyog54Gw6Imy6L655qGGICovXG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7IC8qIOm8oOagh+emgeeUqOeKtuaAgeaMh+ekuiAqL1xufVxuXG4uY3VzdG9tQ2hlY2tib3ggaW5wdXQ6ZGlzYWJsZWQgKyAuY2hlY2ttYXJrOmFmdGVyIHtcbiAgYmFja2dyb3VuZDogI2JkYmRiZDsgLyog54Gw6Imy5a+55Y+35oiW5pa55Z2X6KGo56S656aB55SoICovXG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.kLB7SXuCbOA1VDEuayQ2 {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  min-height: 244px;
+  width: 400px;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.08), 0px 1px 10px 0px rgba(0, 0, 0, 0.04), 0px 4px 5px 0px rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+}
+.kLB7SXuCbOA1VDEuayQ2 .zEOKQl0KPtsInhEXQ5Bz .cLVWKu0XCorcERQg9FKl {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+.kLB7SXuCbOA1VDEuayQ2 .zEOKQl0KPtsInhEXQ5Bz .cLVWKu0XCorcERQg9FKl .jR9tZOYlGybercDP5RXg {
+  animation: yjWYeSBhppaYr8pyCDGP 1s linear infinite;
+}
+.kLB7SXuCbOA1VDEuayQ2 .zEOKQl0KPtsInhEXQ5Bz .cyF9d8HEngPs9BJtmRBB {
+  font-size: 16px;
+  font-family: OpenSans-Bold, OpenSans;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.88);
+  line-height: 22px;
+  text-align: center;
+}
+.kLB7SXuCbOA1VDEuayQ2 .zEOKQl0KPtsInhEXQ5Bz .Panq7Ykt8Gxb0RQl78BV {
+  font-size: 16px;
+  font-family: OpenSans-Bold, OpenSans;
+  font-weight: bold;
+  color: #479e25;
+  margin-top: 6px;
+  line-height: 22px;
+  text-decoration: underline;
+  text-align: center;
+  cursor: pointer;
+}
+@keyframes yjWYeSBhppaYr8pyCDGP {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9jb21wb25lbnRzL25vdEJhY2tncm91bmQvbm90aWZpY2F0aW9uL2luZGV4Lm1vZHVsZS5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBQTtFQUNBLFNBQUE7RUFDQSxXQUFBO0VBQ0EsYUFBQTtFQUVBLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EsMkhBQUE7RUFFQSxtQkFBQTtBQURGO0FBVkE7RUFlTSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtBQUZOO0FBZkE7RUFvQlEsa0RBQUE7QUFGUjtBQWxCQTtFQXlCTSxlQUFBO0VBQ0Esb0NBQUE7RUFDQSxpQkFBQTtFQUNBLDBCQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtBQUpOO0FBMUJBO0VBa0NNLGVBQUE7RUFDQSxvQ0FBQTtFQUNBLGlCQUFBO0VBQ0EsY0FBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtFQUNBLDBCQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0FBTE47QUFVQTtFQUNFO0lBQ0UseUJBQUE7RUFSRjtFQVdBO0lBQ0UsdUJBQUE7RUFURjtBQUNGIiwic291cmNlc0NvbnRlbnQiOlsiLm5vdGlmeUNvbnRhaW5lciB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiAyMHB4O1xuICByaWdodDogMjBweDtcbiAgei1pbmRleDogOTk5OTtcblxuICBtaW4taGVpZ2h0OiAyNDRweDtcbiAgd2lkdGg6IDQwMHB4O1xuICBiYWNrZ3JvdW5kOiAjZmZmZmZmO1xuICBib3gtc2hhZG93OiAwcHggMnB4IDRweCAtMXB4IHJnYmEoMCwgMCwgMCwgMC4wOCksXG4gICAgMHB4IDFweCAxMHB4IDBweCByZ2JhKDAsIDAsIDAsIDAuMDQpLCAwcHggNHB4IDVweCAwcHggcmdiYSgwLCAwLCAwLCAwLjA2KTtcbiAgYm9yZGVyLXJhZGl1czogMTJweDtcblxuICAubm90aWZ5Q29udGVudCB7XG4gICAgLmltZyB7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICBtYXJnaW4tYm90dG9tOiAyOHB4O1xuXG4gICAgICAubG9hZGluZyB7XG4gICAgICAgIGFuaW1hdGlvbjogcm90YXRlIDFzIGxpbmVhciBpbmZpbml0ZTtcbiAgICAgIH1cbiAgICB9XG5cbiAgICAudGl0bGUge1xuICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgZm9udC1mYW1pbHk6IE9wZW5TYW5zLUJvbGQsIE9wZW5TYW5zO1xuICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjg4KTtcbiAgICAgIGxpbmUtaGVpZ2h0OiAyMnB4O1xuICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIH1cblxuICAgIC5zdWJUaXRsZSB7XG4gICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICBmb250LWZhbWlseTogT3BlblNhbnMtQm9sZCwgT3BlblNhbnM7XG4gICAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICAgIGNvbG9yOiAjNDc5ZTI1O1xuICAgICAgbWFyZ2luLXRvcDogNnB4O1xuICAgICAgbGluZS1oZWlnaHQ6IDIycHg7XG4gICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICB9XG4gIH1cbn1cblxuQGtleWZyYW1lcyByb3RhdGUge1xuICBmcm9tIHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpO1xuICB9XG5cbiAgdG8ge1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xuICB9XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.L6ydMcbc4E5EF6EfA6aG .ant-modal-title {
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.88);
+  line-height: 28px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.hNkYvyrcRaG_kWiy3rkO {
+  margin-top: 16px;
+}
+.hNkYvyrcRaG_kWiy3rkO .ant-alert-message {
+  color: #2189e5;
+}
+.TmOCIHFUEqljERUfq_aY {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 24px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 24px;
+}
+.FijT8eY01qZ_10LX68JG {
+  margin-bottom: 24px;
+}
+.FijT8eY01qZ_10LX68JG .lwYJMkm6l65Ew9BB03hg {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9jb21wb25lbnRzL25vdEJhY2tncm91bmQvYWUvdmVyaWZ5TXVsdGlsaW5ndWFsSW1wb3J0c01vZHVsZS5tb2R1bGUubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUdNLGlCQUFBO0VBQ0EsZUFBQTtFQUNBLDBCQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0Esb0JBQUE7QUFETjtBQVNBO0VBQ0UsZ0JBQUE7QUFQRjtBQU1BO0VBSU0sY0FBQTtBQVBOO0FBWUE7RUFDRSxnQkFBQTtFQUNBLGVBQUE7RUFDQSx5QkFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLG9CQUFBO0VBRUEsbUJBQUE7QUFYRjtBQWNBO0VBQ0UsbUJBQUE7QUFaRjtBQVdBO0VBR0ksV0FBQTtFQUNBLGFBQUE7RUFDQSxxQ0FBQTtFQUNBLGNBQUE7RUFDQSxlQUFBO0FBWEoiLCJzb3VyY2VzQ29udGVudCI6WyIubW9kYWwge1xuICA6Z2xvYmFsIHtcbiAgICAuYW50LW1vZGFsLXRpdGxlIHtcbiAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgICAgZm9udC1zaXplOiAyMHB4O1xuICAgICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC44OCk7XG4gICAgICBsaW5lLWhlaWdodDogMjhweDtcbiAgICAgIHRleHQtYWxpZ246IGxlZnQ7XG4gICAgICBmb250LXN0eWxlOiBub3JtYWw7XG4gICAgICB0ZXh0LXRyYW5zZm9ybTogbm9uZTtcbiAgICB9XG4gIH1cbn1cblxuLmNvbnRhaW5lciB7XG59XG5cbi5hbGVydCB7XG4gIG1hcmdpbi10b3A6IDE2cHg7XG4gIDpnbG9iYWwge1xuICAgIC5hbnQtYWxlcnQtbWVzc2FnZSB7XG4gICAgICBjb2xvcjogIzIxODllNTtcbiAgICB9XG4gIH1cbn1cblxuLmhlYWRlcnNUaXRsZSB7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC41KTtcbiAgbGluZS1oZWlnaHQ6IDI0cHg7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgdGV4dC10cmFuc2Zvcm06IG5vbmU7XG5cbiAgbWFyZ2luLWJvdHRvbTogMjRweDtcbn1cblxuLm11bHRpcGxlQ2hvaWNlIHtcbiAgbWFyZ2luLWJvdHRvbTogMjRweDtcbiAgLmNoZWNrYm94cyB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgZGlzcGxheTogZ3JpZDtcbiAgICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdCgzLCAxZnIpO1xuICAgIGdyaWQtZ2FwOiAyNHB4O1xuICAgIGZsZXgtd3JhcDogd3JhcDtcbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.YezkX1bsuRLzG32QxqOg {
+  top: 0;
+  right: 0;
+  z-index: 1;
+  position: absolute;
+  font-family: OpenSans-Bold, OpenSans;
+  text-wrap: nowrap;
+}
+.YezkX1bsuRLzG32QxqOg .NO7_066UyH5F_wWr_CDK {
+  width: 100%;
+  height: 21px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #ffffff;
+}
+.YezkX1bsuRLzG32QxqOg .NO7_066UyH5F_wWr_CDK .SVkdhKdtfHfJYdb3DeAC {
+  position: absolute;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+}
+.YezkX1bsuRLzG32QxqOg .NO7_066UyH5F_wWr_CDK .SVkdhKdtfHfJYdb3DeAC g {
+  fill: antiquewhite;
+}
+.YezkX1bsuRLzG32QxqOg .NO7_066UyH5F_wWr_CDK .OCxxhXIFkJiVv3OW8Dki {
+  flex: 1;
+  text-align: center;
+}
+.YezkX1bsuRLzG32QxqOg .NO7_066UyH5F_wWr_CDK .eCi62QFGWYWFIdMKmoCY {
+  min-width: 45px;
+  height: 21px;
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #11bc57;
+  border-top-right-radius: 8px;
+  border-left: 1px solid #00b050;
+}
+.YezkX1bsuRLzG32QxqOg .jkiqcnRJY9Y07V6l96yO {
+  background: #2acc6f;
+}
+.YezkX1bsuRLzG32QxqOg .mUWOwtz1vBHUHo7ESj3H {
+  background: #fb5b28;
+}
+.YezkX1bsuRLzG32QxqOg .AJ8PVFZUE_njDcnN2VtU {
+  padding: 0 20px;
+  background: #ff8f00;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.08), 0px 3px 14px 2px rgba(0, 0, 0, 0.04), 0px 8px 10px 1px rgba(0, 0, 0, 0.06);
+  border-radius: 22px;
+  margin-top: 6px px;
+  font-family: OpenSans-Bold, OpenSans;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 38px;
+}
+.YezkX1bsuRLzG32QxqOg .AJ8PVFZUE_njDcnN2VtU svg {
+  margin-right: 8px;
+}
+.mrHXcmsfueCtCtmrCvhk .UN3gm0MT4HG3PapvB5Es {
+  width: 100%;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  background: white !important;
+  color: rgba(0, 0, 0, 0.24);
+}
+.mrHXcmsfueCtCtmrCvhk .UN3gm0MT4HG3PapvB5Es svg {
+  margin-bottom: 4px;
+}
+.mrHXcmsfueCtCtmrCvhk .MWgMsOT14PgnlhzDhUao {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-height: 500px;
+  overflow-x: hidden;
+}
+.mrHXcmsfueCtCtmrCvhk .MWgMsOT14PgnlhzDhUao::-webkit-scrollbar {
+  width: 4px;
+  height: 1px;
+}
+.mrHXcmsfueCtCtmrCvhk .MWgMsOT14PgnlhzDhUao::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #f7f7f7;
+}
+.mrHXcmsfueCtCtmrCvhk .MWgMsOT14PgnlhzDhUao::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: #f7f7f7;
+}
+.mrHXcmsfueCtCtmrCvhk .MWgMsOT14PgnlhzDhUao > div {
+  min-height: auto;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 8px;
+  margin-bottom: 16px;
+  display: flex;
+}
+.mrHXcmsfueCtCtmrCvhk .MWgMsOT14PgnlhzDhUao > div:last-child {
+  border-bottom: 0;
+}
+.mrHXcmsfueCtCtmrCvhk .MWgMsOT14PgnlhzDhUao > div .irbDaxm05L90StDOVuFf {
+  width: 54px;
+  height: 54px;
+  border-radius: 4px 4px 4px 4px;
+  margin-right: 8px;
+}
+.mrHXcmsfueCtCtmrCvhk .MWgMsOT14PgnlhzDhUao > div .irbDaxm05L90StDOVuFf img {
+  width: 100%;
+  height: 100%;
+}
+.mrHXcmsfueCtCtmrCvhk .MWgMsOT14PgnlhzDhUao > div .BEeSRQYIPezxiElL7Y1u {
+  min-height: 54px;
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mrHXcmsfueCtCtmrCvhk .MWgMsOT14PgnlhzDhUao > div .BEeSRQYIPezxiElL7Y1u .me9J0Ec7gRu7hAXPGzY_ {
+  color: #000000;
+  line-height: 16px;
+  text-align: left;
+  text-transform: none;
+  margin-right: 11px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  height: 34px;
+  width: 268px;
+}
+.mrHXcmsfueCtCtmrCvhk .MWgMsOT14PgnlhzDhUao > div .BEeSRQYIPezxiElL7Y1u .w6zpsVlllx6TB6P6tv7T {
+  width: 268px;
+  color: #ff0000;
+}
+.mrHXcmsfueCtCtmrCvhk .MWgMsOT14PgnlhzDhUao > div .h7v9y0cCilg07Xbu3ry8 {
+  display: flex;
+  align-items: center;
+}
+.mrHXcmsfueCtCtmrCvhk .u4k0WEcFhM_UruSqNh2H {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.mrHXcmsfueCtCtmrCvhk .u4k0WEcFhM_UruSqNh2H button {
+  margin-bottom: 8px;
+  height: 36px;
+}
+.mrHXcmsfueCtCtmrCvhk .u4k0WEcFhM_UruSqNh2H ._69nR89KKgxcsjj4aZVg {
+  background: transparent !important;
+  box-shadow: none !important;
+  color: black !important;
+  font-weight: 400 !important;
+  font-size: 14px !important ;
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+.mrHXcmsfueCtCtmrCvhk .u4k0WEcFhM_UruSqNh2H ._69nR89KKgxcsjj4aZVg svg {
+  margin-right: 5px;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9jb21wb25lbnRzL25vdEJhY2tncm91bmQvYWUvYmF0Y2hJbXBvcnREb20ubW9kdWxlLmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBdURBO0VBQ0UsTUFBQTtFQUNBLFFBQUE7RUFDQSxVQUFBO0VBQ0Esa0JBQUE7RUFDQSxvQ0FBQTtFQUNBLGlCQUFBO0FBdERGO0FBZ0RBO0VBU0ksV0FBQTtFQUNBLFlBQUE7RUFDQSwyQkFBQTtFQUNBLDRCQUFBO0VBRUEsYUFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7RUFFQSxjQUFBO0FBeERKO0FBc0NBO0VBeUJNLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0FBNUROO0FBZ0NBO0VBOEJRLGtCQUFBO0FBM0RSO0FBNkJBO0VBbUNNLE9BQUE7RUFDQSxrQkFBQTtBQTdETjtBQXlCQTtFQXdDTSxlQUFBO0VBQ0EsWUFBQTtFQUVBLGtCQUFBO0VBQ0EsUUFBQTtFQUVBLGFBQUE7RUFDQSx1QkFBQTtFQUNBLG1CQUFBO0VBRUEseUJBQUE7RUFDQSw0QkFBQTtFQUNBLDhCQUFBO0FBakVOO0FBYUE7RUF5REksbUJBQUE7QUFuRUo7QUFVQTtFQTZESSxtQkFBQTtBQXBFSjtBQU9BO0VBaUVJLGVBQUE7RUFDQSxtQkFBQTtFQUNBLDRIQUFBO0VBRUEsbUJBQUE7RUFDQSxrQkFBQTtFQUNBLG9DQUFBO0VBQ0EsaUJBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0FBdEVKO0FBTEE7RUE4RU0saUJBQUE7QUF0RU47QUEyRUE7RUFFSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0EsaUJBQUE7RUFDQSw0QkFBQTtFQUNBLDBCQUFBO0FBMUVKO0FBaUVBO0VBV00sa0JBQUE7QUF6RU47QUE4REE7RUFnQkksYUFBQTtFQUNBLG1CQUFBO0VBQ0Esc0JBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0FBM0VKO0FBNkVJO0VBQ0UsVUFBQTtFQUNBLFdBQUE7QUEzRU47QUE2RUk7RUFDRSxtQkFBQTtFQUNBLG9EQUFBO0VBQ0EsbUJBQUE7QUEzRU47QUE2RUk7RUFDRSxvREFBQTtFQUNBLG1CQUFBO0VBQ0EsbUJBQUE7QUEzRU47QUE4RUk7RUFDRSxnQkFBQTtFQUNBLCtCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtBQTVFTjtBQTZFTTtFQUNFLGdCQUFBO0FBM0VSO0FBb0VJO0VBVUksV0FBQTtFQUNBLFlBQUE7RUFDQSw4QkFBQTtFQUNBLGlCQUFBO0FBM0VSO0FBOERJO0VBZU0sV0FBQTtFQUNBLFlBQUE7QUExRVY7QUEwREk7RUFxQkksZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSx1QkFBQTtBQTVFUjtBQWtESTtFQTRCTSxjQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLG9CQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLG9CQUFBO0VBQ0EscUJBQUE7RUFDQSw0QkFBQTtFQUNBLHVCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7QUEzRVY7QUFvQ0k7RUEwQ00sWUFBQTtFQUNBLGNBQUE7QUEzRVY7QUFnQ0k7RUFnREksYUFBQTtFQUNBLG1CQUFBO0FBN0VSO0FBVEE7RUE0RkksV0FBQTtFQUNBLGFBQUE7RUFDQSx1QkFBQTtFQUNBLHNCQUFBO0FBaEZKO0FBZkE7RUFpR00sa0JBQUE7RUFDQSxZQUFBO0FBL0VOO0FBbkJBO0VBc0dNLGtDQUFBO0VBQ0EsMkJBQUE7RUFDQSx1QkFBQTtFQUNBLDJCQUFBO0VBQ0EsMkJBQUE7RUFDQSxvQ0FBQTtBQWhGTjtBQTNCQTtFQThHUSxpQkFBQTtBQWhGUiIsInNvdXJjZXNDb250ZW50IjpbIi8vIEBmb250LWZhY2Uge1xuLy8gICBmb250LWZhbWlseTogXCJIZWx2ZXRpY2FcIjtcbi8vICAgc3JjOiB1cmwoXCJodHRwczovL2ltZy5kc2Vycy5jb20vZm9udC9VQi1IZWx2ZXRpY2EudHRmXCIpO1xuLy8gfVxuXG4vLyBAZm9udC1mYWNlIHtcbi8vICAgZm9udC1mYW1pbHk6IFwiT3BlblNhbnMtUmVndWxhclwiO1xuLy8gICBzcmM6IHVybChcImh0dHBzOi8vaW1nLmRzZXJzLmNvbS9mb250L09wZW5TYW5zLVJlZ3VsYXIudHRmXCIpO1xuLy8gfVxuXG4vLyBAZm9udC1mYWNlIHtcbi8vICAgZm9udC1mYW1pbHk6IFwiT3BlblNhbnMtQm9sZFwiO1xuLy8gICBzcmM6IHVybChcImh0dHBzOi8vaW1nLmRzZXJzLmNvbS9mb250L09wZW5TYW5zLUJvbGQudHRmXCIpO1xuLy8gfVxuXG4vLyBAZm9udC1mYWNlIHtcbi8vICAgZm9udC1mYW1pbHk6IFwiT3BlblNhbnMtU2VtaUJvbGRcIjtcbi8vICAgc3JjOiB1cmwoXCJodHRwczovL2ltZy5kc2Vycy5jb20vZm9udC9PcGVuU2Fucy1TZW1pQm9sZC50dGZcIik7XG4vLyB9XG5cbi8vIEBmb250LWZhY2Uge1xuLy8gICBmb250LWZhbWlseTogXCJIZWx2ZXRpY2FOZXVlLUJvbGRcIjtcbi8vICAgc3JjOiB1cmwoXCJodHRwczovL2ltZy5kc2Vycy5jb20vZm9udC9IZWx2ZXRpY2FOZXVlLUJvbGQub3RmXCIpO1xuLy8gfVxuXG4vLyBAZm9udC1mYWNlIHtcbi8vICAgZm9udC1mYW1pbHk6IFwicHNsXCI7XG4vLyAgIHNyYzogdXJsKFwiaHR0cHM6Ly9pbWcuZHNlcnMuY29tL2ZvbnQvUFNMMDAyU1AudHRmXCIpO1xuLy8gfVxuXG4vLyBAZm9udC1mYWNlIHtcbi8vICAgZm9udC1mYW1pbHk6IFwiQXJpYWwtQm9sZE1UXCI7XG4vLyAgIHNyYzogdXJsKFwiaHR0cHM6Ly9pbWcuZHNlcnMuY29tL2ZvbnQvQXJpYWwtQm9sZE1ULm90ZlwiKTtcbi8vIH1cblxuLy8gQGZvbnQtZmFjZSB7XG4vLyAgIGZvbnQtZmFtaWx5OiBcIlJ1YmlrLUJvbGRJdGFsaWNcIjtcbi8vICAgc3JjOiB1cmwoXCJodHRwczovL2ltZy5kc2Vycy5jb20vZm9udC9SdWJpay1Cb2xkSXRhbGljLnR0ZlwiKTtcbi8vIH1cblxuLy8gQGZvbnQtZmFjZSB7XG4vLyAgIGZvbnQtZmFtaWx5OiBcIlJ1YmlrLVJlZ3VsYXJcIjtcbi8vICAgc3JjOiB1cmwoXCJodHRwczovL2ltZy5kc2Vycy5jb20vZm9udC9SdWJpay1SZWd1bGFyLnR0ZlwiKTtcbi8vIH1cblxuLy8gQGZvbnQtZmFjZSB7XG4vLyAgIGZvbnQtZmFtaWx5OiBcIlJ1YmlrLUJvbGRcIjtcbi8vICAgc3JjOiB1cmwoXCJodHRwczovL2ltZy5kc2Vycy5jb20vZm9udC9SdWJpay1Cb2xkLnR0ZlwiKTtcbi8vIH1cblxuLy8gQGZvbnQtZmFjZSB7XG4vLyAgIGZvbnQtZmFtaWx5OiBcIlVidW50dS1Cb2xkXCI7XG4vLyAgIHNyYzogdXJsKFwiaHR0cHM6Ly9pbWcuZHNlcnMuY29tL2ZvbnQvVWJ1bnR1LUJvbGQudHRmXCIpO1xuLy8gfVxuXG4uaW1wb3J0X3Byb2R1Y3RfYnV0dG9uIHtcbiAgdG9wOiAwO1xuICByaWdodDogMDtcbiAgei1pbmRleDogMTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBmb250LWZhbWlseTogT3BlblNhbnMtQm9sZCwgT3BlblNhbnM7XG4gIHRleHQtd3JhcDogbm93cmFwO1xuXG4gIC5oZWFkZXIge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMjFweDtcbiAgICBib3JkZXItdG9wLWxlZnQtcmFkaXVzOiA4cHg7XG4gICAgYm9yZGVyLXRvcC1yaWdodC1yYWRpdXM6IDhweDtcblxuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG5cbiAgICBjb2xvcjogI2ZmZmZmZjtcblxuICAgIC8vIGJveC1zaGFkb3c6IDBweCA1cHggNXB4IC0zcHggcmdiYSgwLCAwLCAwLCAwLjA4KSxcbiAgICAvLyAgIDBweCAzcHggMTRweCAycHggcmdiYSgwLCAwLCAwLCAwLjA0KSwgMHB4IDhweCAxMHB4IDFweCByZ2JhKDAsIDAsIDAsIDAuMDYpO1xuICAgIC8vIGJvcmRlci1yYWRpdXM6IDRweDtcblxuICAgIC5pY29uIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGxlZnQ6IDEwcHg7XG4gICAgICB3aWR0aDogMTVweDtcbiAgICAgIGhlaWdodDogMTVweDtcbiAgICAgIGcge1xuICAgICAgICBmaWxsOiBhbnRpcXVld2hpdGU7XG4gICAgICB9XG4gICAgfVxuXG4gICAgLnRpdGxlIHtcbiAgICAgIGZsZXg6IDE7XG4gICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgfVxuXG4gICAgLnByaWNlIHtcbiAgICAgIG1pbi13aWR0aDogNDVweDtcbiAgICAgIGhlaWdodDogMjFweDtcblxuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgcmlnaHQ6IDA7XG5cbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG5cbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICMxMWJjNTc7XG4gICAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogOHB4O1xuICAgICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjMDBiMDUwO1xuICAgIH1cbiAgfVxuXG4gIC5zdWNjZWVkIHtcbiAgICBiYWNrZ3JvdW5kOiByZ2IoNDIsIDIwNCwgMTExKTtcbiAgfVxuXG4gIC5lcnJvciB7XG4gICAgYmFja2dyb3VuZDogcmdiKDI1MSwgOTEsIDQwKTtcbiAgfVxuXG4gIC5idXR0b24ge1xuICAgIHBhZGRpbmc6IDAgMjBweDtcbiAgICBiYWNrZ3JvdW5kOiAjZmY4ZjAwO1xuICAgIGJveC1zaGFkb3c6IDBweCA1cHggNXB4IC0zcHggcmdiYSgwLCAwLCAwLCAwLjA4KSxcbiAgICAgIDBweCAzcHggMTRweCAycHggcmdiYSgwLCAwLCAwLCAwLjA0KSwgMHB4IDhweCAxMHB4IDFweCByZ2JhKDAsIDAsIDAsIDAuMDYpO1xuICAgIGJvcmRlci1yYWRpdXM6IDIycHg7XG4gICAgbWFyZ2luLXRvcDogNnB4IHB4O1xuICAgIGZvbnQtZmFtaWx5OiBPcGVuU2Fucy1Cb2xkLCBPcGVuU2FucztcbiAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICBjb2xvcjogI2ZmZmZmZjtcbiAgICBmb250LXNpemU6IDE2cHg7XG4gICAgbGluZS1oZWlnaHQ6IDM4cHg7XG5cbiAgICBzdmcge1xuICAgICAgbWFyZ2luLXJpZ2h0OiA4cHg7XG4gICAgfVxuICB9XG59XG5cbi5iYXRjaENvbnRhaW5lciB7XG4gIC5ub0RhdGEge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogODZweDtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgZmxleC1mbG93OiBjb2x1bW47XG4gICAgYmFja2dyb3VuZDogd2hpdGUgIWltcG9ydGFudDtcbiAgICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjI0KTtcbiAgICBzdmcge1xuICAgICAgbWFyZ2luLWJvdHRvbTogNHB4O1xuICAgIH1cbiAgfVxuXG4gIC5iYXRjaENvbnRhaW5lcl9ib3gge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgIG1heC1oZWlnaHQ6IDUwMHB4O1xuICAgIG92ZXJmbG93LXg6IGhpZGRlbjtcblxuICAgICY6Oi13ZWJraXQtc2Nyb2xsYmFyIHtcbiAgICAgIHdpZHRoOiA0cHg7XG4gICAgICBoZWlnaHQ6IDFweDtcbiAgICB9XG4gICAgJjo6LXdlYmtpdC1zY3JvbGxiYXItdGh1bWIge1xuICAgICAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgICAgIC13ZWJraXQtYm94LXNoYWRvdzogaW5zZXQgMCAwIDVweCByZ2JhKDAsIDAsIDAsIDAuMik7XG4gICAgICBiYWNrZ3JvdW5kOiAjZjdmN2Y3O1xuICAgIH1cbiAgICAmOjotd2Via2l0LXNjcm9sbGJhci10cmFjayB7XG4gICAgICAtd2Via2l0LWJveC1zaGFkb3c6IGluc2V0IDAgMCA1cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgICAgIGJhY2tncm91bmQ6ICNmN2Y3Zjc7XG4gICAgfVxuXG4gICAgJiA+IGRpdiB7XG4gICAgICBtaW4taGVpZ2h0OiBhdXRvO1xuICAgICAgYmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjA0KTtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIG1hcmdpbi1ib3R0b206IDE2cHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgJjpsYXN0LWNoaWxkIHtcbiAgICAgICAgYm9yZGVyLWJvdHRvbTogMDtcbiAgICAgIH1cbiAgICAgIC5pbWcge1xuICAgICAgICB3aWR0aDogNTRweDtcbiAgICAgICAgaGVpZ2h0OiA1NHB4O1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHggNHB4IDRweCA0cHg7XG4gICAgICAgIG1hcmdpbi1yaWdodDogOHB4O1xuICAgICAgICBpbWcge1xuICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICAudGV4dCB7XG4gICAgICAgIG1pbi1oZWlnaHQ6IDU0cHg7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIC5uYW1lIHtcbiAgICAgICAgICBjb2xvcjogIzAwMDAwMDtcbiAgICAgICAgICBsaW5lLWhlaWdodDogMTZweDtcbiAgICAgICAgICB0ZXh0LWFsaWduOiBsZWZ0O1xuICAgICAgICAgIHRleHQtdHJhbnNmb3JtOiBub25lO1xuICAgICAgICAgIG1hcmdpbi1yaWdodDogMTFweDtcbiAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgICAgICAgIGRpc3BsYXk6IC13ZWJraXQtYm94O1xuICAgICAgICAgIC13ZWJraXQtbGluZS1jbGFtcDogMjtcbiAgICAgICAgICAtd2Via2l0LWJveC1vcmllbnQ6IHZlcnRpY2FsO1xuICAgICAgICAgIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICAgICAgICAgIGhlaWdodDogMzRweDtcbiAgICAgICAgICB3aWR0aDogMjY4cHg7XG4gICAgICAgIH1cbiAgICAgICAgLmVyclRleHQge1xuICAgICAgICAgIHdpZHRoOiAyNjhweDtcbiAgICAgICAgICBjb2xvcjogI2ZmMDAwMDtcbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICAuc3RhdHVzIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgIH1cbiAgICB9XG4gIH1cblxuICAuYnRuIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgYnV0dG9uIHtcbiAgICAgIG1hcmdpbi1ib3R0b206IDhweDtcbiAgICAgIGhlaWdodDogMzZweDtcbiAgICB9XG5cbiAgICAuY2xlYXIge1xuICAgICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQgIWltcG9ydGFudDtcbiAgICAgIGJveC1zaGFkb3c6IG5vbmUgIWltcG9ydGFudDtcbiAgICAgIGNvbG9yOiBibGFjayAhaW1wb3J0YW50O1xuICAgICAgZm9udC13ZWlnaHQ6IDQwMCAhaW1wb3J0YW50O1xuICAgICAgZm9udC1zaXplOiAxNHB4ICFpbXBvcnRhbnQgO1xuICAgICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC41KSAhaW1wb3J0YW50O1xuXG4gICAgICBzdmcge1xuICAgICAgICBtYXJnaW4tcmlnaHQ6IDVweDtcbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>.WeMhfmnyjZApMUugIiUr {
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
+  font-family: OpenSans-Bold, OpenSans;
+}
+.WeMhfmnyjZApMUugIiUr .D5xruGoBdBD8fjbDpn0T {
+  width: 100%;
+  height: 21px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #ffffff;
+}
+.WeMhfmnyjZApMUugIiUr .D5xruGoBdBD8fjbDpn0T .z568v0OExVt7aKAe_qwb {
+  position: absolute;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+}
+.WeMhfmnyjZApMUugIiUr .D5xruGoBdBD8fjbDpn0T .z568v0OExVt7aKAe_qwb g {
+  fill: antiquewhite;
+}
+.WeMhfmnyjZApMUugIiUr .D5xruGoBdBD8fjbDpn0T .YvPjV_lQ9LjrwsRvkSAx {
+  flex: 1;
+  text-align: center;
+}
+.WeMhfmnyjZApMUugIiUr .D5xruGoBdBD8fjbDpn0T .w9aSxjg6VdZA_08E8a_P {
+  min-width: 45px;
+  height: 21px;
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #11bc57;
+  border-top-right-radius: 8px;
+  border-left: 1px solid #00b050;
+}
+.WeMhfmnyjZApMUugIiUr .p5jxubOfKVHADwdR4sVq {
+  background: #2acc6f;
+}
+.WeMhfmnyjZApMUugIiUr .BiGR8PrJwIl3jPvAzTRy {
+  background: #fb5b28;
+}
+.WeMhfmnyjZApMUugIiUr .ddn6LFwb35gnBPJ__Ma4 {
+  display: none;
+  width: 98%;
+  height: 32px;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.08), 0px 3px 14px 2px rgba(0, 0, 0, 0.04), 0px 8px 10px 1px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  margin-top: 6px;
+  font-size: 12px;
+  font-family: OpenSans-Bold, OpenSans;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 17px;
+}
+.WeMhfmnyjZApMUugIiUr .ddn6LFwb35gnBPJ__Ma4 svg {
+  margin-right: 8px;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9jb21wb25lbnRzL25vdEJhY2tncm91bmQvYWUvcHJvZHVjdERPTS5tb2R1bGUubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUF1REE7RUFDRSxXQUFBO0VBR0EsTUFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBRUEsYUFBQTtFQUNBLG1CQUFBO0VBQ0Esc0JBQUE7RUFFQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxvQ0FBQTtBQTFERjtBQTRDQTtFQWlCSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLDJCQUFBO0VBQ0EsNEJBQUE7RUFFQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtFQUVBLGNBQUE7QUE1REo7QUFrQ0E7RUFpQ00sa0JBQUE7RUFDQSxVQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUFoRU47QUE0QkE7RUFzQ1Esa0JBQUE7QUEvRFI7QUF5QkE7RUEyQ00sT0FBQTtFQUNBLGtCQUFBO0FBakVOO0FBcUJBO0VBZ0RNLGVBQUE7RUFDQSxZQUFBO0VBRUEsa0JBQUE7RUFDQSxRQUFBO0VBRUEsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7RUFFQSx5QkFBQTtFQUNBLDRCQUFBO0VBQ0EsOEJBQUE7QUFyRU47QUFTQTtFQWlFSSxtQkFBQTtBQXZFSjtBQU1BO0VBcUVJLG1CQUFBO0FBeEVKO0FBR0E7RUF5RUksYUFBQTtFQUNBLFVBQUE7RUFDQSxZQUFBO0VBQ0EsNEhBQUE7RUFFQSxrQkFBQTtFQUNBLGVBQUE7RUFFQSxlQUFBO0VBQ0Esb0NBQUE7RUFDQSxpQkFBQTtFQUNBLGNBQUE7RUFDQSxpQkFBQTtBQTNFSjtBQVZBO0VBd0ZNLGlCQUFBO0FBM0VOIiwic291cmNlc0NvbnRlbnQiOlsiLy8gQGZvbnQtZmFjZSB7XG4vLyAgIGZvbnQtZmFtaWx5OiBcIkhlbHZldGljYVwiO1xuLy8gICBzcmM6IHVybChcImh0dHBzOi8vaW1nLmRzZXJzLmNvbS9mb250L1VCLUhlbHZldGljYS50dGZcIik7XG4vLyB9XG5cbi8vIEBmb250LWZhY2Uge1xuLy8gICBmb250LWZhbWlseTogXCJPcGVuU2Fucy1SZWd1bGFyXCI7XG4vLyAgIHNyYzogdXJsKFwiaHR0cHM6Ly9pbWcuZHNlcnMuY29tL2ZvbnQvT3BlblNhbnMtUmVndWxhci50dGZcIik7XG4vLyB9XG5cbi8vIEBmb250LWZhY2Uge1xuLy8gICBmb250LWZhbWlseTogXCJPcGVuU2Fucy1Cb2xkXCI7XG4vLyAgIHNyYzogdXJsKFwiaHR0cHM6Ly9pbWcuZHNlcnMuY29tL2ZvbnQvT3BlblNhbnMtQm9sZC50dGZcIik7XG4vLyB9XG5cbi8vIEBmb250LWZhY2Uge1xuLy8gICBmb250LWZhbWlseTogXCJPcGVuU2Fucy1TZW1pQm9sZFwiO1xuLy8gICBzcmM6IHVybChcImh0dHBzOi8vaW1nLmRzZXJzLmNvbS9mb250L09wZW5TYW5zLVNlbWlCb2xkLnR0ZlwiKTtcbi8vIH1cblxuLy8gQGZvbnQtZmFjZSB7XG4vLyAgIGZvbnQtZmFtaWx5OiBcIkhlbHZldGljYU5ldWUtQm9sZFwiO1xuLy8gICBzcmM6IHVybChcImh0dHBzOi8vaW1nLmRzZXJzLmNvbS9mb250L0hlbHZldGljYU5ldWUtQm9sZC5vdGZcIik7XG4vLyB9XG5cbi8vIEBmb250LWZhY2Uge1xuLy8gICBmb250LWZhbWlseTogXCJwc2xcIjtcbi8vICAgc3JjOiB1cmwoXCJodHRwczovL2ltZy5kc2Vycy5jb20vZm9udC9QU0wwMDJTUC50dGZcIik7XG4vLyB9XG5cbi8vIEBmb250LWZhY2Uge1xuLy8gICBmb250LWZhbWlseTogXCJBcmlhbC1Cb2xkTVRcIjtcbi8vICAgc3JjOiB1cmwoXCJodHRwczovL2ltZy5kc2Vycy5jb20vZm9udC9BcmlhbC1Cb2xkTVQub3RmXCIpO1xuLy8gfVxuXG4vLyBAZm9udC1mYWNlIHtcbi8vICAgZm9udC1mYW1pbHk6IFwiUnViaWstQm9sZEl0YWxpY1wiO1xuLy8gICBzcmM6IHVybChcImh0dHBzOi8vaW1nLmRzZXJzLmNvbS9mb250L1J1YmlrLUJvbGRJdGFsaWMudHRmXCIpO1xuLy8gfVxuXG4vLyBAZm9udC1mYWNlIHtcbi8vICAgZm9udC1mYW1pbHk6IFwiUnViaWstUmVndWxhclwiO1xuLy8gICBzcmM6IHVybChcImh0dHBzOi8vaW1nLmRzZXJzLmNvbS9mb250L1J1YmlrLVJlZ3VsYXIudHRmXCIpO1xuLy8gfVxuXG4vLyBAZm9udC1mYWNlIHtcbi8vICAgZm9udC1mYW1pbHk6IFwiUnViaWstQm9sZFwiO1xuLy8gICBzcmM6IHVybChcImh0dHBzOi8vaW1nLmRzZXJzLmNvbS9mb250L1J1YmlrLUJvbGQudHRmXCIpO1xuLy8gfVxuXG4vLyBAZm9udC1mYWNlIHtcbi8vICAgZm9udC1mYW1pbHk6IFwiVWJ1bnR1LUJvbGRcIjtcbi8vICAgc3JjOiB1cmwoXCJodHRwczovL2ltZy5kc2Vycy5jb20vZm9udC9VYnVudHUtQm9sZC50dGZcIik7XG4vLyB9XG5cbi5pbXBvcnRfcHJvZHVjdF9idXR0b24ge1xuICB3aWR0aDogMTAwJTtcbiAgLy8gYm9yZGVyOiAxcHggc29saWQgc2FsbW9uO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG5cbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcblxuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHotaW5kZXg6IDI7XG4gIGZvbnQtZmFtaWx5OiBPcGVuU2Fucy1Cb2xkLCBPcGVuU2FucztcblxuICAuaGVhZGVyIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDIxcHg7XG4gICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogOHB4O1xuICAgIGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiA4cHg7XG5cbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuXG4gICAgY29sb3I6ICNmZmZmZmY7XG5cbiAgICAvLyBib3gtc2hhZG93OiAwcHggNXB4IDVweCAtM3B4IHJnYmEoMCwgMCwgMCwgMC4wOCksXG4gICAgLy8gICAwcHggM3B4IDE0cHggMnB4IHJnYmEoMCwgMCwgMCwgMC4wNCksIDBweCA4cHggMTBweCAxcHggcmdiYSgwLCAwLCAwLCAwLjA2KTtcbiAgICAvLyBib3JkZXItcmFkaXVzOiA0cHg7XG5cbiAgICAuaWNvbiB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBsZWZ0OiAxMHB4O1xuICAgICAgd2lkdGg6IDE1cHg7XG4gICAgICBoZWlnaHQ6IDE1cHg7XG4gICAgICBnIHtcbiAgICAgICAgZmlsbDogYW50aXF1ZXdoaXRlO1xuICAgICAgfVxuICAgIH1cblxuICAgIC50aXRsZSB7XG4gICAgICBmbGV4OiAxO1xuICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIH1cblxuICAgIC5wcmljZSB7XG4gICAgICBtaW4td2lkdGg6IDQ1cHg7XG4gICAgICBoZWlnaHQ6IDIxcHg7XG5cbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIHJpZ2h0OiAwO1xuXG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuXG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTFiYzU3O1xuICAgICAgYm9yZGVyLXRvcC1yaWdodC1yYWRpdXM6IDhweDtcbiAgICAgIGJvcmRlci1sZWZ0OiAxcHggc29saWQgIzAwYjA1MDtcbiAgICB9XG4gIH1cblxuICAuc3VjY2VlZCB7XG4gICAgYmFja2dyb3VuZDogcmdiKDQyLCAyMDQsIDExMSk7XG4gIH1cblxuICAuZXJyb3Ige1xuICAgIGJhY2tncm91bmQ6IHJnYigyNTEsIDkxLCA0MCk7XG4gIH1cblxuICAuYnV0dG9uIHtcbiAgICBkaXNwbGF5OiBub25lO1xuICAgIHdpZHRoOiA5OCU7XG4gICAgaGVpZ2h0OiAzMnB4O1xuICAgIGJveC1zaGFkb3c6IDBweCA1cHggNXB4IC0zcHggcmdiYSgwLCAwLCAwLCAwLjA4KSxcbiAgICAgIDBweCAzcHggMTRweCAycHggcmdiYSgwLCAwLCAwLCAwLjA0KSwgMHB4IDhweCAxMHB4IDFweCByZ2JhKDAsIDAsIDAsIDAuMDYpO1xuICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICBtYXJnaW4tdG9wOiA2cHg7XG5cbiAgICBmb250LXNpemU6IDEycHg7XG4gICAgZm9udC1mYW1pbHk6IE9wZW5TYW5zLUJvbGQsIE9wZW5TYW5zO1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgIGNvbG9yOiAjZmZmZmZmO1xuICAgIGxpbmUtaGVpZ2h0OiAxN3B4O1xuXG4gICAgc3ZnIHtcbiAgICAgIG1hcmdpbi1yaWdodDogOHB4O1xuICAgIH1cbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.vsK1fKu8GYkRlcoudhIh {
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
+  font-family: OpenSans-Bold, OpenSans;
+}
+.vsK1fKu8GYkRlcoudhIh .kNT2mFuNFTBP9Hi7bAC8 {
+  width: 100%;
+  height: 21px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #ffffff;
+}
+.vsK1fKu8GYkRlcoudhIh .kNT2mFuNFTBP9Hi7bAC8 .mZYCnZhor58rYAUqK4ng {
+  position: absolute;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+}
+.vsK1fKu8GYkRlcoudhIh .kNT2mFuNFTBP9Hi7bAC8 .mZYCnZhor58rYAUqK4ng g {
+  fill: antiquewhite;
+}
+.vsK1fKu8GYkRlcoudhIh .kNT2mFuNFTBP9Hi7bAC8 .ngtRvSjrm9yOTPcnJvii {
+  flex: 1;
+  text-align: center;
+}
+.vsK1fKu8GYkRlcoudhIh .kNT2mFuNFTBP9Hi7bAC8 .rd0GcjHkbm37tIo1UZkh {
+  min-width: 45px;
+  height: 21px;
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #11bc57;
+  border-top-right-radius: 8px;
+  border-left: 1px solid #00b050;
+}
+.vsK1fKu8GYkRlcoudhIh .xqJbzeH_Z6QRQ9J1z5UV {
+  background: #2acc6f;
+}
+.vsK1fKu8GYkRlcoudhIh .mmXPLYRJZx8YRhtuZOzD {
+  background: #fb5b28;
+}
+.vsK1fKu8GYkRlcoudhIh .jaTHVmG4yPmCMGNQaqic {
+  display: none;
+  width: 98%;
+  height: 32px;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.08), 0px 3px 14px 2px rgba(0, 0, 0, 0.04), 0px 8px 10px 1px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  margin-top: 6px;
+  font-size: 12px;
+  font-family: OpenSans-Bold, OpenSans;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 17px;
+}
+.vsK1fKu8GYkRlcoudhIh .jaTHVmG4yPmCMGNQaqic svg {
+  margin-right: 8px;
+}
+.vsK1fKu8GYkRlcoudhIh .lXitMkUNrxq6Y3RWLqKg {
+  position: absolute;
+  top: 34px;
+  left: 11px;
+  z-index: 99999999;
+}
+.vsK1fKu8GYkRlcoudhIh .lXitMkUNrxq6Y3RWLqKg input {
+  width: 18px;
+  height: 18px;
+}
+.NlPS3pzpp0kyiw7u3qbU {
+  width: 200px;
+  height: 36px;
+  background: #ff8f00;
+  border-radius: 8px 8px 8px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+}
+.NlPS3pzpp0kyiw7u3qbU > div {
+  margin-right: 15px;
+}
+.NlPS3pzpp0kyiw7u3qbU button {
+  background: #ff8f00;
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9jb21wb25lbnRzL25vdEJhY2tncm91bmQvYWUvYWVMaXN0RG9tLm1vZHVsZS5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXVEQTtFQUNFLFdBQUE7RUFHQSxNQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFFQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxzQkFBQTtFQUVBLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLG9DQUFBO0FBMURGO0FBNENBO0VBaUJJLFdBQUE7RUFDQSxZQUFBO0VBQ0EsMkJBQUE7RUFDQSw0QkFBQTtFQUVBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0VBRUEsY0FBQTtBQTVESjtBQWtDQTtFQWlDTSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtBQWhFTjtBQTRCQTtFQXNDUSxrQkFBQTtBQS9EUjtBQXlCQTtFQTJDTSxPQUFBO0VBQ0Esa0JBQUE7QUFqRU47QUFxQkE7RUFnRE0sZUFBQTtFQUNBLFlBQUE7RUFFQSxrQkFBQTtFQUNBLFFBQUE7RUFFQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtFQUVBLHlCQUFBO0VBQ0EsNEJBQUE7RUFDQSw4QkFBQTtBQXJFTjtBQVNBO0VBaUVJLG1CQUFBO0FBdkVKO0FBTUE7RUFxRUksbUJBQUE7QUF4RUo7QUFHQTtFQXlFSSxhQUFBO0VBQ0EsVUFBQTtFQUNBLFlBQUE7RUFDQSw0SEFBQTtFQUVBLGtCQUFBO0VBQ0EsZUFBQTtFQUVBLGVBQUE7RUFDQSxvQ0FBQTtFQUNBLGlCQUFBO0VBQ0EsY0FBQTtFQUNBLGlCQUFBO0FBM0VKO0FBVkE7RUF3Rk0saUJBQUE7QUEzRU47QUFiQTtFQTZGSSxrQkFBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0VBQ0EsaUJBQUE7QUE3RUo7QUFuQkE7RUFrR00sV0FBQTtFQUNBLFlBQUE7QUE1RU47QUFpRkE7RUFDRSxZQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EsOEJBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUVBLGVBQUE7RUFDQSxTQUFBO0VBQ0EsMkJBQUE7RUFDQSxZQUFBO0FBaEZGO0FBa0ZFO0VBQ0Usa0JBQUE7QUFoRko7QUFpRUE7RUFrQkksbUJBQUE7RUFDQSxjQUFBO0FBaEZKIiwic291cmNlc0NvbnRlbnQiOlsiLy8gQGZvbnQtZmFjZSB7XG4vLyAgIGZvbnQtZmFtaWx5OiBcIkhlbHZldGljYVwiO1xuLy8gICBzcmM6IHVybChcImh0dHBzOi8vaW1nLmRzZXJzLmNvbS9mb250L1VCLUhlbHZldGljYS50dGZcIik7XG4vLyB9XG5cbi8vIEBmb250LWZhY2Uge1xuLy8gICBmb250LWZhbWlseTogXCJPcGVuU2Fucy1SZWd1bGFyXCI7XG4vLyAgIHNyYzogdXJsKFwiaHR0cHM6Ly9pbWcuZHNlcnMuY29tL2ZvbnQvT3BlblNhbnMtUmVndWxhci50dGZcIik7XG4vLyB9XG5cbi8vIEBmb250LWZhY2Uge1xuLy8gICBmb250LWZhbWlseTogXCJPcGVuU2Fucy1Cb2xkXCI7XG4vLyAgIHNyYzogdXJsKFwiaHR0cHM6Ly9pbWcuZHNlcnMuY29tL2ZvbnQvT3BlblNhbnMtQm9sZC50dGZcIik7XG4vLyB9XG5cbi8vIEBmb250LWZhY2Uge1xuLy8gICBmb250LWZhbWlseTogXCJPcGVuU2Fucy1TZW1pQm9sZFwiO1xuLy8gICBzcmM6IHVybChcImh0dHBzOi8vaW1nLmRzZXJzLmNvbS9mb250L09wZW5TYW5zLVNlbWlCb2xkLnR0ZlwiKTtcbi8vIH1cblxuLy8gQGZvbnQtZmFjZSB7XG4vLyAgIGZvbnQtZmFtaWx5OiBcIkhlbHZldGljYU5ldWUtQm9sZFwiO1xuLy8gICBzcmM6IHVybChcImh0dHBzOi8vaW1nLmRzZXJzLmNvbS9mb250L0hlbHZldGljYU5ldWUtQm9sZC5vdGZcIik7XG4vLyB9XG5cbi8vIEBmb250LWZhY2Uge1xuLy8gICBmb250LWZhbWlseTogXCJwc2xcIjtcbi8vICAgc3JjOiB1cmwoXCJodHRwczovL2ltZy5kc2Vycy5jb20vZm9udC9QU0wwMDJTUC50dGZcIik7XG4vLyB9XG5cbi8vIEBmb250LWZhY2Uge1xuLy8gICBmb250LWZhbWlseTogXCJBcmlhbC1Cb2xkTVRcIjtcbi8vICAgc3JjOiB1cmwoXCJodHRwczovL2ltZy5kc2Vycy5jb20vZm9udC9BcmlhbC1Cb2xkTVQub3RmXCIpO1xuLy8gfVxuXG4vLyBAZm9udC1mYWNlIHtcbi8vICAgZm9udC1mYW1pbHk6IFwiUnViaWstQm9sZEl0YWxpY1wiO1xuLy8gICBzcmM6IHVybChcImh0dHBzOi8vaW1nLmRzZXJzLmNvbS9mb250L1J1YmlrLUJvbGRJdGFsaWMudHRmXCIpO1xuLy8gfVxuXG4vLyBAZm9udC1mYWNlIHtcbi8vICAgZm9udC1mYW1pbHk6IFwiUnViaWstUmVndWxhclwiO1xuLy8gICBzcmM6IHVybChcImh0dHBzOi8vaW1nLmRzZXJzLmNvbS9mb250L1J1YmlrLVJlZ3VsYXIudHRmXCIpO1xuLy8gfVxuXG4vLyBAZm9udC1mYWNlIHtcbi8vICAgZm9udC1mYW1pbHk6IFwiUnViaWstQm9sZFwiO1xuLy8gICBzcmM6IHVybChcImh0dHBzOi8vaW1nLmRzZXJzLmNvbS9mb250L1J1YmlrLUJvbGQudHRmXCIpO1xuLy8gfVxuXG4vLyBAZm9udC1mYWNlIHtcbi8vICAgZm9udC1mYW1pbHk6IFwiVWJ1bnR1LUJvbGRcIjtcbi8vICAgc3JjOiB1cmwoXCJodHRwczovL2ltZy5kc2Vycy5jb20vZm9udC9VYnVudHUtQm9sZC50dGZcIik7XG4vLyB9XG5cbi5pbXBvcnRfcHJvZHVjdF9idXR0b24ge1xuICB3aWR0aDogMTAwJTtcbiAgLy8gYm9yZGVyOiAxcHggc29saWQgc2FsbW9uO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG5cbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcblxuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHotaW5kZXg6IDI7XG4gIGZvbnQtZmFtaWx5OiBPcGVuU2Fucy1Cb2xkLCBPcGVuU2FucztcblxuICAuaGVhZGVyIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDIxcHg7XG4gICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogOHB4O1xuICAgIGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiA4cHg7XG5cbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuXG4gICAgY29sb3I6ICNmZmZmZmY7XG5cbiAgICAvLyBib3gtc2hhZG93OiAwcHggNXB4IDVweCAtM3B4IHJnYmEoMCwgMCwgMCwgMC4wOCksXG4gICAgLy8gICAwcHggM3B4IDE0cHggMnB4IHJnYmEoMCwgMCwgMCwgMC4wNCksIDBweCA4cHggMTBweCAxcHggcmdiYSgwLCAwLCAwLCAwLjA2KTtcbiAgICAvLyBib3JkZXItcmFkaXVzOiA0cHg7XG5cbiAgICAuaWNvbiB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBsZWZ0OiAxMHB4O1xuICAgICAgd2lkdGg6IDE1cHg7XG4gICAgICBoZWlnaHQ6IDE1cHg7XG4gICAgICBnIHtcbiAgICAgICAgZmlsbDogYW50aXF1ZXdoaXRlO1xuICAgICAgfVxuICAgIH1cblxuICAgIC50aXRsZSB7XG4gICAgICBmbGV4OiAxO1xuICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIH1cblxuICAgIC5wcmljZSB7XG4gICAgICBtaW4td2lkdGg6IDQ1cHg7XG4gICAgICBoZWlnaHQ6IDIxcHg7XG5cbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIHJpZ2h0OiAwO1xuXG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuXG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTFiYzU3O1xuICAgICAgYm9yZGVyLXRvcC1yaWdodC1yYWRpdXM6IDhweDtcbiAgICAgIGJvcmRlci1sZWZ0OiAxcHggc29saWQgIzAwYjA1MDtcbiAgICB9XG4gIH1cblxuICAuc3VjY2VlZCB7XG4gICAgYmFja2dyb3VuZDogcmdiKDQyLCAyMDQsIDExMSk7XG4gIH1cblxuICAuZXJyb3Ige1xuICAgIGJhY2tncm91bmQ6IHJnYigyNTEsIDkxLCA0MCk7XG4gIH1cblxuICAuYnV0dG9uIHtcbiAgICBkaXNwbGF5OiBub25lO1xuICAgIHdpZHRoOiA5OCU7XG4gICAgaGVpZ2h0OiAzMnB4O1xuICAgIGJveC1zaGFkb3c6IDBweCA1cHggNXB4IC0zcHggcmdiYSgwLCAwLCAwLCAwLjA4KSxcbiAgICAgIDBweCAzcHggMTRweCAycHggcmdiYSgwLCAwLCAwLCAwLjA0KSwgMHB4IDhweCAxMHB4IDFweCByZ2JhKDAsIDAsIDAsIDAuMDYpO1xuICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICBtYXJnaW4tdG9wOiA2cHg7XG5cbiAgICBmb250LXNpemU6IDEycHg7XG4gICAgZm9udC1mYW1pbHk6IE9wZW5TYW5zLUJvbGQsIE9wZW5TYW5zO1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgIGNvbG9yOiAjZmZmZmZmO1xuICAgIGxpbmUtaGVpZ2h0OiAxN3B4O1xuXG4gICAgc3ZnIHtcbiAgICAgIG1hcmdpbi1yaWdodDogOHB4O1xuICAgIH1cbiAgfVxuXG4gIC5jaGVja2JveCB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIHRvcDogMzRweDtcbiAgICBsZWZ0OiAxMXB4O1xuICAgIHotaW5kZXg6IDk5OTk5OTk5O1xuICAgIGlucHV0IHtcbiAgICAgIHdpZHRoOiAxOHB4O1xuICAgICAgaGVpZ2h0OiAxOHB4O1xuICAgIH1cbiAgfVxufVxuXG4uYWVMaXN0QmF0Y2hCdG5Cb3gge1xuICB3aWR0aDogMjAwcHg7XG4gIGhlaWdodDogMzZweDtcbiAgYmFja2dyb3VuZDogI2ZmOGYwMDtcbiAgYm9yZGVyLXJhZGl1czogOHB4IDhweCA4cHggOHB4O1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcblxuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGxlZnQ6IDUwJTtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKC01MCUpO1xuICBib3R0b206IDIwcHg7XG5cbiAgJiA+IGRpdiB7XG4gICAgbWFyZ2luLXJpZ2h0OiAxNXB4O1xuICB9XG4gIGJ1dHRvbiB7XG4gICAgYmFja2dyb3VuZDogI2ZmOGYwMDtcbiAgICBjb2xvcjogI2ZmZmZmZjtcbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><script src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" id="vturb-smartplayer-js" fetchpriority="high"></script><link id="vturb-typography-font-inter" href="./teste vturb_files/css2.css" rel="stylesheet" type="text/css">
+<!-- ===== TODAY HEAD BLOCK — fontes + estilos ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+/* ===== TODAY.COM HEAD BLOCK (escopado, nao toca no resto da pagina) ===== */
+.today-header-wrapper, .today-nav-mobile, .breaking-news-banner, .article-header {
+	font-family: 'Libre Franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #2a2a2a;
+	-webkit-font-smoothing: antialiased;
+}
+.today-header-wrapper *, .today-nav-mobile *, .breaking-news-banner *, .article-header * { box-sizing: border-box; }
+/* --- TODAY HEADER --- */
+.today-header-wrapper {
+	position: sticky;
+	top: 0;
+	z-index: 9999;
+	background: #fff;
+	border-bottom: 1px solid #e8e8e8;
+}
+.today-header-inner {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.today-logo {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	margin-right: 24px;
+	flex-shrink: 0;
+}
+.today-logo .sunrise-icon { width: 36px; height: 20px; margin-right: 6px; color: #FF503C; }
+.today-logo .brand-text { height: 24px; color: #000; }
+.today-nav { display: flex; align-items: center; gap: 0; flex-wrap: nowrap; overflow: hidden; }
+.today-nav a {
+	font-size: 15px;
+	font-weight: 700;
+	color: #2a2a2a;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 0 12px;
+	white-space: nowrap;
+	letter-spacing: 0.3px;
+	border-right: 1px solid #d9d9d9;
+	line-height: 56px;
+}
+.today-nav a:last-child { border-right: none; }
+.today-nav a:hover { color: #FF503C; }
+.today-nav a.is-active, .today-nav-mobile a.is-active { color: #FF503C; }
+.today-header-right { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+.today-header-right .icon-btn {
+	background: none; border: none; cursor: pointer; color: #2a2a2a;
+	padding: 4px; display: flex; align-items: center;
+}
+.today-header-right .icon-btn svg { width: 17px; height: 17px; fill: currentColor; display: block; }
+.today-header-right .hamburger-btn { display: flex; flex-direction: column; gap: 4px; padding: 4px; cursor: pointer; }
+.today-header-right .hamburger-btn span { display: block; width: 20px; height: 2px; background: #2a2a2a; border-radius: 1px; }
+/* --- MOBILE NAV --- */
+.today-nav-mobile { display: none; }
+/* --- BREAKING NEWS BANNER --- */
+.breaking-news-banner {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	border-bottom: 1px solid #e8e8e8;
+}
+.breaking-news-label {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	background: #f2f2f2;
+	padding: 6px 16px;
+	font-size: 13px;
+	font-weight: 700;
+	color: #2a2a2a;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	white-space: nowrap;
+	border-left: 4px solid #FF6B3D;
+}
+.breaking-news-date { font-size: 13px; color: #2a2a2a; font-weight: 400; }
+/* --- ARTICLE HEADER --- */
+.article-header { max-width: 1200px; margin: 0 auto; padding: 20px 20px 0; }
+.article-header .article-category,
+.article-header .article-title,
+.article-header .article-meta { max-width: 800px; }
+.article-category {
+	font-size: 12px; font-weight: 700; color: #2a2a2a; text-transform: uppercase;
+	letter-spacing: 0.5px; margin-bottom: 12px; display: inline-block;
+}
+.article-title {
+	font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+	font-size: 38px;
+	font-weight: 900;
+	line-height: 1.15;
+	color: #000;
+	margin: 0 0 16px 0;
+	text-align: left;
+}
+.article-meta {
+	display: flex; align-items: center; gap: 16px; padding: 12px 0;
+	border-top: 1px solid #e8e8e8; margin-bottom: 0; flex-wrap: wrap;
+}
+.article-date { font-size: 13px; color: #6b6b6b; margin-left: auto; }
+.article-author { display: flex; align-items: center; gap: 8px; }
+.author-avatar {
+	width: 32px; height: 32px; border-radius: 50%;
+	display: flex; align-items: center; justify-content: center;
+	font-weight: 700; font-size: 11px; background: #FF503C; color: #fff; flex-shrink: 0;
+}
+.author-name { font-size: 13px; font-weight: 700; color: #2a2a2a; line-height: 1.2; }
+.author-role { font-size: 11px; color: #6b6b6b; line-height: 1.2; }
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+	.today-nav-mobile {
+		display: flex; align-items: center; overflow-x: auto;
+		-webkit-overflow-scrolling: touch; border-bottom: 1px solid #e8e8e8; background: #fff;
+	}
+	.today-nav-mobile::-webkit-scrollbar { display: none; }
+	.today-nav-mobile a {
+		font-size: 13px; font-weight: 700; color: #2a2a2a; text-decoration: none;
+		text-transform: uppercase; padding: 0 12px; white-space: nowrap;
+		letter-spacing: 0.3px; border-right: 1px solid #d9d9d9; line-height: 42px;
+	}
+	.today-nav-mobile a:last-child { border-right: none; }
+	.today-nav { display: none; }
+	.today-header-inner { height: 50px; padding: 0 12px; }
+	.today-logo .sunrise-icon { width: 28px; height: 16px; }
+	.today-logo .brand-text { height: 20px; }
+	.breaking-news-banner { padding: 8px 12px; }
+	.breaking-news-label { font-size: 11px; padding: 3px 12px; }
+	.article-header { padding: 16px 16px 0; }
+	.article-title { font-size: 28px; }
+	.article-date { margin-left: 0; }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+	.today-nav a { font-size: 13px; padding: 0 8px; }
+}
+</style>
+<!-- ===== /TODAY HEAD BLOCK ===== -->
+
+<!-- ===== BLOCO DE OFERTA AUDILEAF — CSS (escopado em #audileaf-lp) ===== -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./audileaf/bootstrap.scoped.css">
+<link rel="stylesheet" href="./audileaf/aos.css">
+<link rel="stylesheet" href="./audileaf/audileaf.css">
+<script>
+(function () {
+  var PARAM = 'subid5';
+  var PREFIXO = 'v3_';
+  function liberar() {
+    var links = document.querySelectorAll('a[href]');
+    for (var i = 0; i < links.length; i++) {
+      try {
+        var u = new URL(links[i].href);
+        if (!u.searchParams.has(PARAM)) continue;
+        var v = u.searchParams.get(PARAM) || '';
+        if (v.indexOf(PREFIXO) === 0) continue;
+        u.searchParams.delete(PARAM);
+        links[i].href = u.toString();
+      } catch (e) {}
+    }
+  }
+  liberar();
+  window.addEventListener('load', function () {
+    setTimeout(liberar, 300); setTimeout(liberar, 1000); setTimeout(liberar, 3000);
+  });
+  document.addEventListener('click', function (e) {
+    var t = e.target; if (t && t.nodeType === 3) t = t.parentElement;
+    var a = t && t.closest ? t.closest('a[href]') : null;
+    if (a) liberar();
+  }, true);
+  if (typeof MutationObserver !== 'undefined') {
+    new MutationObserver(liberar).observe(document.body || document.documentElement,
+      { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
+  }
+})();
+</script>
+<!-- ===== /BLOCO DE OFERTA AUDILEAF — CSS ===== -->
+<style id="no-scroll-anim">[data-aos]{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}</style></head><body data-page-type="page" data-page="_qXbmtNrlnmT0fHuGt1Rm" data-variant="wq4nnner7sc" data-version="2.7">
+<!-- ============ START — BLOCO HEAD TODAY ============ -->
+<div class="today-header-wrapper">
+	<div class="today-header-inner">
+		<div style="display:flex;align-items:center;overflow:hidden;">
+			<a class="today-logo" href="#">
+				<svg class="sunrise-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 20" fill="currentColor"><path fill-rule="evenodd" d="M5.167 18.82c-.023.329-.034.66-.034.995H0c0-.345.009-.687.026-1.027C.56 8.322 9.208 0 19.797 0c10.662 0 19.355 8.435 19.78 19.002.011.27.017.54.017.813h-5.132c0-.304-.01-.606-.029-.906-.468-7.673-6.855-13.772-14.636-13.772-7.752 0-14.118 6.052-14.63 13.683zm6.619.06a8.064 8.064 0 00-.054.935H6.599c0-.293.01-.583.029-.87.448-6.89 6.172-12.34 13.169-12.34 7.008 0 12.74 5.466 13.172 12.37.017.278.025.558.025.84h-5.131c0-.295-.016-.585-.048-.873-.435-4.042-3.865-7.2-8.018-7.2-4.131 0-7.547 3.126-8.011 7.138zm8.011-5.67a6.6 6.6 0 016.599 6.605H13.198a6.601 6.601 0 016.599-6.605z"></path></svg>
+				<svg class="brand-text" viewBox="0 0 140 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.4577 27.4862V6.50765H26.8307V0.513773H0.97998V6.50765H10.2246V27.4862H17.4577ZM56.4703 14C56.4703 22.3058 50.3072 28 42.4749 28C34.6427 28 28.4796 22.3058 28.4796 14C28.4796 5.69419 34.6427 0 42.4749 0C50.3072 0 56.4703 5.69419 56.4703 14ZM48.9807 14C48.9807 9.41895 46.4555 6.42201 42.4752 6.42201C38.4949 6.42201 35.9697 9.41895 35.9697 14C35.9697 18.581 38.4949 21.578 42.4752 21.578C46.4555 21.578 48.9807 18.581 48.9807 14ZM67.6638 21.7492H70.5313C75.2392 21.7492 78.0212 18.9235 78.0212 13.9572C78.0212 9.07644 75.2392 6.25076 70.5313 6.25076H67.6638V21.7492ZM60.3879 27.4862V0.513773H71.0449C79.9899 0.513773 85.511 5.56576 85.511 14C85.511 22.4343 79.9899 27.4862 71.0449 27.4862H60.3879ZM96.8324 0.513773H104.964L115.707 27.4862H107.96L105.949 22.263H95.42L93.4084 27.4862H86.0898L96.8324 0.513773ZM100.599 8.86238L97.5171 16.8257H103.851L100.77 8.86238H100.599ZM126.029 10.2324L131.807 0.513773H139.639L129.282 17.2538V27.4862H122.22V17.2538L111.862 0.513773H119.951L126.029 10.2324Z"></path></svg>
+			</a>
+			<nav class="today-nav">
+				<a href="#">On the Show</a>
+				<a href="#">Shop</a>
+				<a href="#">Health</a>
+				<a href="#" class="is-active">Start TODAY</a>
+				<a href="#">Parents</a>
+				<a href="#">Food</a>
+				<a href="#">Life</a>
+			</nav>
+		</div>
+		<div class="today-header-right">
+			<button class="icon-btn" type="button" title="Notifications" aria-label="Notifications"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 0c-17.7 0-32 14.3-32 32l0 19.2C119 66 64 130.6 64 208l0 25.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416l400 0c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4l0-25.4c0-77.4-55-142-128-156.8L256 32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3l-64 0-64 0c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg></button>
+			<button class="icon-btn" type="button" title="Search" aria-label="Search"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></button>
+			<div class="hamburger-btn" title="Menu"><span></span><span></span><span></span></div>
+		</div>
+	</div>
+</div>
+<nav class="today-nav-mobile">
+	<a href="#">On the Show</a>
+	<a href="#">Shop</a>
+	<a href="#">Health</a>
+	<a href="#" class="is-active">Start TODAY</a>
+	<a href="#">Parents</a>
+	<a href="#">Food</a>
+	<a href="#">Life</a>
+</nav>
+<div class="breaking-news-banner">
+	<div class="breaking-news-label">BREAKING NEWS</div>
+	<span class="breaking-news-date" id="live-breaking-news-date">Aug. 5, 2026, 11:33 PM UTC</span>
+</div>
+<div class="article-header">
+	<span class="article-category">Health</span>
+	<h1 class="article-title">Martha Stewart Lived With Ringing in Her Ears for Years — Until a Brain Doctor Told Her to Stop Taking Calcium and Squeeze a Lemon Into a Glass of Water</h1>
+	<div class="article-meta">
+		<div class="article-author">
+			<div class="author-avatar">SG</div>
+			<div>
+				<div class="author-name">Savannah Guthrie</div>
+				<div class="author-role">Lead Anchor</div>
+			</div>
+		</div>
+		<span class="article-date" id="live-article-date">Updated: Wednesday, 5th August 2026, 7:33pm</span>
+	</div>
+</div>
+<script>
+(function () {
+	function ordinal(n) {
+		var j = n % 10, k = n % 100;
+		if (j === 1 && k !== 11) return n + 'st';
+		if (j === 2 && k !== 12) return n + 'nd';
+		if (j === 3 && k !== 13) return n + 'rd';
+		return n + 'th';
+	}
+	function formatNyDateTime(d) {
+		d = d || new Date();
+		try {
+			var fmt = new Intl.DateTimeFormat('en-US', {
+				timeZone: 'America/New_York', weekday: 'long', month: 'long', year: 'numeric', day: 'numeric',
+				hour: 'numeric', minute: '2-digit', hour12: true
+			});
+			var map = {};
+			fmt.formatToParts(d).forEach(function (p) { if (p.type !== 'literal') map[p.type] = p.value; });
+			var dayNum = parseInt(map.day, 10);
+			var timeLower = (map.hour + ':' + map.minute + (map.dayPeriod || '')).replace(/\s/g, '').toLowerCase();
+			return map.weekday + ', ' + ordinal(dayNum) + ' ' + map.month + ' ' + map.year + ', ' + timeLower;
+		} catch (e) {
+			return d.toLocaleString('en-US', { timeZone: 'America/New_York' });
+		}
+	}
+	function formatBreakingUtc() {
+		var d = new Date();
+		try {
+			var fmt = new Intl.DateTimeFormat('en-US', {
+				timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric',
+				hour: 'numeric', minute: '2-digit', hour12: true
+			});
+			var map = {};
+			fmt.formatToParts(d).forEach(function (p) { if (p.type !== 'literal') map[p.type] = p.value; });
+			var mon = map.month || '';
+			if (mon.indexOf('.') === -1) mon = mon + '.';
+			var t = (map.hour + ':' + map.minute + ' ' + (map.dayPeriod || '')).replace(/\s+/g, ' ').trim();
+			return mon + ' ' + map.day + ', ' + map.year + ', ' + t + ' UTC';
+		} catch (e) {
+			return new Date().toUTCString();
+		}
+	}
+	function run() {
+		var a = document.getElementById('live-article-date');
+		if (a) a.textContent = 'Updated: ' + formatNyDateTime(new Date());
+		var b = document.getElementById('live-breaking-news-date');
+		if (b) b.textContent = formatBreakingUtc();
+	}
+	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+	else run();
+})();
+</script>
+<!-- ============ END — BLOCO HEAD TODAY ============ -->
+<div class="a-b-cont a-s-d-cq9x3d"><div class="a-b-o-cont a-s-d-v6kvmz atomicat-container-d815705 a-b-o-cont--legacy-margin"><!-- container - 8yccka --><style>.atomicat-container-d815705>.a-o-cont>.a-cont{flex-direction:column}@media screen and (max-width:480px){.atomicat-container-d815705>.a-o-cont>.a-cont{max-width:500px}}.a-b-cont .atomicat-container-d815705.a-b-o-cont{background-size:cover;background-repeat:no-repeat;background-position:center}</style><div class="a-o-cont a-cont-b"><div class="a-cont a-i-cont"><div class="a-s-d-el6xxk a-c-cont-67aae86 a-c-cont a-r"><style>.a-c-cont-67aae86{width:100%}</style><div class="atomicat-video a-e-cont a-r a-video atomicat-element-container-67aae86 a-video-67aae86"><!-- video - wsw8h2 --><div><vturb-smartplayer id="vid-6a7008ee0034d99c56aedf52" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.03703703703704% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer><script type="text/javascript">var s=document.createElement("script"); s.src="https://scripts.converteai.net/323b6d8a-4307-4d60-9a56-26e91f3cb757/players/6a7008ee0034d99c56aedf52/v4/player.js", s.async=!0,document.head.appendChild(s);</script></div></div></div></div></div></div>
+<!-- ============ START — BLOCO DE OFERTA AUDILEAF ============ -->
+<!-- TESTE BOTAO VTURB: mantem o bloco de oferta oculto mesmo depois do pitch.
+     O VTurb remove a classe .esconder no PITCH_TIME; este !important vence isso.
+     Para voltar ao normal, basta apagar o <style> abaixo. Nada mais foi alterado. -->
+<div id="audileaf-lp" class="esconder">
+
+
+
+
+
+
+    <!-- Pricing Section -->
+    <section id="pricing2" class="py-5 bg-light text-dark">
+        <div class="container">
+            <h2 class="text-center mb-2 aos-init" data-aos="fade-up">Claim Your Discounted AudiLeaf<sup>TM</sup> Now</h2>
+            <h3 class="text-center mb-5 aos-init" data-aos="fade-up" data-aos-delay="100">While Supplies Last</h3>
+            <div class="row d-flex flex-wrap justify-content-center">
+
+                <!-- 3 BOTTLES -->
+                <div class="col-md-4 mb-4 aos-init order-2 order-md-1" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card pricing-card h-100">
+                        <div class="card-header text-center py-3 text-white" style="background-color: #305d61;">
+                            <h4>Most Popular</h4>
+                        </div>
+                        <div class="card-body text-center p-0">
+                            <div class="pricing-title text-center py-2 border-bottom">
+                                <h3 class="mb-0">3 BOTTLES</h3>
+                                <p class="mb-0">90 DAYS SUPPLY</p>
+                            </div>
+                            <div class="p-4">
+                                <img src="./audileaf/img/3b.webp" class="img-fluid mb-3" alt="3 Bottles" loading="lazy">
+                                <div class="price">
+                                    <h1 class="mb-0">$72<span class="per-bottle">PER<br>BOTTLE</span></h1>
+                                </div>
+                                <div class="border-top border-bottom py-2 my-3">
+                                    <p style="font-weight: 700; color: #298f16;" class="mb-0"><i class="fas fa-check-circle me-2"></i> YOU SAVE $321!</p>
+                                </div>
+                                <div class="border-bottom py-2 mb-3">
+                                    <p class="mb-0"><i class="fas fa-check-circle text-success me-2"></i> 60 DAYS GUARANTEE</p>
+                                </div>
+                                <a href="https://xszyrk-8s.myshopify.com/cart/44535681417305:1?channel=buy_button" class="button-buy-b btn btn-danger btn-lg w-100 mb-3" onclick="(function(){ var id=genEventId(); fbq('track','AddToCart',{content_name:'AudiLeaf 3 Bottles',content_category:'Wellness',currency:'USD',value:216.00},{eventID:id}); sendCAPI('AddToCart',{content_name:'AudiLeaf 3 Bottles',content_category:'Wellness',currency:'USD',value:216.00},id); })()">BUY NOW</a>
+                                <div class="payment-methods mb-3">
+                                    <img src="./audileaf/img/cards-0326.webp" class="me-1" alt="Payment methods" loading="lazy">
+                                </div>
+                                <div class="total-price">
+                                    <p class="mb-1">Total: <span class="text-decoration-line-through">$537</span> <span class="fw-bold">$216</span></p>
+                                    <p class="mb-0">+ FREE US SHIPPING</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6 BOTTLES -->
+                <div class="col-md-4 mb-4 aos-init order-1 order-md-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card pricing-card h-100 popular">
+                        <div class="card-header text-center py-3 text-white" style="background-color: #305d61;">
+                            <h4>BEST VALUE!</h4>
+                        </div>
+                        <div class="card-body text-center p-0" style="background: radial-gradient(circle, #305d61 0%, #729d9d 70%); color: white;">
+                            <div class="p-4">
+                                <h3 class="mb-0 text-white">6 BOTTLES</h3>
+                                <p class="mb-0 text-white">180 DAYS SUPPLY</p>
+                                <img src="./audileaf/img/6b.webp" class="img-fluid mb-3" alt="6 Bottles" loading="lazy">
+                                <div class="price">
+                                    <h1 class="mb-0 text-white">$49<span class="per-bottle text-white">PER<br>BOTTLE</span></h1>
+                                </div>
+                                <div class="border-top border-bottom py-2 my-3" style="border-color: rgba(255, 255, 255, 0.2) !important;">
+                                    <p class="mb-0 text-white"><i class="fas fa-check-circle text-warning me-2"></i><b>YOU SAVE $1488!</b></p>
+                                </div>
+                                <div class="border-bottom py-2 mb-3" style="border-color: rgba(255, 255, 255, 0.2) !important;">
+                                    <p class="mb-0 text-white"><i class="fas fa-check-circle text-warning me-2"></i> BIGGEST DISCOUNT</p>
+                                </div>
+                                <div class="border-bottom py-2 mb-3" style="border-color: rgba(255, 255, 255, 0.2) !important;">
+                                    <p class="mb-0 text-white"><i class="fas fa-check-circle text-warning me-2"></i> 60 DAYS GUARANTEE</p>
+                                </div>
+                                <a href="https://xszyrk-8s.myshopify.com/cart/44535684235353:1?channel=buy_button" class="btn btn-warning btn-lg w-100 mb-3 text-dark fw-bold" onclick="(function(){ var id=genEventId(); fbq('track','AddToCart',{content_name:'AudiLeaf 6 Bottles',content_category:'Wellness',currency:'USD',value:294.00},{eventID:id}); sendCAPI('AddToCart',{content_name:'AudiLeaf 6 Bottles',content_category:'Wellness',currency:'USD',value:294.00},id); })()">BUY NOW</a>
+                                <div class="payment-methods mb-3">
+                                    <img src="./audileaf/img/cards-0326.webp" class="me-1" alt="Payment methods" loading="lazy">
+                                </div>
+                                <div class="total-price">
+                                    <p class="mb-1 text-white">Total: <span class="text-decoration-line-through text-white-50">$1782</span> <span class="fw-bold text-white">$294</span></p>
+                                    <p class="mb-0 text-white">+ FREE US SHIPPING</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 BOTTLES -->
+                <div class="col-md-4 mb-4 aos-init order-3 order-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card pricing-card h-100">
+                        <div class="card-header text-center py-3 text-white" style="background-color: #305d61;">
+                            <h4>Basic</h4>
+                        </div>
+                        <div class="card-body text-center p-0">
+                            <div class="pricing-title text-center py-2 border-bottom">
+                                <h3 class="mb-0">2 BOTTLES</h3>
+                                <p class="mb-0">60 DAYS SUPPLY</p>
+                            </div>
+                            <div class="p-4">
+                                <img src="./audileaf/img/2b.webp" class="img-fluid mb-3" alt="2 Bottles" loading="lazy">
+                                <div class="price">
+                                    <h1 class="mb-0">$89<span class="per-bottle">PER<br>BOTTLE</span></h1>
+                                </div>
+                                <div class="border-top border-bottom py-2 my-3">
+                                    <p style="font-weight: 700; color: #298f16;" class="mb-0"><i class="fas fa-check-circle me-2"></i> YOU SAVE $180!</p>
+                                </div>
+                                <div class="border-bottom py-2 mb-3">
+                                    <p class="mb-0"><i class="fas fa-check-circle text-success me-2"></i> 60 DAYS GUARANTEE</p>
+                                </div>
+                                <a href="https://xszyrk-8s.myshopify.com/cart/44535681351769:1?channel=buy_button" class="button-buy-b btn btn-danger btn-lg w-100 mb-3" onclick="(function(){ var id=genEventId(); fbq('track','AddToCart',{content_name:'AudiLeaf 2 Bottles',content_category:'Wellness',currency:'USD',value:178.00},{eventID:id}); sendCAPI('AddToCart',{content_name:'AudiLeaf 2 Bottles',content_category:'Wellness',currency:'USD',value:178.00},id); })()">BUY NOW</a>
+                                <div class="payment-methods mb-3">
+                                    <img src="./audileaf/img/cards-0326.webp" class="me-1" alt="Payment methods" loading="lazy">
+                                </div>
+                                <div class="total-price">
+                                    <p class="mb-1">Total: <span class="text-decoration-line-through">$358</span> <span class="fw-bold">$178</span></p>
+                                    <p class="mb-0">+9.99 SHIPPING</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 aos-init" data-aos="fade-up">Take Control of Your Hearing, Mind &amp; Nervous System Naturally for Lasting Peace and Balance</h2>
+            <h4 style="font-weight: 400;" class="text-center mb-5"><span style="color: #305d61;font-weight: 600;">AudiLeaf</span> makes it easier to support auditory clarity, cognitive sharpness, and overall ear wellness with a simple, effective solution.</h4>
+            <div class="row">
+                <div style="margin-top: 50px;" class="col-md-4 mb-4 aos-init" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 benefit-card">
+                        <div class="card-body text-center">
+                            <div class="icon-circle mb-3">
+                                <img src="./audileaf/img/benefits-1.webp" class="rounded-circle" alt="Icon" loading="lazy">
+                            </div>
+                            <h4>Supports Hearing Clarity Naturally</h4>
+                            <p>Stay in charge of your auditory health effortlessly, helping you enjoy peace of mind and clear sounds every single day.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 50px;" class="col-md-4 mb-4 aos-init" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 benefit-card">
+                        <div class="card-body text-center">
+                            <div class="icon-circle mb-3">
+                                <img src="./audileaf/img/benefits-2.webp" class="rounded-circle" alt="Icon" loading="lazy">
+                            </div>
+                            <h4>Boosts Cognitive Focus and Mental Calmness</h4>
+                            <p>Say goodbye to distraction, enjoying lasting clarity that keeps your mind sharp and relaxed all day long.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 50px;" class="col-md-4 mb-4 aos-init" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 benefit-card">
+                        <div class="card-body text-center">
+                            <div class="icon-circle mb-3">
+                                <img src="./audileaf/img/benefits-3.webp" class="rounded-circle" alt="Icon" loading="lazy">
+                            </div>
+                            <h4>Simple to Use, Easy to Enjoy</h4>
+                            <p>Just a few added to your daily routine for a lifetime of better hearing, sharper thinking, and calm nervous system support.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 50px;" class="col-md-4 mb-4 aos-init" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 benefit-card">
+                        <div class="card-body text-center">
+                            <div class="icon-circle mb-3">
+                                <img src="./audileaf/img/benefits-4.webp" class="rounded-circle" alt="Icon" loading="lazy">
+                            </div>
+                            <h4>Promotes Everyday Ear Comfort</h4>
+                            <p>Encourages a sense of quiet and balance, helping you feel relaxed and at ease throughout the day.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 50px;" class="col-md-4 mb-4 aos-init" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 benefit-card">
+                        <div class="card-body text-center">
+                            <div class="icon-circle mb-3">
+                                <img src="./audileaf/img/benefits-5.webp" class="rounded-circle" alt="Icon" loading="lazy">
+                            </div>
+                            <h4>Pure &amp; Natural Herbal Formula</h4>
+                            <p>Crafted from carefully selected plant extracts, free from harmful additives, delivering safe and effective results.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 50px;" class="col-md-4 mb-4 aos-init" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 benefit-card">
+                        <div class="card-body text-center">
+                            <div class="icon-circle mb-3">
+                                <img src="./audileaf/img/benefits-6.webp" class="rounded-circle" alt="Icon" loading="lazy">
+                            </div>
+                            <h4>Supports Nervous System &amp; Ear Health</h4>
+                            <p>Nourishes nerve pathways and ear function, breaking the cycle of irritation and helping you stay focused and balanced.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-3 aos-init" style="color: #305d61;" data-aos="fade-up">Why Choose AudiLeaf?</h2>
+            <p class="text-center mb-5 aos-init" data-aos="fade-up" data-aos-delay="100">Experience superior auditory, cognitive, and nervous system support with our carefully formulated blend of natural ingredients.</p>
+
+            <div style="z-index: 10000000;" class="row justify-content-center mb-4">
+                <div class="col-md-8 text-center aos-init" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="./audileaf/img/vs.webp" class="img-fluid" alt="Why Choose AudiLeaf" loading="lazy">
+                </div>
+            </div>
+
+            <div class="comparison-container aos-init" data-aos="fade-up" data-aos-delay="300">
+                <div style="max-width: 75%;margin: 0 auto;" class="row">
+                    <div class="col-md-6 aos-init" data-aos="fade-right" data-aos-delay="400">
+                        <h4 class="mb-3">AudiLeaf</h4>
+                        <ul class="list-unstyled check-list">
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Supports Hearing &amp; Auditory Clarity</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Promotes Cognitive Focus &amp; Mental Calmness</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Pure and Safe Herbal Ingredients</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Strengthens Nervous System Function</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Backed by Scientific Research</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 aos-init" data-aos="fade-left" data-aos-delay="400">
+                        <h4 class="mb-3">Competitors</h4>
+                        <ul class="list-unstyled x-list">
+                            <li><i class="fas fa-times-circle text-danger me-2"></i> Temporary or Limited Relief</li>
+                            <li><i class="fas fa-times-circle text-danger me-2"></i> Minimal Impact on Hearing or Brain Health</li>
+                            <li><i class="fas fa-times-circle text-danger me-2"></i> Often Contains Artificial Fillers</li>
+                            <li><i class="fas fa-times-circle text-danger me-2"></i> Weak Nervous System Support</li>
+                            <li><i class="fas fa-times-circle text-danger me-2"></i> Lack of Solid Clinical Foundation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 testimonials-section" style="background-color: #305d61;min-height: 500px;">
+        <div class="container aos-init" data-aos="fade-up">
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- ITEM 1 - active (primeiro depoimento) -->
+                    <div class="carousel-item active" style="min-height: 468px;">
+                        <div class="testimonial-card text-center p-4 mx-auto" style="max-width: 800px;">
+                            <div class="stars mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <h3 class="text-white">Sharper Focus and Clearer Hearing</h3>
+                            <p class="testimonial-text text-white mb-4">"The constant discomfort in my ears was really slowing me down. AudiLeaf has helped me feel clearer and more focused throughout the day. I finally feel like I can enjoy peace of mind again."</p>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img style="max-width: 200px;" src="./audileaf/img/dep-1.webp" class="rounded-circle me-3" alt="Customer" loading="lazy">
+                                <div class="text-start text-white">
+                                    <h5 style="color: #FFC107;" class="mb-0">Lisa M., Florida</h5>
+                                    <p class="mb-0">Purchased a 6 bottle kit for this review.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ITEM 2 -->
+                    <div class="carousel-item" style="min-height: 468px;">
+                        <div class="testimonial-card text-center p-4 mx-auto" style="max-width: 800px;">
+                            <div class="stars mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <h3 class="text-white">Calmer Ears and Better Sleep</h3>
+                            <p class="testimonial-text text-white mb-4">"I used to deal with constant ear discomfort every night, but AudiLeaf changed that. My sleep is so much better now, and I wake up feeling refreshed and focused. It's made a huge difference in my daily life."</p>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img style="max-width: 200px;" src="./audileaf/img/dep-2.webp" class="rounded-circle me-3" alt="Customer" loading="lazy">
+                                <div class="text-start text-white">
+                                    <h5 style="color: #FFC107;" class="mb-0">David S., New York</h5>
+                                    <p class="mb-0">Purchased a 3-bottle kit for this review.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ITEM 3 -->
+                    <div class="carousel-item" style="min-height: 468px;">
+                        <div class="testimonial-card text-center p-4 mx-auto" style="max-width: 800px;">
+                            <div class="stars mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <h3 class="text-white">More Energy and Peace Every Day</h3>
+                            <p class="testimonial-text text-white mb-4">"I used to feel drained all the time because of the constant discomfort in my ears. After starting AudiLeaf, I feel full of energy again. My mind is calmer, my focus sharper, and I can get through the day feeling balanced and refreshed."</p>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img style="max-width: 200px;" src="./audileaf/img/dep-3.webp" class="rounded-circle me-3" alt="Customer" loading="lazy">
+                                <div class="text-start text-white">
+                                    <h5 style="color: #FFC107;" class="mb-0">Michael R., Texas</h5>
+                                    <p class="mb-0">Purchased a 3-bottle kit for this review.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center mb-4 mb-md-0 aos-init" data-aos="zoom-in">
+                    <img src="./audileaf/img/garantia.webp" class="img-fluid" alt="Guarantee Badge" loading="lazy">
+                </div>
+                <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-delay="200">
+                    <h3 style="color: #305d61;">100% Money-Back Guarantee. Risk-Free 60-Day Return Policy</h3>
+                    <p>Give AudiLeaf a try with complete confidence, thanks to our 60-day satisfaction guarantee! We are certain that you'll love the results, and we want to make your decision completely worry-free. That's why we offer a full six-month (60-day) money-back guarantee.
+                    <br>
+                    <br>
+                    If for any reason you feel that AudiLeaf isn't right for you, simply return the product within 60 days, and we will refund every penny — no hidden terms, no hassle. This is our commitment to transparency, quality, and your complete satisfaction!
+                    </p>
+                    <div class="payment-icons mt-3">
+                        <img src="./audileaf/img/selos-b.webp" class="me-2" alt="Security seals" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="py-3" style="background-color: #fff;">
+        <div data-aos="fade-up" class="container text-center aos-init">
+            <h3>EVERY ORDER OF 6 BOTTLES COMES WITH FREE US SHIPPING!</h3>
+            <p class="mb-0"><strong>&#9989; 96% of Customers Choose 6 Bottles (Our Recommended Option)</strong></p>
+        </div>
+    </section>
+
+    <section class="py-3" style="background-color: rgb(0, 0, 0);color: white;">
+        <div data-aos="fade-up" class="container text-center aos-init">
+            <h3>DON'T MISS THIS LIMITED-TIME OPPORTUNITY TO STOCK UP ON AudiLeaf!<span style="color: #FFC107;">
+                SUPPLIES ARE RUNNING LOW – ORDER NOW!</span>
+            </h3>
+            <p style="font-size: 25px;font-weight: 300;padding: 10px 0;" class="mb-0"><strong>&#128230; Order 6 Bottles or 3 Bottles and Receive 2 FREE Bonuses!</strong></p>
+        </div>
+    </section>
+
+    <!-- Free Bonuses Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 aos-init" style="color: #305d61;" data-aos="fade-up">EXCLUSIVE BONUSES</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4 aos-init" data-aos="fade-right" data-aos-delay="100">
+                    <div class="card h-100 bonus-card">
+                        <div class="card-body p-4">
+                            <div class="row">
+                                <div style="width: 50%;margin-bottom: 10px;" class="col-4">
+                                    <img src="./audileaf/img/bonus-1.webp" class="img-fluid" alt="Bonus 1" loading="lazy">
+                                </div>
+                                <div style="width: 50%;margin-bottom: 10px;" class="col-8">
+                                    <h4 style="font-size: 25px;font-weight: 700;">The Quiet Mind Blueprint: Unlock Peace &amp; Clarity</h4>
+                                    <p class="mb-0"><strong>Value: <span style="text-decoration: line-through;">$67.00</span> <span style="color: #12b300;">FREE</span></strong></p>
+                                </div>
+                            </div>
+                            <p style="font-weight: 500;">A complete digital guide revealing simple yet powerful strategies to support ear and mind wellness, strengthen focus, and restore inner calm. Inside, you'll find a "Silence Ritual" for relaxation, soothing sound therapies, and daily practices that encourage lasting auditory clarity and balance.
+                                <br><br>
+                            * This is a digital download.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 aos-init" data-aos="fade-right" data-aos-delay="100">
+                    <div class="card h-100 bonus-card">
+                        <div class="card-body p-4">
+                            <div class="row">
+                                <div style="width: 50%;margin-bottom: 10px;" class="col-4">
+                                    <img src="./audileaf/img/bonus-2.webp" class="img-fluid" alt="Bonus 2" loading="lazy">
+                                </div>
+                                <div style="width: 50%;margin-bottom: 10px;" class="col-8">
+                                    <h4 style="font-size: 25px;font-weight: 700;">Ear &amp; Brain Secrets: The Essential Guide to Auditory Health</h4>
+                                    <p class="mb-0"><strong>Value: <span style="text-decoration: line-through;">$107.00</span> <span style="color: #12b300;">FREE</span></strong></p>
+                                </div>
+                            </div>
+                            <p style="font-weight: 500;">Your go-to manual for protecting and strengthening your hearing naturally. Learn daily habits that support ear circulation, promote nerve health, and encourage overall auditory wellness. Includes a "Hearing Harmony Tea" recipe, relaxation methods for calm and focus, and lifestyle strategies for lifelong clarity and balance.
+                                <br><br>
+                            * This is a digital download.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Pricing Section (repeated after bonuses) -->
+    <section id="pricing3" class="py-5 bg-light text-dark">
+        <div class="container">
+            <h2 class="text-center mb-2 aos-init" data-aos="fade-up">Claim Your Discounted AudiLeaf<sup>TM</sup> Now</h2>
+            <h3 class="text-center mb-5 aos-init" data-aos="fade-up" data-aos-delay="100">While Supplies Last</h3>
+            <div class="row d-flex flex-wrap justify-content-center">
+
+                <!-- 3 BOTTLES -->
+                <div class="col-md-4 mb-4 aos-init order-2 order-md-1" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card pricing-card h-100">
+                        <div class="card-header text-center py-3 text-white" style="background-color: #305d61;">
+                            <h4>Most Popular</h4>
+                        </div>
+                        <div class="card-body text-center p-0">
+                            <div class="pricing-title text-center py-2 border-bottom">
+                                <h3 class="mb-0">3 BOTTLES</h3>
+                                <p class="mb-0">90 DAYS SUPPLY</p>
+                            </div>
+                            <div class="p-4">
+                                <img src="./audileaf/img/3b.webp" class="img-fluid mb-3" alt="3 Bottles" loading="lazy">
+                                <div class="price">
+                                    <h1 class="mb-0">$72<span class="per-bottle">PER<br>BOTTLE</span></h1>
+                                </div>
+                                <div class="border-top border-bottom py-2 my-3">
+                                    <p style="font-weight: 700; color: #298f16;" class="mb-0"><i class="fas fa-check-circle me-2"></i> YOU SAVE $321!</p>
+                                </div>
+                                <div class="border-bottom py-2 mb-3">
+                                    <p class="mb-0"><i class="fas fa-check-circle text-success me-2"></i> 60 DAYS GUARANTEE</p>
+                                </div>
+                                <a href="https://xszyrk-8s.myshopify.com/cart/44535681417305:1?channel=buy_button" class="button-buy-b btn btn-danger btn-lg w-100 mb-3" onclick="(function(){ var id=genEventId(); fbq('track','AddToCart',{content_name:'AudiLeaf 3 Bottles',content_category:'Wellness',currency:'USD',value:216.00},{eventID:id}); sendCAPI('AddToCart',{content_name:'AudiLeaf 3 Bottles',content_category:'Wellness',currency:'USD',value:216.00},id); })()">BUY NOW</a>
+                                <div class="payment-methods mb-3">
+                                    <img src="./audileaf/img/cards-0326.webp" class="me-1" alt="Payment methods" loading="lazy">
+                                </div>
+                                <div class="total-price">
+                                    <p class="mb-1">Total: <span class="text-decoration-line-through">$537</span> <span class="fw-bold">$216</span></p>
+                                    <p class="mb-0">+ FREE US SHIPPING</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6 BOTTLES -->
+                <div class="col-md-4 mb-4 aos-init order-1 order-md-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card pricing-card h-100 popular">
+                        <div class="card-header text-center py-3 text-white" style="background-color: #305d61;">
+                            <h4>BEST VALUE!</h4>
+                        </div>
+                        <div class="card-body text-center p-0" style="background: radial-gradient(circle, #305d61 0%, #729d9d 70%); color: white;">
+                            <div class="p-4">
+                                <h3 class="mb-0 text-white">6 BOTTLES</h3>
+                                <p class="mb-0 text-white">180 DAYS SUPPLY</p>
+                                <img src="./audileaf/img/6b.webp" class="img-fluid mb-3" alt="6 Bottles" loading="lazy">
+                                <div class="price">
+                                    <h1 class="mb-0 text-white">$49<span class="per-bottle text-white">PER<br>BOTTLE</span></h1>
+                                </div>
+                                <div class="border-top border-bottom py-2 my-3" style="border-color: rgba(255, 255, 255, 0.2) !important;">
+                                    <p class="mb-0 text-white"><i class="fas fa-check-circle text-warning me-2"></i><b>YOU SAVE $1488!</b></p>
+                                </div>
+                                <div class="border-bottom py-2 mb-3" style="border-color: rgba(255, 255, 255, 0.2) !important;">
+                                    <p class="mb-0 text-white"><i class="fas fa-check-circle text-warning me-2"></i> BIGGEST DISCOUNT</p>
+                                </div>
+                                <div class="border-bottom py-2 mb-3" style="border-color: rgba(255, 255, 255, 0.2) !important;">
+                                    <p class="mb-0 text-white"><i class="fas fa-check-circle text-warning me-2"></i> 60 DAYS GUARANTEE</p>
+                                </div>
+                                <a href="https://xszyrk-8s.myshopify.com/cart/44535684235353:1?channel=buy_button" class="btn btn-warning btn-lg w-100 mb-3 text-dark fw-bold" onclick="(function(){ var id=genEventId(); fbq('track','AddToCart',{content_name:'AudiLeaf 6 Bottles',content_category:'Wellness',currency:'USD',value:294.00},{eventID:id}); sendCAPI('AddToCart',{content_name:'AudiLeaf 6 Bottles',content_category:'Wellness',currency:'USD',value:294.00},id); })()">BUY NOW</a>
+                                <div class="payment-methods mb-3">
+                                    <img src="./audileaf/img/cards-0326.webp" class="me-1" alt="Payment methods" loading="lazy">
+                                </div>
+                                <div class="total-price">
+                                    <p class="mb-1 text-white">Total: <span class="text-decoration-line-through text-white-50">$1782</span> <span class="fw-bold text-white">$294</span></p>
+                                    <p class="mb-0 text-white">+ FREE US SHIPPING</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 BOTTLES -->
+                <div class="col-md-4 mb-4 aos-init order-3 order-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card pricing-card h-100">
+                        <div class="card-header text-center py-3 text-white" style="background-color: #305d61;">
+                            <h4>Basic</h4>
+                        </div>
+                        <div class="card-body text-center p-0">
+                            <div class="pricing-title text-center py-2 border-bottom">
+                                <h3 class="mb-0">2 BOTTLES</h3>
+                                <p class="mb-0">60 DAYS SUPPLY</p>
+                            </div>
+                            <div class="p-4">
+                                <img src="./audileaf/img/2b.webp" class="img-fluid mb-3" alt="2 Bottles" loading="lazy">
+                                <div class="price">
+                                    <h1 class="mb-0">$89<span class="per-bottle">PER<br>BOTTLE</span></h1>
+                                </div>
+                                <div class="border-top border-bottom py-2 my-3">
+                                    <p style="font-weight: 700; color: #298f16;" class="mb-0"><i class="fas fa-check-circle me-2"></i> YOU SAVE $180!</p>
+                                </div>
+                                <div class="border-bottom py-2 mb-3">
+                                    <p class="mb-0"><i class="fas fa-check-circle text-success me-2"></i> 60 DAYS GUARANTEE</p>
+                                </div>
+                                <a href="https://xszyrk-8s.myshopify.com/cart/44535681351769:1?channel=buy_button" class="button-buy-b btn btn-danger btn-lg w-100 mb-3" onclick="(function(){ var id=genEventId(); fbq('track','AddToCart',{content_name:'AudiLeaf 2 Bottles',content_category:'Wellness',currency:'USD',value:178.00},{eventID:id}); sendCAPI('AddToCart',{content_name:'AudiLeaf 2 Bottles',content_category:'Wellness',currency:'USD',value:178.00},id); })()">BUY NOW</a>
+                                <div class="payment-methods mb-3">
+                                    <img src="./audileaf/img/cards-0326.webp" class="me-1" alt="Payment methods" loading="lazy">
+                                </div>
+                                <div class="total-price">
+                                    <p class="mb-1">Total: <span class="text-decoration-line-through">$358</span> <span class="fw-bold">$178</span></p>
+                                    <p class="mb-0">+9.99 SHIPPING</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 aos-init" style="color: #305d61;" data-aos="fade-up">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item mb-3 aos-init" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Is AudiLeaf a Genuine Product?
+                        </button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes! AudiLeaf is made from carefully selected natural ingredients, produced under strict quality standards in GMP-certified facilities. It's a trusted formula designed to support hearing clarity.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-3 aos-init" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Can I Take AudiLeaf Alongside Other Supplements?
+                        </button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                           Absolutely. AudiLeaf is safe to use with most other supplements. However, if you are currently taking prescription medication or have a medical condition, it's always best to consult your healthcare provider first.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-3 aos-init" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Will AudiLeaf Be Effective for Me?
+                        </button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Many users report noticeable improvements in hearing clarity and better focus after consistent use. Results vary by individual, but AudiLeaf is designed to work gently and effectively over time.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-3 aos-init" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            What If AudiLeaf Doesn't Meet My Expectations?
+                        </button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            No worries! Every order is backed by our 60-day money-back guarantee. If you're not fully satisfied with your results, simply return your bottles for a complete refund — no questions asked.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-3 aos-init" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            How Many Bottles Should I Purchase?
+                        </button>
+                    </h3>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            For best results, we recommend at least 3 to 6 bottles of AudiLeaf. This ensures consistent use over several months, giving your body the time it needs to absorb and maximize the formula's benefits.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-3 aos-init" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                            How Quickly Will I Receive My Order?
+                        </button>
+                    </h3>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            All orders are processed immediately. You can expect delivery within 5–7 business days in the U.S. International orders may take slightly longer depending on your location.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-3 aos-init" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                            What Should I Do Next?
+                        </button>
+                    </h3>
+                    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Simply choose the package that's right for you below, place your order, and start your journey to enhanced clarity, balanced calm, and overall well-being with AudiLeaf.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center mb-3">
+                    <a href="https://audileaf.com/info/contact.html" class="text-white me-3">Contact</a>
+                    <a href="https://audileaf.com/info/privacy.html" class="text-white me-3">Privacy</a>
+                    <a href="https://audileaf.com/info/terms.html" class="text-white me-3">Terms</a>
+                    <a href="https://audileaf.com/info/refund.html" class="text-white me-3">Refund</a>
+                    <a href="https://audileaf.com/info/shipping.html" class="text-white me-3">Shipping</a>
+                    <a href="https://audileaf.com/info/disclaimer.html" class="text-white">Disclaimer</a>
+                </div>
+                <span id="disclaimer">
+                    <div style="background:#000;color:#ddd;font-family:Verdana;font-size:11px;text-align:justify;line-height:1.4;padding:15px 10px;box-sizing:border-box;display: inline-block;width: 100%;">
+                    <div style="display:flex;margin: 0 auto;align-items:center;justify-content:center;max-width: 1200px;">
+                    <div class="col-12 col-md-8" style="flex:1 1 500px; min-width:280px; padding:10px; text-align:justify;">
+                        Statements on this website have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure or prevent any disease.</div></div></div></span>
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">&copy; 2026 AudiLeaf. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- JS Dependencies -->
+
+
+
+
+</div>
+<!-- UTM Passthrough to Shopify -->
+<script>
+(function() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'src', 'vid1', 'vid2', 'vid3'];
+  var extraParams = '';
+
+  utmParams.forEach(function(param) {
+    var value = urlParams.get(param);
+    if (value) {
+      extraParams += '&' + param + '=' + encodeURIComponent(value);
+    }
+  });
+
+  if (extraParams) {
+    var links = document.querySelectorAll('a[href*="/cart/"]');
+    links.forEach(function(link) {
+      link.href = link.href + extraParams;
+    });
+  }
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+(function () {
+	if (typeof AOS === 'undefined') return;
+	AOS.init({ easing: 'ease-in-out', duration: 800, delay: 0 });
+	// o bloco nasce display:none (.esconder) — quando o VTurb revelar no pitch,
+	// o AOS precisa recalcular as posicoes, senao o conteudo fica em opacity 0.
+	var lp = document.getElementById('audileaf-lp');
+	if (!lp || typeof MutationObserver === 'undefined') return;
+	new MutationObserver(function () {
+		if (lp.offsetParent !== null) { AOS.refreshHard(); }
+	}).observe(lp, { attributes: true, attributeFilter: ['class', 'style'] });
+})();
+</script>
+<!-- ============ END — BLOCO DE OFERTA AUDILEAF ============ -->
+<div class="a-b-o-cont a-b-o-cont--legacy-margin atomicat-container-a6d5463"><!-- container - ch1qaq --><style>.atomicat-container-a6d5463>.a-o-cont>.a-cont{flex-direction:column}.a-b-cont .atomicat-container-a6d5463.a-b-o-cont{background-size:cover;background-repeat:no-repeat;background-position:center}@media screen and (max-width:480px){.a-b-cont .atomicat-container-a6d5463.a-b-o-cont{margin-bottom:30px}}</style><div class="a-o-cont a-cont-b"><div class="a-i-cont a-cont"><div class="atomicat-container-7957788 a-b-o-cont a-b-o-cont--legacy-margin"><style>.atomicat-container-7957788>.a-o-cont>.a-cont{flex-direction:column}.a-b-cont .atomicat-container-7957788.a-b-o-cont{background-size:cover;background-repeat:no-repeat;background-position:center;width:100%}@media screen and (max-width:480px){.a-b-cont .atomicat-container-7957788.a-b-o-cont{width:100%}}</style><div class="a-o-cont a-cont-f-w"><div class="a-i-cont a-cont a-s-d-8pbeyj"><div class="a-c-cont a-c-cont-e6cd642 a-r"><style></style><div class="a-u-3 a-html-e6cd642 atomicat-element-container-e6cd642 a-r a-html a-e-cont atomicat-html a-s-d-pzhtn9" data-hex="Xwj64Tkf1"><div class="a-i-e-cont"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>.fb-group-container *{box-sizing:border-box}.fb-group-container{background-color:#fff;font-family:'Segoe UI',Helvetica,Arial,sans-serif;max-width:800px;margin:20px auto 50px;padding:15px;border:1px solid #ddd;border-radius:8px}.fb-header-info{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid #e4e6eb;margin-bottom:15px}.fb-stat-count{color:#65676b;font-size:15px;font-weight:600}.fb-stat-count i{color:#1877f2;margin-left:5px}.fb-thread{margin-bottom:15px}.fb-comment-row{display:flex;gap:8px;margin-bottom:4px}.fb-face{width:38px;height:38px;flex-shrink:0}.fb-face img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:1px solid #eee}.fb-bubble-block{max-width:88%}.fb-bubble-content{background-color:#f0f2f5;padding:10px 14px;border-radius:18px;position:relative;display:inline-block}.fb-user-name{color:#050505;font-weight:600;font-size:13px;cursor:pointer;display:block;text-decoration:none;margin-bottom:2px}.fb-user-name:hover{text-decoration:underline}.fb-msg-text{color:#1c1e21;font-size:15px;line-height:1.35;font-weight:400}.fb-tag{color:#1877f2;font-weight:600;cursor:pointer;text-decoration:none}.fb-tag:hover{text-decoration:underline}.fb-footer-actions{display:flex;gap:12px;margin-left:14px;margin-top:2px;margin-bottom:6px}.fb-action-link{font-size:12px;font-weight:700;color:#65676b;cursor:pointer;text-decoration:none}.fb-action-link:hover{text-decoration:underline}.fb-time{font-size:12px;color:#65676b;font-weight:400}.fb-badge-likes{position:absolute;bottom:-8px;right:-10px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.2);padding:2px 5px;display:flex;align-items:center;gap:3px;font-size:11px;color:#65676b;z-index:2;border:1px solid #fff}.icon-thumb{background:#1877f2;color:#fff;border-radius:50%;padding:3px;width:16px;height:16px;display:flex;align-items:center;justify-content:center;font-size:9px}.icon-heart{background:#f23e5c;color:#fff;border-radius:50%;padding:3px;width:16px;height:16px;display:flex;align-items:center;justify-content:center;font-size:9px}.fb-reply-thread{margin-left:48px;border-left:2px solid #f0f2f5;padding-left:10px}.fb-reply-row{display:flex;gap:8px;margin-bottom:4px;margin-top:6px}.fb-reply-row .fb-face{width:28px;height:28px}.fb-reply-row .fb-msg-text{font-size:14px}.fb-closed-notice{margin-top:30px;padding-top:20px;border-top:1px solid #e4e6eb;text-align:center;background-color:#f9fafb;padding:15px;border-radius:6px}.fb-closed-text{color:#65676b;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px}@media (max-width:480px){.fb-group-container{padding:10px;border:none;margin-bottom:20px}.fb-reply-thread{margin-left:30px;border:none;padding-left:0}.fb-bubble-content{padding:8px 12px}}</style><div class="fb-group-container"><div class="fb-header-info"><span class="fb-stat-count">Showing 9 of 552 comments</span> <span class="fb-stat-count">Most Relevant <i class="fa-caret-down fas"></i></span></div><!-- Eleanor Vance --><div class="fb-thread"><div class="fb-comment-row"><div class="fb-face"><img src="./audileaf/avatars/eleanor.webp" alt="Eleanor" loading="lazy" decoding="async"></div><div class="fb-bubble-block"><div class="fb-bubble-content"><a class="fb-user-name" id="7e88158b-4fc3-fa33-f5ef-3df1195784be">Eleanor Vance</a><div class="fb-msg-text">I'm so glad I watched this till the end. Super happy!!! Thank you to the specialist. That constant ringing was driving me mad, I couldn't sleep and I thought I'd end up isolated from my own family. But after trying this protocol, the silence is golden. My mind feels clearer than it has in 20 years! God bless you!</div><div class="fb-badge-likes"><i class="icon-thumb fas fa-thumbs-up"></i><i class="icon-heart fas fa-heart"></i> 13</div></div><div class="fb-footer-actions"><span class="fb-action-link">Like</span> <span class="fb-action-link">Reply</span> <span class="fb-time">13 m</span></div></div></div><div class="fb-reply-thread"><div class="fb-reply-row"><div class="fb-face"><img src="./audileaf/avatars/david.webp" alt="David" loading="lazy" decoding="async"></div><div class="fb-bubble-block"><div class="fb-bubble-content"><a class="fb-user-name" id="d7b08105-f4f7-a922-2a7d-aa9954e73104">David Peterson</a><div class="fb-msg-text"><span class="fb-tag">@Eleanor Vance</span> Same here! My doctor told me I just had to live with it. But after I tried it, I saw that it works. I can finally watch a movie with my wife without the volume blasting. This method really rocks!!</div><div class="fb-badge-likes"><i class="icon-thumb fas fa-thumbs-up"></i> 18</div></div><div class="fb-footer-actions"><span class="fb-action-link">Like</span> <span class="fb-action-link">Reply</span> <span class="fb-time">3 m</span></div></div></div></div></div><!-- Sarah Jenkins --><div class="fb-thread"><div class="fb-comment-row"><div class="fb-face"><img src="./audileaf/avatars/sarah.webp" alt="Sarah" loading="lazy" decoding="async"></div><div class="fb-bubble-block"><div class="fb-bubble-content"><a class="fb-user-name" id="e916f400-8a96-d007-6045-a8eb89e1786a">Sarah Jenkins</a><div class="fb-msg-text">My father has suffered with tinnitus for over 5 years. He became so irritable and withdrawn. And this natural discovery has simply given him his life back. He's smiling and engaging in conversations again. 🙏</div><div class="fb-badge-likes"><i class="fa-heart fas icon-heart"></i> 9</div></div><div class="fb-footer-actions"><span class="fb-action-link">Like</span> <span class="fb-action-link">Reply</span> <span class="fb-time">24 m</span></div></div></div><div class="fb-reply-thread"><div class="fb-reply-row"><div class="fb-face"><img src="./audileaf/avatars/robert.webp" alt="Robert" loading="lazy" decoding="async"></div><div class="fb-bubble-block"><div class="fb-bubble-content"><a class="fb-user-name" id="735b94d1-18ee-adf0-b2ec-dc62ba32d2e2">Robert Miller</a><div class="fb-msg-text">So happy for your father! I get emotional just thinking about how I can finally enjoy silence again after years of suffering. This truly feels like a miracle.</div><div class="fb-badge-likes"><i class="fa-thumbs-up fas icon-thumb"></i> 3</div></div><div class="fb-footer-actions"><span class="fb-action-link">Like</span> <span class="fb-action-link">Reply</span> <span class="fb-time">16 m</span></div></div></div><div class="fb-reply-row"><div class="fb-face"><img src="./audileaf/avatars/sarah-2.webp" alt="Sarah" loading="lazy" decoding="async"></div><div class="fb-bubble-block"><div class="fb-bubble-content"><a class="fb-user-name" id="d28855f7-3e47-bffc-8697-e8b884a022c6">Sarah Jenkins</a><div class="fb-msg-text"><span class="fb-tag">@Robert Miller</span> Thank you! I'm so glad you found relief too ❤️</div></div><div class="fb-footer-actions"><span class="fb-action-link">Like</span> <span class="fb-action-link">Reply</span> <span class="fb-time">11 m</span></div></div></div></div></div><!-- Brenda Walsh --><div class="fb-thread"><div class="fb-comment-row"><div class="fb-face"><img src="./audileaf/avatars/brenda.webp" alt="Brenda" loading="lazy" decoding="async"></div><div class="fb-bubble-block"><div class="fb-bubble-content"><a class="fb-user-name" id="474799fb-0706-0111-9892-abb49ae6abc2">Brenda Walsh</a><div class="fb-msg-text">I always thought this stuff about a natural cure for tinnitus was a bunch of nonsense, I'd already spent thousands on hearing aids that did nothing. I'm so happy to eat my words. If I'd known about this earlier, I would've tried it a long time ago!</div><div class="fb-badge-likes"><i class="icon-thumb fa-thumbs-up fas"></i><i class="fas fa-heart icon-heart"></i> 5</div></div><div class="fb-footer-actions"><span class="fb-action-link">Like</span> <span class="fb-action-link">Reply</span> <span class="fb-time">26 m</span></div></div></div></div><!-- Kevin O'Malley --><div class="fb-thread"><div class="fb-comment-row"><div class="fb-face"><img src="./audileaf/avatars/kevin.webp" alt="Kevin" loading="lazy" decoding="async"></div><div class="fb-bubble-block"><div class="fb-bubble-content"><a class="fb-user-name" id="67f5577d-a4d5-a38c-0230-9c2780b6bb14">Kevin O'Malley</a><div class="fb-msg-text">I thought this was a scam, but the constant hiss in my head is actually gone. Can't believe it 😳</div><div class="fb-badge-likes"><i class="fa-thumbs-up fas icon-thumb"></i> 10</div></div><div class="fb-footer-actions"><span class="fb-action-link">Like</span> <span class="fb-action-link">Reply</span> <span class="fb-time">1 h</span></div></div></div><div class="fb-reply-thread"><div class="fb-reply-row"><div class="fb-face"><img src="./audileaf/avatars/maria.webp" alt="Maria" loading="lazy" decoding="async"></div><div class="fb-bubble-block"><div class="fb-bubble-content"><a class="fb-user-name" id="f40da064-bf19-bc79-1d30-a5ec84f7e372">Maria Garcia</a><div class="fb-msg-text">I tried this natural method everyone's talking about, and it's working for my mom! She's finally sleeping through the night. 🙌</div><div class="fb-badge-likes"><i class="icon-heart fa-heart fas"></i> 9</div></div><div class="fb-footer-actions"><span class="fb-action-link">Like</span> <span class="fb-action-link">Reply</span> <span class="fb-time">47 m</span></div></div></div></div></div><!-- Tom Henderson --><div class="fb-thread"><div class="fb-comment-row"><div class="fb-face"><img src="./audileaf/avatars/tom.webp" alt="Tom" loading="lazy" decoding="async"></div><div class="fb-bubble-block"><div class="fb-bubble-content"><a class="fb-user-name" id="5ff9463a-d94f-4c8a-9695-d547a916d6ed">Tom Henderson</a><div class="fb-msg-text"><span class="fb-tag">@Mark Finley</span> this is what I was telling you about, it worked for my uncle.</div><div class="fb-badge-likes"><i class="fas fa-thumbs-up icon-thumb"></i> 4</div></div><div class="fb-footer-actions"><span class="fb-action-link">Like</span> <span class="fb-action-link">Reply</span> <span class="fb-time">1 h</span></div></div></div></div><div class="fb-closed-notice"><div class="fb-closed-text"><i class="fa-lock fas"></i> This post is no longer receiving comments!</div></div></div></div></div></div></div></div></div></div></div></div><div class="a-b-o-cont a-b-o-cont--legacy-margin atomicat-container-b82775f a-s-d-si3iyd"><style>.atomicat-container-b82775f>.a-o-cont{padding-top:40px;padding-bottom:40px}@media screen and (max-width:480px){.atomicat-container-b82775f>.a-o-cont{padding-right:30px;padding-left:30px}}.atomicat-container-b82775f>.a-o-cont>.a-cont{flex-direction:row}.a-b-cont .atomicat-container-b82775f.a-b-o-cont{background:#1f1929;background-size:cover;background-repeat:no-repeat;background-position:center}</style><div class="a-cont-b a-o-cont a-s-d-aqsqpp"><div class="a-cont a-i-cont a-s-d-pj2t3y"><div class="a-u-1 atomicat-container-bf21358 a-b-o-cont--legacy-margin a-b-o-cont a-s-d-p7u657" data-hex="as6sxZwAK6"><!-- container - udij92 --><style>.atomicat-container-bf21358>.a-o-cont>.a-cont{flex-direction:column}.a-b-cont .atomicat-container-bf21358.a-b-o-cont{background-size:cover;background-repeat:no-repeat;background-position:center;width:100%}@media screen and (max-width:480px){.a-b-cont .atomicat-container-bf21358.a-b-o-cont{width:100%}}</style><div class="a-o-cont a-cont-f-w"><div class="a-cont a-i-cont"><div class="a-r a-c-cont a-c-cont-6386859"><style>.a-e-cont.atomicat-heading-title-6386859 h1:hover{-webkit-text-fill-color:unset}.a-e-cont.atomicat-heading-title-6386859 h1{text-align:center;font-weight:500;font-size:14px;color:#fff}@media screen and (max-width:480px){.a-e-cont.atomicat-heading-title-6386859 h1{line-height:30px;text-align:center;font-size:14px}}.a-c-cont-6386859>.a-e-cont{margin-bottom:0;padding-bottom:0}@media screen and (max-width:480px){.a-c-cont-6386859>.a-e-cont{margin-right:0;padding-left:0;margin-left:0;padding-bottom:0;padding-right:0}}</style><div class="atomicat-element-container-6386859 atomicat-heading-title-6386859 a-r a-s-d-3z15ej a-e-cont atomicat-text-6386859 atomicat-heading-title a-u-2" data-hex="V8bp5Mqjb"><h1 class="a-i-e-cont"><p>All Rights Reserved © 2026</p></h1></div></div></div></div></div></div></div></div></div><script>!function(){function t(t=document){let e=window.location.search;e&&t.querySelectorAll("a").forEach(t=>{if(function t(e){let r=e.getAttribute("href")||"";return!!(!r||r.startsWith("#")||/^javascript:/i.test(r))}(t))return;let r=t.getAttribute("href"),n;try{n=new URL(r,location.origin)}catch{return}!function t(e,r){if(!r)return e;let n=new URLSearchParams(e.search),a=new URLSearchParams;n.forEach((t,e)=>{a.has(e)||a.set(e,t)});let o=new URLSearchParams(r);return o.forEach((t,e)=>{a.has(e)||a.set(e,t)}),e.search=a.toString(),e}(n,e),function t(e,r,n){if(r.startsWith("//")){e.setAttribute("href","//"+n.host+n.pathname+(n.search||"")+(n.hash||""));return}if(/^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(r)){e.setAttribute("href",n.toString());return}e.setAttribute("href",n.pathname+(n.search||"")+(n.hash||""))}(t,r,n)})}document.addEventListener("DOMContentLoaded",()=>{t();let e=new MutationObserver(e=>{for(let r of e)for(let n of r.addedNodes)1===n.nodeType&&("A"===n.tagName?t(n.parentNode||document):n.querySelectorAll&&t(n))});e.observe(document.body,{childList:!0,subtree:!0})})}();</script><script type="application/json">{"atm": "city"}</script><script type="text/javascript" defer="defer">document.body.appendChild(Object.assign(document.createElement("script"), {src: "https://cdn.atomicatpages.net/cdn/a.js?cache=" + Date.now(),async: true,defer: true}));</script><script src="./teste vturb_files/a.js" async="" defer=""></script><script src="./teste vturb_files/isnmIC5290090.js" charset="utf-8" id="a-js" defer="defer"></script></body></html>

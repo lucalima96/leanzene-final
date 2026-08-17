@@ -1,0 +1,743 @@
+#audileaf-lp{
+    --primary-color: #305d61;
+    --secondary-color: #d7bb52;
+    --light-bg: #f8f8f8;
+    --dark-bg: #333;
+    --white: #fff;
+    --black: #000;
+    --price-red: #8B0000;
+    --red-accent: #E44D26;
+    --font-size-base: 1.05rem;
+    --font-size-medium: 1.15rem;
+    --font-size-large: 1.25rem;
+}
+#audileaf-lp{
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+#audileaf-lp{
+    font-family: 'Montserrat', 'Roboto', 'Segoe UI', sans-serif;
+    color: #333;
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+}
+#audileaf-lp img{
+    max-width: 100%;
+    height: auto;
+}
+#audileaf-lp .container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width: 576px){#audileaf-lp .container{
+        max-width: 540px;
+    }}
+@media (min-width: 768px){#audileaf-lp .container{
+        max-width: 720px;
+    }}
+@media (min-width: 992px){#audileaf-lp .container{
+        max-width: 960px;
+    }}
+@media (min-width: 1200px){#audileaf-lp .container{
+        max-width: 1140px;
+    }}
+#audileaf-lp h1, #audileaf-lp h2, #audileaf-lp h3, #audileaf-lp h4, #audileaf-lp h5, #audileaf-lp h6{
+    font-weight: 700;
+    line-height: 1.3;
+}
+#audileaf-lp h1{
+    font-size: 3rem;
+}
+#audileaf-lp h2{
+    font-size: 2.5rem;
+}
+#audileaf-lp h3{
+    font-size: 2rem;
+}
+#audileaf-lp h4{
+    font-size: 1.5rem;
+}
+#audileaf-lp p{
+    margin-bottom: 1.2rem;
+}
+#audileaf-lp .btn{
+    font-weight: 600;
+    font-size: var(--font-size-medium);
+    padding: 0.6rem 1.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+#audileaf-lp .btn-lg{
+    font-size: var(--font-size-large);
+    padding: 0.8rem 2rem;
+}
+#audileaf-lp .btn-primary{
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+#audileaf-lp .btn-primary:hover{
+    background-color: #4a1382;
+    border-color: #4a1382;
+}
+#audileaf-lp .btn-warning{
+    background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;
+    border-color: var(--secondary-color);
+    color: var(--black);
+}
+#audileaf-lp .btn-warning:hover{
+    background-color: #c5aa48;
+    border-color: #c5aa48;
+    color: var(--black);
+}
+#audileaf-lp .navbar-brand{
+    font-weight: 700;
+    font-size: 2rem;
+}
+#audileaf-lp .nav-link{
+    font-size: var(--font-size-medium);
+    font-weight: 500;
+}
+#audileaf-lp .hero-section{
+    background-image: linear-gradient(to right, #3e767b, #aec6c6);
+}
+#audileaf-lp .hero-section h1{
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+#audileaf-lp .hero-section p{
+    font-size: var(--font-size-large);
+}
+#audileaf-lp .benefit-card{
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--primary-color);
+    color: var(--white);
+    transition: transform 0.3s ease;
+}
+#audileaf-lp .benefit-card:hover{
+    transform: translateY(-5px);
+}
+#audileaf-lp .benefit-card h4{
+    margin-bottom: 1rem;
+}
+#audileaf-lp .icon-circle{
+    width: 80px;
+    height: 80px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: -50px auto 10px auto;
+}
+#audileaf-lp .ingredient-card{
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+#audileaf-lp .ingredient-card:hover{
+    transform: translateY(-5px);
+}
+#audileaf-lp .comparison-box{
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#audileaf-lp .check-list li, #audileaf-lp .x-list li{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    font-size: var(--font-size-medium);
+}
+#audileaf-lp .check-list i, #audileaf-lp .x-list i{
+    margin-top: 3px;
+}
+#audileaf-lp .product-comparison{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+#audileaf-lp .product-image{
+    width: 180px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+#audileaf-lp .product-image:hover{
+    transform: translateY(-5px);
+}
+#audileaf-lp .vs-badge{
+    width: 60px;
+    height: 60px;
+    background-color: var(--red-accent);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+#audileaf-lp .comparison-container{
+    border: 2px dashed #ddd;
+    border-radius: 15px;
+    padding: 30px;
+    background-color: white;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+#audileaf-lp .comparison-container h4{
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+#audileaf-lp .check-list i{
+    color: #42b983;
+    font-size: 20px;
+}
+#audileaf-lp .x-list i{
+    color: var(--red-accent);
+    font-size: 20px;
+}
+#audileaf-lp .pricing-card{
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+#audileaf-lp .pricing-card:hover{
+    transform: translateY(-10px);
+}
+#audileaf-lp .pricing-card.popular{
+    transform: scale(1.02);
+    position: relative;
+    z-index: 1;
+    border: 2px solid var(--secondary-color);
+}
+#audileaf-lp .pricing-card.popular:hover{
+    transform: scale(1.05);
+}
+#audileaf-lp .pricing-title{
+    background-color: #f8f8f8;
+}
+#audileaf-lp .price{
+    margin: 15px 0;
+}
+#audileaf-lp .price h1{
+    font-size: 4.5rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+#audileaf-lp .per-bottle{
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 600;
+    display: inline-block;
+    text-align: left;
+    padding-left: 5px;
+}
+#audileaf-lp .payment-methods img{
+    width: auto;
+    object-fit: contain;
+}
+#audileaf-lp .total-price{
+    font-size: 1.3rem;
+}
+#audileaf-lp .testimonials-section{
+    padding: 50px 0;
+}
+#audileaf-lp .carousel-inner{
+    min-height: 300px;
+    position: relative;
+}
+#audileaf-lp .carousel-item{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    padding: 0 15px;
+}
+#audileaf-lp .carousel-item.active{
+    position: relative;
+    opacity: 1;
+}
+#audileaf-lp .testimonial-card{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#audileaf-lp .testimonial-text{
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+}
+#audileaf-lp .accordion-item{
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border: none;
+    margin-bottom: 1rem;
+}
+#audileaf-lp .accordion-button{
+    background-color: var(--white);
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: var(--font-size-medium);
+    padding: 1.2rem;
+}
+#audileaf-lp .accordion-button:not(.collapsed){
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+#audileaf-lp .accordion-button:focus{
+    box-shadow: none;
+    border-color: var(--primary-color);
+}
+#audileaf-lp .accordion-body{
+    font-size: var(--font-size-base);
+    padding: 1.2rem;
+    line-height: 1.6;
+}
+#audileaf-lp .bonus-card{
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+#audileaf-lp .bonus-badge{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--secondary-color);
+    color: var(--black);
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 30px;
+    z-index: 1;
+    font-size: var(--font-size-base);
+}
+#audileaf-lp .bonus-card .card-body .row{
+    display: flex;
+    flex-wrap: wrap;
+}
+#audileaf-lp .bonus-card .card-body h4{
+    margin-top: 0;
+}
+@media (max-width: 767px){#audileaf-lp .bonus-card .card-body .row{
+        flex-direction: column;
+    }
+#audileaf-lp .bonus-card .card-body .row > div{
+        width: 100% !important;
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+#audileaf-lp .bonus-card .card-body .row > div:first-child{
+        order: 1;
+        text-align: center;
+    }
+#audileaf-lp .bonus-card .card-body .row > div:nth-child(2){
+        order: 2;
+        text-align: center;
+    }
+#audileaf-lp .bonus-card .card-body .row img{
+        max-width: 200px;
+        margin: 0 auto 15px;
+        display: block;
+    }
+#audileaf-lp .bonus-card h4{
+        font-size: 22px !important;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+#audileaf-lp .bonus-card .card-body p:last-of-type{
+        text-align: left;
+        margin-top: 15px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+#audileaf-lp .bonus-card .card-body .row{
+        display: grid;
+        grid-template-rows: auto auto;
+    }}
+#audileaf-lp footer a{
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: var(--font-size-base);
+}
+#audileaf-lp footer a:hover{
+    color: var(--secondary-color) !important;
+}
+@media (max-width: 768px){#audileaf-lp{
+        --font-size-base: 1rem;
+        --font-size-medium: 1.1rem;
+        --font-size-large: 1.2rem;
+    }
+#audileaf-lp h1{
+        font-size: 2.5rem;
+    }
+#audileaf-lp h2{
+        font-size: 2rem;
+    }
+#audileaf-lp h3{
+        font-size: 1.75rem;
+    }
+#audileaf-lp .hero-section h1{
+        font-size: 2.8rem;
+    }
+#audileaf-lp .container{
+        width: 100%;
+        max-width: 100% !important;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+#audileaf-lp .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+#audileaf-lp .row > [class*="col-"]{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+#audileaf-lp .comparison-container{
+        padding: 15px 10px;
+        width: 100%;
+    }
+#audileaf-lp .vs-badge{
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        margin: 0 5px;
+    }
+#audileaf-lp .product-image{
+        width: 100px;
+    }
+#audileaf-lp .comparison-container ul li{
+        font-size: 0.95rem;
+        word-wrap: break-word;
+    }
+#audileaf-lp .check-list i, #audileaf-lp .x-list i{
+        font-size: 16px;
+    }
+#audileaf-lp .pricing-card{
+        width: 100%;
+    }
+#audileaf-lp .pricing-card .p-4{
+        padding: 1rem !important;
+    }
+#audileaf-lp .price h1{
+        font-size: 2.8rem;
+    }
+#audileaf-lp .per-bottle{
+        font-size: 0.8rem;
+        right: -40px;
+        top: 12px;
+    }
+#audileaf-lp .pricing-card.popular{
+        transform: scale(1);
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+#audileaf-lp .pricing-card.popular:hover{
+        transform: translateY(-10px);
+    }
+#audileaf-lp .testimonial-text{
+        font-size: 1.1rem;
+    }
+#audileaf-lp [data-aos-delay]{
+        transition-delay: 0s !important;
+    }
+#audileaf-lp .carousel-inner{
+        min-height: 360px;
+    }
+#audileaf-lp .testimonial-text{
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+#audileaf-lp .testimonial-card .d-flex{
+        flex-direction: column;
+        text-align: center;
+        align-items: center !important;
+        margin-top: 20px;
+    }
+#audileaf-lp .testimonial-card .d-flex img{
+        margin-right: 0 !important;
+        margin-bottom: 15px;
+        max-width: 120px !important;
+        border: 3px solid rgba(255, 255, 255, 0.2);
+    }
+#audileaf-lp .testimonial-card .text-start{
+        text-align: center !important;
+        width: 100%;
+    }
+#audileaf-lp .carousel-inner{
+        min-height: 520px;
+    }
+#audileaf-lp .testimonial-card h3{
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+#audileaf-lp .testimonial-card .testimonial-text{
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+#audileaf-lp .testimonials-section{
+        overflow: hidden;
+    }}
+@media (max-width: 576px){#audileaf-lp .col-md-6, #audileaf-lp .col-md-4, #audileaf-lp .col-md-8, #audileaf-lp .col-md-3, #audileaf-lp .col-md-9{
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+#audileaf-lp .product-comparison{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+#audileaf-lp .product-image{
+        width: 80px;
+    }
+#audileaf-lp .vs-badge{
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+#audileaf-lp .comparison-container{
+        border-width: 1px;
+    }
+#audileaf-lp *{
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+#audileaf-lp .carousel-inner{
+        min-height: 560px;
+    }
+#audileaf-lp .testimonial-card{
+        padding: 1rem !important;
+    }
+#audileaf-lp .testimonial-card .stars i{
+        font-size: 14px;
+    }
+#audileaf-lp .testimonial-card h3{
+        font-size: 1.3rem;
+    }
+#audileaf-lp .testimonial-card .d-flex img{
+        max-width: 100px !important;
+    }
+#audileaf-lp .testimonial-card h5{
+        font-size: 1.1rem;
+    }
+#audileaf-lp .testimonial-card .d-flex p{
+        font-size: 0.9rem;
+    }}
+@keyframes pulse{
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+#audileaf-lp #countdown{
+    animation: pulse 1s infinite;
+    font-weight: bold;
+    color: var(--white);
+    font-size: var(--font-size-large);
+}
+#audileaf-lp .button-buy-b{
+    background: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;
+    color: #000;
+    border: none;
+}
+#audileaf-lp .button-buy-b:hover{
+    background: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;
+    color: #000;
+}
+#audileaf-lp .carousel-control-prev, #audileaf-lp .carousel-control-next{
+    width: 8%;
+    opacity: 0.8;
+}
+#audileaf-lp .carousel-control-prev:hover, #audileaf-lp .carousel-control-next:hover{
+    opacity: 1;
+}
+#audileaf-lp .carousel-indicators{
+    bottom: -40px;
+}
+#audileaf-lp .carousel-indicators button{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 0 5px;
+    opacity: 0.7;
+}
+#audileaf-lp .carousel-indicators .active{
+    background-color: var(--white);
+    opacity: 1;
+}
+#audileaf-lp .testimonial-card .card-body{
+    padding: 25px;
+}
+#audileaf-lp .testimonial-author{
+    margin-top: 15px;
+    font-weight: 600;
+}
+#audileaf-lp .verified-badge{
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+@media (min-width: 992px){#audileaf-lp .carousel-inner{
+        min-height: 280px;
+    }}
+@media (max-width: 576px){#audileaf-lp .carousel-inner{
+        min-height: 420px;
+    }
+#audileaf-lp .carousel-control-prev, #audileaf-lp .carousel-control-next{
+        width: 12%;
+    }
+#audileaf-lp .testimonial-card .card-body{
+        padding: 20px 15px;
+    }}
+#audileaf-lp footer .footer-disclaimer-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#audileaf-lp footer .footer-disclaimer-row .col-md-4, #audileaf-lp footer .footer-disclaimer-row .col-md-8{
+  width: 100%;
+  text-align: center;
+}
+@media (max-width: 768px){#audileaf-lp footer .row{
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+#audileaf-lp footer img{
+    display: block;
+    margin: 0 auto 16px auto;
+    max-width: 160px;
+  }
+#audileaf-lp footer p, #audileaf-lp footer div{
+    text-align: center !important;
+  }
+#audileaf-lp .footer-bottom{
+    flex-direction: column !important;
+    gap: 12px;
+  }}
+#audileaf-lp{
+    --primary-color: #305d61;
+    --secondary-color: #d7bb52;
+    --light-bg: #f8f8f8;
+    --dark-bg: #333;
+    --white: #fff;
+    --black: #000;
+    --price-red: #8B0000;
+    --red-accent: #E44D26;
+    --font-size-base: 1.05rem;
+    --font-size-medium: 1.15rem;
+    --font-size-large: 1.25rem;
+}
+#audileaf-lp{ overflow-x: hidden; width: 100%; position: relative; }
+#audileaf-lp{ font-family: 'Montserrat', 'Roboto', 'Segoe UI', sans-serif; color: #333; font-size: var(--font-size-base); line-height: 1.6; background: #fff; margin: 0; padding: 0; }
+#audileaf-lp img{ max-width: 100%; height: auto; }
+#audileaf-lp .container{ width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; }
+@media (min-width: 576px){#audileaf-lp .container{ max-width: 540px; }}
+@media (min-width: 768px){#audileaf-lp .container{ max-width: 720px; }}
+@media (min-width: 992px){#audileaf-lp .container{ max-width: 960px; }}
+@media (min-width: 1200px){#audileaf-lp .container{ max-width: 1140px; }}
+#audileaf-lp h1, #audileaf-lp h2, #audileaf-lp h3, #audileaf-lp h4, #audileaf-lp h5, #audileaf-lp h6{ font-weight: 700; line-height: 1.3; }
+#audileaf-lp h1{ font-size: 3rem; }
+#audileaf-lp h2{ font-size: 2.5rem; }
+#audileaf-lp h3{ font-size: 2rem; }
+#audileaf-lp h4{ font-size: 1.5rem; }
+#audileaf-lp p{ margin-bottom: 1.2rem; }
+#audileaf-lp .btn{ font-weight: 600; font-size: var(--font-size-medium); padding: 0.6rem 1.5rem; border-radius: 5px; transition: all 0.3s ease; }
+#audileaf-lp .btn-lg{ font-size: var(--font-size-large); padding: 0.8rem 2rem; }
+#audileaf-lp .btn-primary{ background-color: var(--primary-color); border-color: var(--primary-color); }
+#audileaf-lp .btn-warning{ background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important; border-color: var(--secondary-color); color: var(--black); }
+#audileaf-lp .benefit-card{ border-radius: 10px; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: var(--primary-color); color: var(--white); transition: transform 0.3s ease; }
+#audileaf-lp .benefit-card:hover{ transform: translateY(-5px); }
+#audileaf-lp .icon-circle{ width: 80px; height: 80px; background-color: var(--secondary-color); color: var(--primary-color); display: flex; align-items: center; justify-content: center; border-radius: 50%; margin: -50px auto 10px auto; }
+#audileaf-lp .ingredient-card, #audileaf-lp .comparison-box{ border-radius: 10px; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+#audileaf-lp .check-list li, #audileaf-lp .x-list li{ margin-bottom: 15px; display: flex; align-items: flex-start; font-size: var(--font-size-medium); }
+#audileaf-lp .comparison-container{ border: 2px dashed #ddd; border-radius: 15px; padding: 30px; background-color: white; position: relative; width: 100%; box-sizing: border-box; }
+#audileaf-lp .comparison-container h4{ color: var(--primary-color); font-weight: 600; margin-bottom: 1.2rem; text-align: center; }
+#audileaf-lp .check-list i{ color: #42b983; font-size: 20px; }
+#audileaf-lp .x-list i{ color: var(--red-accent); font-size: 20px; }
+#audileaf-lp .pricing-card{ border-radius: 10px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; overflow: hidden; }
+#audileaf-lp .pricing-card:hover{ transform: translateY(-10px); }
+#audileaf-lp .pricing-card.popular{ transform: scale(1.02); position: relative; z-index: 1; border: 2px solid var(--secondary-color); }
+#audileaf-lp .pricing-title{ background-color: #f8f8f8; }
+#audileaf-lp .price{ margin: 15px 0; }
+#audileaf-lp .price h1{ font-size: 4.5rem; font-weight: 700; position: relative; display: inline-block; }
+#audileaf-lp .per-bottle{ font-size: 1rem; line-height: 1.2; font-weight: 600; display: inline-block; text-align: left; padding-left: 5px; }
+#audileaf-lp .payment-methods img{ width: auto; object-fit: contain; }
+#audileaf-lp .total-price{ font-size: 1.3rem; }
+#audileaf-lp .testimonials-section{ padding: 50px 0; }
+#audileaf-lp .carousel-inner{ min-height: 300px; position: relative; }
+#audileaf-lp .carousel-item{ height: 100%; position: absolute; top: 0; left: 0; right: 0; opacity: 0; transition: opacity 0.6s ease; padding: 0 15px; }
+#audileaf-lp .carousel-item.active{ position: relative; opacity: 1; }
+#audileaf-lp .testimonial-card{ background-color: rgba(255,255,255,0.1); border-radius: 15px; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+#audileaf-lp .testimonial-text{ font-size: 1.2rem; font-style: italic; line-height: 1.8; }
+#audileaf-lp .accordion-item{ border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: none; margin-bottom: 1rem; }
+#audileaf-lp .accordion-button{ background-color: var(--white); font-weight: 600; color: var(--primary-color); font-size: var(--font-size-medium); padding: 1.2rem; }
+#audileaf-lp .accordion-button:not(.collapsed){ background-color: var(--primary-color); color: var(--white); }
+#audileaf-lp .accordion-button:focus{ box-shadow: none; border-color: var(--primary-color); }
+#audileaf-lp .accordion-body{ font-size: var(--font-size-base); padding: 1.2rem; line-height: 1.6; }
+#audileaf-lp .bonus-card{ border-radius: 10px; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); position: relative; overflow: hidden; }
+#audileaf-lp .bonus-badge{ position: absolute; top: 10px; left: 10px; background-color: var(--secondary-color); color: var(--black); font-weight: bold; padding: 5px 10px; border-radius: 30px; z-index: 1; font-size: var(--font-size-base); }
+#audileaf-lp footer a{ text-decoration: none; transition: color 0.3s ease; font-size: var(--font-size-base); }
+#audileaf-lp footer a:hover{ color: var(--secondary-color) !important; }
+@keyframes pulse{ 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+#audileaf-lp #countdown{ animation: pulse 1s infinite; font-weight: bold; color: var(--white); font-size: var(--font-size-large); }
+#audileaf-lp .button-buy-b{ background: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important; color: #000; border: none; }
+#audileaf-lp .carousel-control-prev, #audileaf-lp .carousel-control-next{ width: 8%; opacity: 0.8; }
+#audileaf-lp .carousel-indicators{ bottom: -40px; }
+#audileaf-lp .carousel-indicators button{ width: 10px; height: 10px; border-radius: 50%; background-color: rgba(255,255,255,0.4); margin: 0 5px; opacity: 0.7; }
+#audileaf-lp .carousel-indicators .active{ background-color: var(--white); opacity: 1; }
+#audileaf-lp .testimonial-card .card-body{ padding: 25px; }
+#audileaf-lp .testimonial-author{ margin-top: 15px; font-weight: 600; }
+#audileaf-lp .verified-badge{ font-size: 0.85rem; opacity: 0.8; }
+@media (max-width: 768px){#audileaf-lp{ --font-size-base: 1rem; --font-size-medium: 1.1rem; --font-size-large: 1.2rem; }
+#audileaf-lp h1{ font-size: 2.5rem; }
+#audileaf-lp h2{ font-size: 2rem; }
+#audileaf-lp h3{ font-size: 1.75rem; }
+#audileaf-lp .container{ width: 100%; max-width: 100% !important; padding-left: 10px; padding-right: 10px; }
+#audileaf-lp .pricing-card.popular{ transform: scale(1); margin-top: 1.5rem; margin-bottom: 1.5rem; }
+#audileaf-lp .carousel-inner{ min-height: 520px; }
+#audileaf-lp .testimonial-card .d-flex{ flex-direction: column; text-align: center; align-items: center !important; margin-top: 20px; }
+#audileaf-lp .testimonial-card .d-flex img{ margin-right: 0 !important; margin-bottom: 15px; max-width: 120px !important; }
+#audileaf-lp .testimonial-card .text-start{ text-align: center !important; width: 100%; }
+#audileaf-lp .bonus-card .card-body .row{ display: grid; grid-template-rows: auto auto; }}
+@media (max-width: 576px){#audileaf-lp .carousel-inner{ min-height: 420px; }
+#audileaf-lp .price h1{ font-size: 2.8rem; }
+#audileaf-lp footer .row{ flex-direction: column !important; align-items: center !important; }
+#audileaf-lp footer img{ display: block; margin: 0 auto 16px auto; max-width: 160px; }
+#audileaf-lp footer p, #audileaf-lp footer div{ text-align: center !important; }}
+#audileaf-lp .vsl-wrapper{ width: 100%; max-width: 700px; margin: 30px auto; padding: 20px 15px; text-align: center; background: transparent; }
+#audileaf-lp.esconder{
+  display: none;
+}
