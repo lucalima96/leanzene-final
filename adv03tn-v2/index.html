@@ -1778,6 +1778,34 @@ src="https://www.facebook.com/tr?id=1630606758184714&ev=PageView&noscript=1"
   }
 })();
 </script>
+
+<!-- SALVA-VIDAS DO CLIQUE ==========================================
+     O pixel da UTMify (cdn.utmify.com.br/scripts/pixel/pixel-google.js)
+     intercepta o clique nos botoes, chama preventDefault() e so DEPOIS
+     tenta rastrear. Nesse rastreio ele estoura:
+       "TypeError: Cannot read properties of undefined (reading '_id')"
+     A excecao acontece antes da linha que faria a navegacao, entao o
+     default fica cancelado e ninguem navega: o botao morre.
+
+     Este fallback reexecuta a navegacao logo apos o clique. Se a UTMify
+     conseguir navegar sozinha, a pagina descarrega antes do timer e ele
+     nunca dispara — por isso nao ha risco de navegacao dupla.
+
+     Os 200ms dao tempo do AddToCart (fbq + CAPI) sair antes de trocar
+     de pagina. Modificadores e clique do meio ficam de fora para nao
+     quebrar "abrir em nova aba".
+
+     Consertar na raiz = cadastrar o dominio da Shopify na UTMify. Com
+     isso feito, este bloco pode sair. ============================== -->
+<script>
+document.addEventListener('click', function (e) {
+  if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  var a = e.target && e.target.closest ? e.target.closest('a[href*="/cart/"]') : null;
+  if (!a) return;
+  var url = a.href;
+  setTimeout(function () { window.location.href = url; }, 200);
+}, false);
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
