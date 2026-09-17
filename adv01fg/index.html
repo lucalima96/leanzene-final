@@ -44,6 +44,20 @@ function getFbc() {
   return '';
 }
 
+// Id de sessao: viaja ate o checkout num subid e volta no postback da
+// BuyGoods, pra o Purchase (que chega horas depois, sem cookie nenhum)
+// reencontrar o fbp/fbc deste clique. E o fbc que faz o Meta creditar o
+// anuncio certo; UTM nao atribui nada no Meta.
+function getSid() {
+  var k = '_mt_sid', v = '';
+  try { v = sessionStorage.getItem(k) || ''; } catch (e) {}
+  if (!v) {
+    v = 's' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
+    try { sessionStorage.setItem(k, v); } catch (e) {}
+  }
+  return v;
+}
+
 function sendCAPI(event_name, custom_data, event_id) {
   try {
     fetch(CAPI_URL, {
@@ -55,6 +69,7 @@ function sendCAPI(event_name, custom_data, event_id) {
         event_source_url: window.location.href,
         fbp: getCookie('_fbp'),
         fbc: getFbc(),
+        sid: getSid(),
         custom_data: custom_data || {}
       }),
       keepalive: true
@@ -1483,6 +1498,12 @@ document.addEventListener('click', function (e) {
       extraParams += '&' + param + '=' + encodeURIComponent(value);
     }
   });
+
+  // subid2 e do vTurb (conversion:["subid2"] no player) — nao encostar.
+  // subid3 leva o id de sessao para o postback da BuyGoods devolver.
+  if (typeof getSid === 'function') {
+    extraParams += '&subid3=' + encodeURIComponent(getSid());
+  }
 
   if (extraParams) {
     var links = document.querySelectorAll('a[href*="buygoods.com/secure/checkout"]');
