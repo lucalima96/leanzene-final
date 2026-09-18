@@ -1001,7 +1001,19 @@
      scripts de terceiro ja injetaram href aqui em runtime e o clique recarregava
      a pagina, reiniciando a VSL no meio do pitch. -->
 <style id="fb-names-inertes">a.fb-user-name,span.fb-tag{pointer-events:none}</style>
-<style id="no-scroll-anim">[data-aos]{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}</style></head><body data-page-type="page" data-page="_qXbmtNrlnmT0fHuGt1Rm" data-variant="wq4nnner7sc" data-version="2.7">
+<style id="no-scroll-anim">[data-aos]{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}</style>
+<!-- ===== TRACKER (raadstag) =====
+     Ultimo elemento do head, como o fornecedor pede.
+     data-plat-params NAO controla as vagas: testado em 18/09/2026, tirar
+     subid2 da lista nao impede o tag de escrever nele. Ele grava o mesmo
+     valor (vSt...) em subid, subid2, subid3 e subid4.
+     ⚠️ subid2 e a vaga de conversao do player vTurb (conversion:["subid2"]),
+     entao os dois disputam. Quem escreve por ultimo vence, e o vTurb
+     injeta no pitch, depois do tag — mas e corrida, nao garantia.
+     SAIDA LIMPA: mover o vTurb para subid5 no painel (o tag nao escreve
+     nessa vaga) e apontar o postback para {SUBID5}. -->
+<script defer src="https://cdn.raadstag.com/tag.js" data-tag-id="13652-0605ccf403274745842bd466694da452" data-event-host="api.raadstag.com" data-plat-params="subid,subid2,subid3,subid4,subid5"></script>
+</head><body data-page-type="page" data-page="_qXbmtNrlnmT0fHuGt1Rm" data-variant="wq4nnner7sc" data-version="2.7">
 <!-- ============ START — BLOCO HEAD TODAY ============ -->
 <div class="today-header-wrapper">
 	<div class="today-header-inner">
