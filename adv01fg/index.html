@@ -1485,32 +1485,48 @@ document.addEventListener('click', function (e) {
     <script type="text/javascript">setTimeout(function () { var i = document.createElement("iframe"), oid = new URLSearchParams(window.location.search); i.async = true; i.style = "display:none"; i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12481&t=c5ddb76012dd3733cd934deeac46a866&s=" + ReadCookie('sessid2')); document.body.appendChild(i); }, 1000);</script>
 <!-- ===== /TRACKING BUYGOODS ===== -->
 
-<!-- UTM passthrough para os links de checkout do BuyGoods -->
+<!-- Passthrough para os links de checkout do BuyGoods.
+     Mapa de vagas de subid (cada um na sua; duas coisas na mesma vaga e uma
+     sobrescreve a outra e some do relatorio):
+       subid  -> origem do trafego (campanha|anuncio), pra ler no painel da BG
+       subid2 -> chave de conversao do vTurb — NAO ENCOSTAR, quem escreve e o player
+       subid3 -> id de sessao da ponte do CAPI
+     Escrita via URLSearchParams.set (idempotente): o script de tracking da
+     BuyGoods reescreve esses links depois da gente, e concatenar string
+     duplicava os parametros. Por isso tambem reaplicamos algumas vezes. -->
 <script>
 (function() {
   var urlParams = new URLSearchParams(window.location.search);
   var utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'src', 'vid1', 'vid2', 'vid3'];
-  var extraParams = '';
 
-  utmParams.forEach(function(param) {
-    var value = urlParams.get(param);
-    if (value) {
-      extraParams += '&' + param + '=' + encodeURIComponent(value);
-    }
-  });
+  var origem = [urlParams.get('utm_campaign'), urlParams.get('utm_content')]
+    .filter(Boolean).join('|') || urlParams.get('utm_source') || '';
 
-  // subid2 e do vTurb (conversion:["subid2"] no player) — nao encostar.
-  // subid3 leva o id de sessao para o postback da BuyGoods devolver.
-  if (typeof getSid === 'function') {
-    extraParams += '&subid3=' + encodeURIComponent(getSid());
-  }
-
-  if (extraParams) {
+  function aplicar() {
     var links = document.querySelectorAll('a[href*="buygoods.com/secure/checkout"]');
-    links.forEach(function(link) {
-      link.href = link.href + extraParams;
-    });
+    for (var i = 0; i < links.length; i++) {
+      try {
+        var u = new URL(links[i].href);
+        utmParams.forEach(function(p) {
+          var v = urlParams.get(p);
+          if (v) u.searchParams.set(p, v);
+        });
+        if (origem) u.searchParams.set('subid', origem.slice(0, 100));
+        if (typeof getSid === 'function') u.searchParams.set('subid3', getSid());
+        links[i].href = u.toString();
+      } catch (e) {}
+    }
   }
+
+  aplicar();
+  window.addEventListener('load', function () {
+    setTimeout(aplicar, 300); setTimeout(aplicar, 1500); setTimeout(aplicar, 4000);
+  });
+  // reaplica tambem no clique, caso algo tenha reescrito o href no meio
+  document.addEventListener('click', function (e) {
+    var t = e.target; if (t && t.nodeType === 3) t = t.parentElement;
+    if (t && t.closest && t.closest('a[href*="buygoods.com/secure/checkout"]')) aplicar();
+  }, true);
 })();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
