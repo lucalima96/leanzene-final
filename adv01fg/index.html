@@ -1124,38 +1124,10 @@ document.addEventListener('click', function (e) {
     
 </style>
 <style>#audileaf-lp.esconder{display:none}</style>
-<script>
-(function () {
-  var PARAM = 'subid2';
-  var PREFIXO = 'v3_';
-  function liberar() {
-    var links = document.querySelectorAll('a[href]');
-    for (var i = 0; i < links.length; i++) {
-      try {
-        var u = new URL(links[i].href);
-        if (!u.searchParams.has(PARAM)) continue;
-        var v = u.searchParams.get(PARAM) || '';
-        if (v.indexOf(PREFIXO) === 0) continue;
-        u.searchParams.delete(PARAM);
-        links[i].href = u.toString();
-      } catch (e) {}
-    }
-  }
-  liberar();
-  window.addEventListener('load', function () {
-    setTimeout(liberar, 300); setTimeout(liberar, 1000); setTimeout(liberar, 3000);
-  });
-  document.addEventListener('click', function (e) {
-    var t = e.target; if (t && t.nodeType === 3) t = t.parentElement;
-    var a = t && t.closest ? t.closest('a[href]') : null;
-    if (a) liberar();
-  }, true);
-  if (typeof MutationObserver !== 'undefined') {
-    new MutationObserver(liberar).observe(document.body || document.documentElement,
-      { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
-  }
-})();
-</script>
+<!-- O script liberar() foi removido: ele apagava qualquer subid2 que nao
+     comecasse com v3_, pra proteger a vaga do vTurb. Agora o vTurb vive no
+     subid5 e o subid2 e da campanha, entao ele passou a apagar justamente o
+     dado que queremos ler no painel da BuyGoods. -->
 <!-- ===== /BLOCO DE OFERTA NAILSCLEANPRO — CSS ===== -->
 <!-- Defesa: nomes dos comentarios nunca navegam. O HTML nasce sem href, mas
      scripts de terceiro ja injetaram href aqui em runtime e o clique recarregava
@@ -1485,44 +1457,89 @@ document.addEventListener('click', function (e) {
     <script type="text/javascript">setTimeout(function () { var i = document.createElement("iframe"), oid = new URLSearchParams(window.location.search); i.async = true; i.style = "display:none"; i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12481&t=c5ddb76012dd3733cd934deeac46a866&s=" + ReadCookie('sessid2')); document.body.appendChild(i); }, 1000);</script>
 <!-- ===== /TRACKING BUYGOODS ===== -->
 
-<!-- Passthrough para os links de checkout do BuyGoods.
-     Mapa de vagas de subid (cada um na sua; duas coisas na mesma vaga e uma
-     sobrescreve a outra e some do relatorio):
-       subid  -> origem do trafego (campanha|anuncio), pra ler no painel da BG
-       subid2 -> chave de conversao do vTurb — NAO ENCOSTAR, quem escreve e o player
+<!-- ===== MAPA DE SUBIDS DO CHECKOUT =====
+       subid2 -> origem da campanha (utm_campaign|utm_content)  <- o que o Lucas le na BG
+       subid5 -> chave de conversao do vTurb (v3_...)
        subid3 -> id de sessao da ponte do CAPI
-     Escrita via URLSearchParams.set (idempotente): o script de tracking da
-     BuyGoods reescreve esses links depois da gente, e concatenar string
-     duplicava os parametros. Por isso tambem reaplicamos algumas vezes. -->
+     O player do vTurb escreve a chave no subid2 por config nativa dele, e o
+     tag do raadstag tambem grava nas vagas. Como nao da pra impedir nenhum
+     dos dois pela pagina, a gente REMAPEIA: acha a chave v3_ onde quer que
+     ela esteja, leva pro subid5, e devolve o subid2 pra campanha.
+     Reaplica no load, em timeouts, no clique (fase de captura, antes de
+     navegar) e em mudanca de href. So escreve quando mudou, senao o
+     observer entraria em loop.
+     ⚠️ O postback do vTurb na BuyGoods tem que usar {SUBID5}. -->
 <script>
-(function() {
+(function () {
   var urlParams = new URLSearchParams(window.location.search);
   var utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'src', 'vid1', 'vid2', 'vid3'];
+  var VAGAS = ['subid', 'subid2', 'subid3', 'subid4', 'subid5'];
 
   var origem = [urlParams.get('utm_campaign'), urlParams.get('utm_content')]
     .filter(Boolean).join('|') || urlParams.get('utm_source') || '';
+
+  function ehChaveVturb(v) { return typeof v === 'string' && v.indexOf('v3_') === 0; }
 
   function aplicar() {
     var links = document.querySelectorAll('a[href*="buygoods.com/secure/checkout"]');
     for (var i = 0; i < links.length; i++) {
       try {
         var u = new URL(links[i].href);
-        utmParams.forEach(function(p) {
-          var v = urlParams.get(p);
-          if (v) u.searchParams.set(p, v);
+        var sp = u.searchParams;
+
+        // Monta o estado desejado e so escreve se algum valor divergir.
+        // NAO comparar u.toString() com o href: o URLSearchParams re-encoda
+        // o redirect= (base64 com '=' no fim) e a string nunca bate, o que
+        // fazia o observer reescrever pra sempre e travar a aba.
+        var mudou = false;
+        function por(k, val) {
+          if (sp.get(k) !== val) { sp.set(k, val); mudou = true; }
+        }
+        function tirar(k) {
+          if (sp.has(k)) { sp.delete(k); mudou = true; }
+        }
+
+        // 1) a chave do vTurb vai pro subid5, venha de que vaga vier
+        var chave = '';
+        for (var v = 0; v < VAGAS.length; v++) {
+          if (ehChaveVturb(sp.get(VAGAS[v]))) chave = sp.get(VAGAS[v]);
+        }
+        if (chave) por('subid5', chave);
+
+        // 2) subid2 e da campanha. Sem origem, pelo menos nao deixa a chave
+        //    do vTurb ocupando a vaga.
+        if (origem) por('subid2', origem.slice(0, 100));
+        else if (ehChaveVturb(sp.get('subid2'))) tirar('subid2');
+
+        // 3) a chave do vTurb nao fica nas vagas que nao sao dela
+        ['subid', 'subid3', 'subid4'].forEach(function (k) {
+          if (ehChaveVturb(sp.get(k))) tirar(k);
         });
-        if (origem) u.searchParams.set('subid', origem.slice(0, 100));
-        if (typeof getSid === 'function') u.searchParams.set('subid3', getSid());
-        links[i].href = u.toString();
+
+        // 4) ponte do CAPI (so existe na pagina com tracking)
+        if (typeof getSid === 'function') por('subid3', getSid());
+
+        // 5) utms normais
+        utmParams.forEach(function (p) {
+          var val = urlParams.get(p);
+          if (val) por(p, val);
+        });
+
+        if (mudou) links[i].href = u.toString();
       } catch (e) {}
     }
   }
 
+  // NAO usar MutationObserver nem timers repetidos aqui. O urlParamInjector
+  // do vTurb tambem observa os links e REINJETA a chave no subid2 toda vez
+  // que a gente tira: os dois observers entram em queda de braco infinita e
+  // travam a aba (aconteceu em 19/09/2026).
+  // Rodamos uma vez no load (pro subid2 ja nascer com a campanha) e, o que
+  // realmente vale, na fase de CAPTURA do clique: ali a gente reescreve o
+  // href no ultimo instante antes de navegar, e o vTurb nao tem mais tempo
+  // de reagir.
   aplicar();
-  window.addEventListener('load', function () {
-    setTimeout(aplicar, 300); setTimeout(aplicar, 1500); setTimeout(aplicar, 4000);
-  });
-  // reaplica tambem no clique, caso algo tenha reescrito o href no meio
+  window.addEventListener('load', function () { setTimeout(aplicar, 1200); });
   document.addEventListener('click', function (e) {
     var t = e.target; if (t && t.nodeType === 3) t = t.parentElement;
     if (t && t.closest && t.closest('a[href*="buygoods.com/secure/checkout"]')) aplicar();
