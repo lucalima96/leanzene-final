@@ -15,97 +15,13 @@
 <link rel="preconnect" href="https://images.converteai.net/">
 <link rel="dns-prefetch" href="https://api.vturb.com.br/">
 
-<!-- ── Tracking: pixels + CAPI (do AudiLeaf LP) ── -->
+<!-- ── Tracking: só UTMify ── -->
 
 <meta name="description" content="AudiLeaf – Advanced formula to support hearing clarity, cognitive focus, and nervous system health. Natural ingredients, 60-day money-back guarantee.">
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
 
-var CAPI_URL = 'https://audileaf-capi.primeviewwindowtint.workers.dev';
 
-function genEventId() {
-  return 'ev_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
-}
 
-function sendCAPI(event_name, custom_data, event_id) {
-  fetch(CAPI_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      event_name: event_name,
-      event_id: event_id,
-      event_source_url: window.location.href,
-      custom_data: custom_data || {}
-    })
-  }).catch(function(){});
-}
-
-var _pvId = genEventId();
-var _vcId = genEventId();
-
-fbq('init', '1630606758184714');
-fbq('track', 'PageView', {}, { eventID: _pvId });
-fbq('track', 'ViewContent', {
-  content_name: 'AudiLeaf Drops',
-  content_category: 'Wellness',
-  content_type: 'product',
-  currency: 'USD',
-  value: 49.00
-}, { eventID: _vcId });
-
-sendCAPI('PageView', {}, _pvId);
-sendCAPI('ViewContent', {
-  content_name: 'AudiLeaf Drops',
-  content_category: 'Wellness',
-  content_type: 'product',
-  currency: 'USD',
-  value: 49.00
-}, _vcId);
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1630606758184714&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-<!-- InitiateCheckout: dispara em todos os botões BuyGoods -->
-<script>
-document.addEventListener('click', function(e) {
-  var link = e.target.closest('a[href*="buygoods.com"]');
-  if (!link) return;
-  var href = link.getAttribute('href') || '';
-  var productMap = {
-    'aud3fnn3': { name: 'AudiLeaf 3 Bottles', value: 216.00, num_items: 3 },
-    'aud6fnn3': { name: 'AudiLeaf 6 Bottles', value: 294.00, num_items: 6 },
-    'aud2fnn3': { name: 'AudiLeaf 2 Bottles', value: 178.00, num_items: 2 }
-  };
-  var match = href.match(/product_codename=([^&]+)/);
-  var product = (match && productMap[match[1]]) || { name: 'AudiLeaf', value: 0, num_items: 1 };
-  var icId = genEventId();
-  fbq('track', 'InitiateCheckout', {
-    content_name: product.name,
-    content_category: 'Wellness',
-    currency: 'USD',
-    value: product.value,
-    num_items: product.num_items
-  }, { eventID: icId });
-  sendCAPI('InitiateCheckout', {
-    content_name: product.name,
-    content_category: 'Wellness',
-    currency: 'USD',
-    value: product.value,
-    num_items: product.num_items
-  }, icId);
-});
-</script>
 
 <!-- Utmify -->
 <script
@@ -1156,45 +1072,6 @@ s.src="https://scripts.converteai.net/323b6d8a-4307-4d60-9a56-26e91f3cb757/playe
 s.async=!0,document.head.appendChild(s);
 </script>
 </div>
-
-<!-- BuyGoods tracking (mantido fora do bloco de oferta removido) -->
-<!-- BuyGoods Affiliate Tracker -->
-<script type="text/javascript" defer="" src="https://tracking.buygoods.com/track/saved_resource"></script>
-<script>
-function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}
-var mysrc = "https://tracking.buygoods.com/track/?a=11867&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=aud1,aud3,aud6&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href);
-if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; }
-var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc;
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s);
-</script>
-
-<!-- BuyGoods Conversion Iframe -->
-<script type="text/javascript">setTimeout(function () {var i = document.createElement("iframe");i.async = true;i.style="display:none";i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=11867&t=843427bf4050c29725c9a67e686ff550&s="+ReadCookie('sessid2'));document.body.appendChild(i);}, 1000);</script>
-
-
-<!-- UTM Passthrough to BuyGoods -->
-<script>
-(function() {
-  var urlParams = new URLSearchParams(window.location.search);
-  var utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'src', 'vid1', 'vid2', 'vid3'];
-  var extraParams = '';
-
-  utmParams.forEach(function(param) {
-    var value = urlParams.get(param);
-    if (value) {
-      extraParams += '&' + param + '=' + encodeURIComponent(value);
-    }
-  });
-
-  if (extraParams) {
-    var links = document.querySelectorAll('a[href*="buygoods.com"]');
-    links.forEach(function(link) {
-      link.href = link.href + extraParams;
-    });
-  }
-})();
-</script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"128225748fc44bf4bcaa8d3ab3446bf1","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 
 <!-- ════ SOCIAL PROOF / COMENTÁRIOS ════ -->
 <div style="max-width:800px; margin: 0 auto; padding: 0 15px;">
